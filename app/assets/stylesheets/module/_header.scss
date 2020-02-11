@@ -1,0 +1,40 @@
+.header {
+  .header-bar {
+    &__upper-side {
+      
+      &__main-icon{
+
+      }
+    }
+    &__upper-side__search-word-input-form {
+      .input-form {
+
+      }
+      .subit-btn {
+        .submit-btn-icon {
+
+        }
+      }
+    }
+  
+    .header-bar__menu-bar {
+      &__left-side {
+        .category-tab{
+
+        }
+        .brand-tab{
+
+        }
+      }
+      
+      &__right-side {
+
+        .rogin-tab {
+
+        }
+        .new-member-registraion-tab {
+        }
+      }
+    }
+  }
+}
