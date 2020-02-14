@@ -22,3 +22,79 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+### usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+|f_name_kana|string|null: false|
+|l_name_kana|string|null: false|
+|f_name_kanji|string|null: false|
+|l_name_kanji|string|null: false|
+|birthday|integer|null: false|
+|phone_number|integer|null: false|
+
+### Association
+- has_many :products
+- has_one :address
+- has_one :credit_card
+
+## productsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false|
+|name|string|null: false|
+|detail|text|null: false|
+|detail|text|null: false|
+|category|references|null: false|
+|price|integer|null: false|
+|status|integer|null: false|
+|state|integer|null: false|
+|city|references|null: false|
+|delivery|integer|null: false|
+|fee_payer|integer|null: false|
+|delivery_area|integer|null: false|
+
+### Association
+- belongs to user
+- has_many :images
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|product_id|references|null: false,foreign_key:true|
+|image|string|null: false|
+
+### Association
+- belongs to product
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|f_name_kana|string|null: false|
+|l_name_kana|string|null: false|
+|f_name_kanji|string|null: false|
+|l_name_kanji|string|null: false|
+|postal_code|integer||
+|prefecture|integer||
+|city|string||
+|street|string||
+|building|string||
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs to user
+
+## credit_cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
+|numbar|integer|null: false|
+|year|integer|null: false|
+|month|integer|null: false|
+|CVC|integer|null: false|
+
+### Association
+- belongs to user
