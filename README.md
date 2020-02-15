@@ -31,8 +31,8 @@ Things you may want to cover:
 |password|string|null: false|
 |f_name_kana|string|null: false|
 |l_name_kana|string|null: false|
-|f_name_kanji|string|null: false|
-|l_name_kanji|string|null: false|
+|f_name|string|null: false|
+|l_name|string|null: false|
 |birthday|integer|null: false|
 |phone_number|integer|null: false|
 
@@ -47,11 +47,9 @@ Things you may want to cover:
 |user_id|references|null: false|
 |name|string|null: false|
 |detail|text|null: false|
-|detail|text|null: false|
-|category|references|null: false|
+|category_id|integer|null: false|
 |price|integer|null: false|
 |status|integer|null: false|
-|state|integer|null: false|
 |city|references|null: false|
 |delivery|integer|null: false|
 |fee_payer|integer|null: false|
@@ -60,6 +58,7 @@ Things you may want to cover:
 ### Association
 - belongs to user
 - has_many :images
+- has_many :categorise
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -75,8 +74,8 @@ Things you may want to cover:
 |------|----|-------|
 |f_name_kana|string|null: false|
 |l_name_kana|string|null: false|
-|f_name_kanji|string|null: false|
-|l_name_kanji|string|null: false|
+|f_name|string|null: false|
+|l_name|string|null: false|
 |postal_code|integer||
 |prefecture|integer||
 |city|string||
@@ -98,3 +97,23 @@ Things you may want to cover:
 
 ### Association
 - belongs to user
+
+## likesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
+|product_id|integer|null: false|
+
+### Association
+- belongs to user
+- belongs to product
+
+## categoriseテーブル
+|Column|Type|Options|
+|------|----|-------|
+|product_id|references|null: false|
+|name|string|null: false|
+
+### Association
+- has_many :products
+- has_ancestry
