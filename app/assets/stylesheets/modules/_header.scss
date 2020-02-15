@@ -1,0 +1,66 @@
+.header {
+
+  .header-bar {
+    padding: 0, 60px;
+    width: 100%;
+    padding: 15px, 0, 0;
+    margin: 0, auto;
+
+    &__upper-side {
+      align-items: center;
+      &__main-icon {
+        display: inline-block;
+
+        .main-logo-icon {
+        height: 55px;
+        width: 140px;
+        }
+      }
+      &__search-word-input-form {
+        display: inline-block;
+        margin-left: auto;
+        .input-form {
+          text-align: center;
+          width: calc(100%-36px);
+        }
+        .subit-btn {
+          background-color: #3CCACE;
+          box-sizing: border-box;
+          height: 36px;
+          width: 36px;
+          .submit-btn-icon {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+  
+    .header-bar__menu-bar {
+      &__left-side {
+        display: inline-block;
+        .category-tab{
+        display: inline-block;
+
+        }
+        .brand-tab{
+          display: inline-block;
+
+        }
+      }
+      
+      &__right-side {
+        display: inline-block;
+
+        .rogin-tab {
+          display: inline-block;
+
+        }
+        .new-member-registraion-tab {
+          display: inline-block;
+
+        }
+      }
+    }
+  }
+}

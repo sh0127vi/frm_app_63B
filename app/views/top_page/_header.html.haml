@@ -2,12 +2,12 @@
   .header-bar
     .header-bar__upper-side
       .header-bar__upper-side__main-icon
-        = link_to image_tag('material/logo/logo.png', alt: "FURIMA-icon", height: '55px', width: '140px', class: 'main-logo-icon'), ""
+        = link_to image_tag('material/logo/logo.png', alt: "FURIMA-icon", class: 'main-logo-icon'), ""
       .header-bar__upper-side__search-word-input-form
         %input.input-form{name: "search-word", placeholder: "キーワードから探す"}
         %button.subit-btn{type: 'submit'}
           .submit-btn-icon
-            = image_tag src='material/icon/icon-search1.png', alt: 'sending-btn', height: '36px', width: 's6px'
+            = image_tag src='material/icon/icon-search1.png', alt: 'sending-btn', height: '100%', width: '100%'
     .header-bar__menu-bar
       .header-bar__menu-bar__left-side
         %ul
@@ -18,9 +18,9 @@
       .header-bar__menu-bar__right-side
         %ul
           %li.rogin-tab
-            ログイン
+            = link_to "ログイン", ""
           %li.new-member-registraion-tab
-            新規会員登録
+            = link_to "新規会員登録", ""
 
 
 
