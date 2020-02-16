@@ -38,8 +38,8 @@ Things you may want to cover:
 
 ### Association
 - has_many :products
-- has_one :address
-- has_one :credit_card
+- has_one :address, dependent: :destroy
+- has_one :credit_card, dependent: :destroy
 
 ## productsテーブル
 |Column|Type|Options|
@@ -49,7 +49,7 @@ Things you may want to cover:
 |detail|text|null: false|
 |category_id|references|null: false,foreign_key: true|
 |price|integer|null: false|
-|status|integer|null: false|
+|condition|integer|null: false|
 |city|references|null: false|
 |delivery|integer|null: false|
 |fee_payer|integer|null: false|
@@ -57,8 +57,8 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_many :images
-- has_many :category
+- has_many :images, dependent: :destroy
+- has_many :category, dependent: :destroy
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -67,7 +67,7 @@ Things you may want to cover:
 |image|string|null: false|
 
 ### Association
-- belongs to :product
+- belongs_to :product
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -84,7 +84,7 @@ Things you may want to cover:
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs to :user
+- belongs_to :user
 
 ## credit_cardsテーブル
 |Column|Type|Options|
@@ -96,7 +96,7 @@ Things you may want to cover:
 |CVC|integer|null: false|
 
 ### Association
-- belongs to :user
+- belongs_to :user
 
 ## likesテーブル
 |Column|Type|Options|
@@ -105,8 +105,8 @@ Things you may want to cover:
 |product_id|references|null: false,foreign_key: true|
 
 ### Association
-- belongs to :user
-- belongs to :product
+- belongs_to :user
+- belongs_to :product
 
 ## categoriseテーブル
 |Column|Type|Options|
