@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :products, only: :new
   resources :users
   root 'top_page#index'
+  get 'users/index'
+  root "users#index"
 end

@@ -1,0 +1,20 @@
+.header
+  .header-menu
+    .header-menu__logo
+      = image_tag src='/assets/logo.png', class: 'logo1'
+    .header-menu__input-box
+      %input{type: 'text', class: 'keyword_search', placeholder: 'キーワードから探す',}
+      %input{:alt => "seachbtn", class: 'search_btn', :src => "/assets/icon-search 1.png", :type => "image"}/
+
+  .navigation
+    %nav
+      %ul.main-navi
+        %li カテゴリー
+        %li ブランド
+        %li いいね
+        %li お知らせ
+        %li やることリスト
+        %li マイページ
+
+
+
