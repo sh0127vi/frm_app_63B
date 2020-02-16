@@ -111,7 +111,6 @@ Things you may want to cover:
 ## categoriseテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_id|references|null: false|
 |name|string|null: false|
 
 ### Association
