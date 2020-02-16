@@ -1,3 +1,82 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@charset "UTF-8";
+
+.header {
+  * {
+  box-sizing: border-box;
+  }
+  .header-menu {
+    height: 65px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    
+    
+    .logo1 {
+      height: 40px;
+    }
+    .keyword_search {
+      margin-left: 20px;
+      width: 60vw;
+      height: 35px;
+    }
+    .search_btn {
+      height: 35px;
+      background-color: #3CCACE
+    }
+  }
+
+  .navigation {
+    .main-navi{
+      height: 50px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      
+    }
+  }
+}
+
+
+
+
+.side-bar {
+  
+  font-size: 17px;
+  background-color: #f8f8f8;
+  .mymenu {
+   
+  }
+  .pay {
+    padding: 50px;
+  }
+  .setting {
+
+  }
+}
+
+
+
+
+
+
+
+
+.main_page {
+  background-color: #f8f8f8;
+  .icon {
+    .logo2 {
+      width: 100px;
+    }
+  }
+}
+
+
+
+
+
