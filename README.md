@@ -44,10 +44,10 @@ Things you may want to cover:
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false|
+|user_id|references|null: false,foreign_key: true|
 |name|string|null: false|
 |detail|text|null: false|
-|category_id|integer|null: false|
+|category_id|references|null: false,foreign_key: true|
 |price|integer|null: false|
 |status|integer|null: false|
 |city|references|null: false|
@@ -56,9 +56,9 @@ Things you may want to cover:
 |delivery_area|integer|null: false|
 
 ### Association
-- belongs_to user
+- belongs_to :user
 - has_many :images
-- has_many :categorise
+- has_many :category
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -67,7 +67,7 @@ Things you may want to cover:
 |image|string|null: false|
 
 ### Association
-- belongs to product
+- belongs to :product
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -84,34 +84,35 @@ Things you may want to cover:
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs to user
+- belongs to :user
 
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
+|user_id|references|null: false,foreign_key: true|
 |numbar|integer|null: false|
 |year|integer|null: false|
 |month|integer|null: false|
 |CVC|integer|null: false|
 
 ### Association
-- belongs to user
+- belongs to :user
 
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|product_id|integer|null: false|
+|user_id|references|null: false,foreign_key: true|
+|product_id|references|null: false,foreign_key: true|
 
 ### Association
-- belongs to user
-- belongs to product
+- belongs to :user
+- belongs to :product
 
 ## categoriseテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|string|null: false|
 
 ### Association
 - has_many :products
