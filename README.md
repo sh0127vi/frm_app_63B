@@ -56,7 +56,7 @@ Things you may want to cover:
 |delivery_area|integer|null: false|
 
 ### Association
-- belongs to user
+- belongs_to user
 - has_many :images
 - has_many :categorise
 
