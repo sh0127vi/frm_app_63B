@@ -1,5 +1,7 @@
-.top-introduction {
+.characteristic {
   padding: 60px 20px;
+  width: 100%;
+  box-sizing: border-box;
 
   .title {
     &__sentence {
@@ -29,18 +31,20 @@
     justify-content: center;
   
     width: 100%;
-    max-width: 1020px;
+    max-width: 10400px;
     margin: 20px auto;
+
 
 
     .content {
       position: relative;
       box-sizing: border-box;
       align-items: center;
-      margin: 16px 5% 0 0;
+      display: flex;
+      margin: 0 auto;
+      flex-direction: column;
 
       &__image {
-        widows: 30%;
         margin-bottom: 20px;
 
       }

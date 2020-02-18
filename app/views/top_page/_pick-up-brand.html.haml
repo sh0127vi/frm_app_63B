@@ -3,13 +3,13 @@
     ピックアップブランド
   .pick-up__box
     .pick-up__box__title
-      アーカイバ
-    .productlists
-      %ul
-        = link_to "", class: "product" do
-          %li.product
-            .product__image
-              =image_tag "material/icon/product_exam.png", alt: "product"
+      =link_to "アーカイバ", "", class: "pick-up_brand_title"
+    %ul.productlists
+      = link_to "", class: "product" do
+        %li.product
+          .product__image
+            =image_tag "material/icon/product_exam.png", alt: "product"
+          .detail
             .product__content
               .product__name
                 product3
@@ -22,10 +22,11 @@
                 %i.fas.fa-star
               .product__evaluation__score
                 ０
-        = link_to "", class: "product" do
-          %li.product
-            .product__image
-              =image_tag "material/icon/product_exam.png", alt: "product"
+      = link_to "", class: "product" do
+        %li.product
+          .product__image
+            =image_tag "material/icon/product_exam.png", alt: "product"
+          .detail
             .product__content
               .product__name
                 product2
@@ -38,10 +39,11 @@
                 %i.fas.fa-star
               .product__evaluation__score
                 ０
-        = link_to "", class: "product" do
-          %li.product
-            .product__image
-              =image_tag "material/icon/product_exam.png", alt: "product"
+      = link_to "", class: "product" do
+        %li.product
+          .product__image
+            =image_tag "material/icon/product_exam.png", alt: "product"
+          .detail
             .product__content
               .product__name
                 product1
