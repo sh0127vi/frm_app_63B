@@ -1,0 +1,280 @@
+@import "reset";
+
+.must_check{
+  background-color:#3ccace;
+  border-radius: 2px;
+  color: #fff;
+  padding: 2px 4px;
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.clearfix{
+  padding:40px;
+}
+
+.label{
+font-weight: bolder;
+display:inline-block;
+}
+
+@mixin list{
+  height: 50px;
+  width: 400px;
+  margin-top: 5px;
+}
+
+.shipping_container{
+margin:0;
+background-color: #f5f5f5;
+}
+.shipping_header{
+text-align: center;
+  &_logo{
+    &-frm{
+      margin-top: 15px;
+    }
+  }
+}
+.shipping_main{
+  &-container{
+    margin: 0 auto;
+    background-color: #fff;
+    width: 700px;
+  }
+}
+
+.goods_main{
+  &-inner{
+  }
+  &-header{
+    &-text{
+    text-align: center;
+    line-height: 100px;
+    font-size: 24px;
+  }
+}
+}
+
+
+.goods_form{
+  border-top:1px solid #eee;
+  &-image{
+    &-title{
+      font-weight: bold;
+      font-size: 16px;
+    }
+    &-text{
+
+    }
+    &-box{
+    height: 150px;
+    width: 600px;
+    background-color: #f5f5f5;
+    border: dotted 3px;
+    border-color: rgb(204, 204, 204);
+    margin-top: 10px;
+    position: relative;
+      &-file{
+        display: none;
+      }
+      &-text{
+        position: absolute;
+        right: 62px;
+        left:  62px;
+        top: 62px;
+        font-size: 14px;
+        text-align: center;
+        padding: 0;
+        background-color: #f5f5f5;
+        line-height:0.7;
+        font-weight: bolder;
+      }
+    }
+}
+  &-explain{
+    border-top:1px solid #eee;
+    &-title{
+    }
+    &-field{
+      width: 620px;
+      height: 30px;
+      border-radius: 2px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+    &-text{
+    }
+    &-area{
+      width: 620px;
+      height: 100px;
+      border-radius: 2px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+}
+  &-detail{
+    border-top:1px solid #eee;
+    height: 150px;
+    display:flex;
+    &-title{
+    }
+    &-div{
+      width: 400px;
+      margin-left: 150px;
+    }
+    &-category{
+      &-list{
+        @include list;
+      }
+    }
+    &-status{
+      &-list{
+        @include list;
+      }
+    }
+  }
+  &-fee{
+    border-top:1px solid #eee;
+    display: flex;
+    &-title{
+    }
+    &-div{
+      margin-left: 140px;
+    }
+    &-price{
+      &-list{
+        @include list;
+      }
+    }
+    &-adress{
+      &-list{
+        @include list;
+      }
+    }
+    &-blank{
+      &-list{
+        @include list;
+      }
+    }
+  }
+  &-price{
+    border-top:1px solid #eee;
+    display: flex;
+    &-list{
+      margin-left: 50px;
+      &-list1{
+        display: flex;
+        &-title{
+          height: 50px;
+          &-label{
+            margin-top: 15px;
+          }
+        }
+        &-input{
+          display: flex;
+          margin-left: 95px;
+          line-height: 50px;
+          padding-bottom: 30px;
+          &-box{
+            margin-left: 5px;
+            &-field{
+              text-align: right;
+              height: 50px;
+              width: 210px;
+              border-radius: 2px;
+              border: 1px solid #ccc;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+      &-list2{
+        height: 70px;
+        border-top: 1px solid #eee;
+        &-title{
+          line-height: 60px;
+        }
+        &-default{
+          margin-left: 250px;
+          color: #ccc;
+        }
+      }
+      &-list3{
+        height: 70px;
+        border-top: 1px solid #eee;
+        &-label{
+          line-height: 70px;
+          font-weight: bolder;
+          font-size: 16px;
+        }
+        &-default{
+          margin-left: 290px;
+        }
+      }
+    }
+    &-number{
+      font-size: 13px;
+    }
+  }
+  &-send{
+    height: 180px;
+    border-top:1px solid #eee;
+    padding:40px;
+    &-term{
+      font-size: 13px;
+    }
+    &-redbtn{
+      height: 50px;
+      width: 620px;
+      margin: 20px auto 0;
+      background-color: #3ccace;
+      color: #eee;
+    }
+    &-graybtn{
+      width: 300px;
+      height: 40px;
+      background-color: #aaa;
+      display:block;
+      margin: 20px auto 0;
+      text-align: center;
+      line-height: 40px;
+      color: #eee;
+    }
+  }
+}
+
+.shipping_footer{
+  height: 150px;
+  &-link{
+    display: flex;
+    margin:20px auto 0;
+    justify-content: center;
+  &-poricy{
+  }
+  &-terms{
+    margin:0 20px 0;
+  }
+  &-nation{
+
+  }
+  }
+  &-logo{
+    margin-top: 15px;
+    text-align: center;
+    &-image{
+      display: inline-block;
+      margin:0 auto;
+      height: 70px;
+      width: 70px;
+      display: flex;
+      &-tag{
+      }
+    }
+    &-ink{
+    }
+  }
+}
