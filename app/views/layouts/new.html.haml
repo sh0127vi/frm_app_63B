@@ -1,0 +1,128 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+  %body{:style => "margin: 0;"}
+  %div.shipping_container 
+    %header.shipping_header
+      %h1.shipping_header_logo
+        =link_to image_tag('material/logo/logo.png', alt:"furima", class:"shipping_header_logo-frm",height:"70",width:"250"),""
+    %main.shipping_main
+      %section.shipping_main-container
+        .goods_main-inner
+          .goods_main-header
+            %h2.goods_main-header-text
+              商品の情報を入力
+          = form_with model:@post, local:true do|f|
+            .goods_info
+              %section.l-shipping_goods_info
+              .goods_form
+
+                .goods_form-image.clearfix
+                  %h2.goods_form_image-title
+                    %h2.label 出品画像
+                    %span.must_check 必須
+                  %br
+                  %p.goods_form-image-text 最大１０枚までアップロードできます
+                  .goods_form-image-box
+                    =f.file_field :image, class: "goods_form-image-box-file"
+                    %pre.goods_form-image-box-text
+                      = preserve do
+                        :escaped
+                        <div>ドラッグ&ドロップ</div>
+                        <div>またはクリックしてファイルをアップロード</div>
+
+                .goods_form-explain.clearfix
+                  %h2.label 商品名
+                  %span.must_check 必須
+                  .goods_form-explain-title
+                    =f.text_field :name, placeholder:"商品名（必須40文字まで)",class:"goods_form-explain-field"
+                  %br
+                  %h2.label 商品の説明
+                  %span.must_check 必須
+                  .goods_form-explain-text
+                    =f.text_area :name, placeholder:"商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例：2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"goods_form-explain-area"
+
+                .goods_form-detail.clearfix
+                  %h3.goods_form-detail-title 商品の詳細
+                  .goods_form-detail-div
+                    .goods_form-detail-category
+                      %h2.label カテゴリー
+                      %span.must_check 必須
+                      %br
+                      = f.select :category, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-category-list'}
+                    %br
+                    .goods_form-detail-status
+                      %h2.label 商品の状態
+                      %span.must_check 必須
+                      %br
+                      = f.select :status, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-status-list'}
+
+                .goods_form-fee.clearfix
+                  %h3.goods_form_fee-title 配送について
+                  .goods_form-fee-div
+                    .goods_form-fee-price
+                      %h2.label 配送料の負担
+                      %span.must_check 必須
+                      %br
+                      = f.select :fee, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-price-list'}
+                    %br
+                    .goods_form-fee-adress
+                      %h2.label 発送元の地域
+                      %span.must_check 必須
+                      %br
+                      = f.select :adress, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-adress-list'}
+                    %br
+                    .goods_form-fee-blank
+                      %h2.label 発送までの日数
+                      %span.must_check 必須
+                      %br
+                      = f.select :blank, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-blank-list'}
+
+                .goods_form-price.clearfix
+                  %h3.goods_form-price-number 販売価格(300~9,999,999)
+                  %ul.goods_form-price-list
+                    %li.goods_form-price-list-list1
+                      .goods_form-price-list-list1-title
+                        %label.goods_form-price-list-list1-title-label
+                          %h2.label 価格
+                          %span.must_check 必須
+                      .goods_form-price-list-list1-input
+                        ¥
+                        .goods_form-price-list-list1-input-box
+                          =f.text_field :price, placeholder:"例) 300",class:"goods_form-price-list-list1-input-box-field"
+                    %li.goods_form-price-list-list2
+                      .goods_form-price-list-list2-title
+                        販売手数料(10%)
+                        %span.goods_form-price-list-list2-default
+                          ー
+                    %li.goods_form-price-list-list3
+                      .goods_form-price-list-list3-label 
+                        販売利益
+                        %span.goods_form-price-list-list3-default
+                          ー
+                .goods_form-send
+                  .goods_form-send-term
+                    %p
+                      禁止されている出品、行為を必ずご確認ください。
+                    %p
+                      またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+                    %p
+                      また、出品をもちまして加盟店規約に同意したことになります。
+
+                  =f.submit :contents,value:"出品する",class:"goods_form-send-redbtn"
+                  %br
+                  = link_to "戻る", root_path, class:'goods_form-send-graybtn'
+    %div.shipping_footer
+      .shipping_footer-link
+        %p.shipping_footer-link-poricy
+          プライバシーポリシー
+        %p.shipping_footer-link-terms
+          メルカリ利用規約
+        %p.shipping_footer-link-nation
+          特定商取引に関する表記
+      .shipping_footer-logo
+        .shipping_footer-logo-image
+          =link_to image_tag("material/logo/logo-white-box.png", alt:"furima", class:"shipping_footer-logo-image-tag",height:"75",width:"70"),""
+        %br
+        %small.shipping_footer-logo-ink &copy;FURIMA,Ink.
