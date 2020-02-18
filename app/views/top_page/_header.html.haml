@@ -1,4 +1,4 @@
-.header
+.top-header
   .header-bar
     .header-bar__upper-side
       .header-bar__upper-side__main-icon
@@ -9,18 +9,16 @@
           .submit-btn-icon
             = image_tag src='material/icon/icon-search1.png', alt: 'sending-btn', height: '100%', width: '100%'
     .header-bar__menu-bar
-      .header-bar__menu-bar__left-side
-        %ul
-          %li.category-tab
-            カテゴリー
-          %li.brand-tab
-            ブランド
-      .header-bar__menu-bar__right-side
-        %ul
-          %li.rogin-tab
-            = link_to "ログイン", ""
-          %li.new-member-registraion-tab
-            = link_to "新規会員登録", ""
+      %ul.header-bar__menu-bar__left-side
+        %li.category-tab
+          カテゴリー
+        %li.brand-tab
+          ブランド
+      %ul.header-bar__menu-bar__right-side
+        %li.rogin-tab
+          = link_to "ログイン", ""
+        %li.new-member-registraion-tab
+          = link_to "新規会員登録", ""
 
 
 
