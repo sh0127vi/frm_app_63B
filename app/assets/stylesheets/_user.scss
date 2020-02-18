@@ -101,7 +101,7 @@
         &-card {
           width: 30% !important;
         }
-        &-submit {
+        &--submit {
           color: #fff;
           background: #ea352d;
         }
@@ -182,10 +182,70 @@
   width: 100%;
   height: 100%;
   .login-form {
-    width: 700px;
+    max-width: none;
+    width: 456px;
     height: 100%;
     background-color: #fff;
     margin: 0 auto;
     text-align: center;
+    &__upper {
+      padding: 40px 64px;
+      text-align: center;
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      p {
+        font-size: 14px;
+        height: 14px;
+        line-height: 14px;
+      }
+      a {
+        display: block;
+        margin: 8px 0 0;
+        border: 1px solid #0099e8;
+        background: #0099e8;
+        color: #fff;
+        line-height: 40px;
+        text-decoration: none;
+        font-size: 14px;
+      }
+    }
+    &__lower {
+      border-top: 1px solid #eee;
+      padding: 24px 64px 32px;
+      text-align: left;
+      &-group {
+        margin: 24px 0 0;
+        .input-text {
+          width: 100%;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+        &-image {
+          width: 300px;
+          height: 74px;
+        }
+        &--submit {
+          background: #ea352d !important;
+          border: 1px solid #ea352d !important;
+          font-size: 14px !important;
+          border-radius: 0 !important;
+          color: #fff;
+        }
+      }
+      &-group:nth-child(4) {
+        text-align: none;
+      }
+      &-group:nth-child(5) {
+        margin-top: 40px;
+      }
+      a {
+        text-decoration: none;
+        font-size: 14px;
+      }
+    }
   }
 }
