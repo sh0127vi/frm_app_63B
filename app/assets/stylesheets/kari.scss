@@ -3,29 +3,32 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @charset "UTF-8";
 
+.wrapper {
+  background-color: rgb(245, 245, 245);
+  height: 1500px;
+}
+
 .header {
   * {
   box-sizing: border-box;
   }
-  .header-menu {
+  .menu {
     height: 65px;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
-    
-    
     .logo1 {
       height: 40px;
+      margin-right: 10px;
     }
     .keyword_search {
-      margin-left: 20px;
       width: 60vw;
       height: 35px;
     }
     .search_btn {
       height: 35px;
+      position: absolute;
       background-color: #3CCACE
     }
   }
@@ -37,46 +40,143 @@
       display: flex;
       align-items: center;
       justify-content: space-around;
-      
+      background-color: #fff;
     }
   }
 }
-
-
-
 
 .side-bar {
-  
-  font-size: 17px;
-  background-color: #f8f8f8;
+  width: 250px;
+  font-size: 14px;
+  margin-left: 200px;
+  line-height: 50px;
+  float: left;
   .mymenu {
-   
+   margin-top: 30px;
+   background-color: #fff;
+    .mypage{
+      font-weight: bold;
+      background-color: #eee;
+      padding-left: 20px;
+    }
+    .menu {
+      padding-left: 20px;
+    }
   }
   .pay {
-    padding: 50px;
+    margin-top: 50px;
+    background-color: #fff;
+    .mypay {
+      font-weight: bold;
+      background-color: rgb(245, 245, 245);
+    }
+    .menu {
+      padding-left: 20px;
+    }
   }
   .setting {
-
-  }
-}
-
-
-
-
-
-
-
-
-.main_page {
-  background-color: #f8f8f8;
-  .icon {
-    .logo2 {
-      width: 100px;
+    margin-top: 50px;
+    background-color: #fff;
+    .mysetting {
+      font-weight: bold;
+      background-color: rgb(245, 245, 245);
+    }
+    .menu {
+      padding-left: 20px;
     }
   }
 }
 
+.main_page {
+  background-color: #fff;
+  width: 700px;
+  height: 725px;
+  margin-left: 500px;
+  margin-top: 30px;
+  .logo2 {
+    width: 80px;
+    padding-top: 40px;
+    padding-left: 310px;
+  }
+  .myname {
+    .name {
+      display: flex;
+    justify-content: center;
+    }
+    .evaluation {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .info {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    margin-top: 20px;
+    margin: 20px;
+  }
+  .message {
+    margin: 50px 50px 50px 50px;
+    line-height: 5;
+  }
+  .verification {
+    height: 70px;
+    margin: 20px 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+  }
+}
 
+.under_content {
+  margin-top: 30px;
+  margin-left: 500px;
+  width: 700px;
+  .buy {
+    height: 70px;
+    width: 685px;
+
+    padding-left: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    background-color: rgb(250, 250, 250);
+  }
+  .selldetails {
+      display: flex;
+      justify-content: space-around;
+      font-weight: bold;
+      align-items: center;
+      height: 70px;
+      .transaction {
+        background-color: #fff;
+        height: 70px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .pasttransaction {
+        background-color: #eee;
+        height: 70px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  }
+  .buymenu {
+    background-color: #fff;
+    color: gray;
+    font-weight: bold;
+    height: 200px;
+    display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+}
 
 
 
