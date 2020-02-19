@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :users
   root 'top_page#index'
   get 'users/index'
-  root "users#index"
+  root 'users#index'
 end
