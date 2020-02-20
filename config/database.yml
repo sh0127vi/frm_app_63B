@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: frm_app_63B_production
-  username: frm_app_63B
-  password: <%= ENV['FRM_APP_63B_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
