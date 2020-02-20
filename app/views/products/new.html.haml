@@ -1,9 +1,4 @@
-!!!
-%html{lang: "ja"}
-  %head
-    %meta{charset: "utf-8"}
-  %body{:style => "margin: 0;"}
-  %div.shipping_container 
+  .shipping_container 
     %header.shipping_header
       %h1.shipping_header_logo
         =link_to image_tag('material/logo/logo.png', alt:"furima", class:"shipping_header_logo-frm",height:"70",width:"250"),""
@@ -113,7 +108,7 @@
                   =f.submit :contents,value:"出品する",class:"goods_form-send-redbtn"
                   %br
                   = link_to "戻る", root_path, class:'goods_form-send-graybtn'
-    %div.shipping_footer
+    .shipping_footer
       .shipping_footer-link
         %p.shipping_footer-link-poricy
           プライバシーポリシー
