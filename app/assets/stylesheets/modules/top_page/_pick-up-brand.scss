@@ -11,7 +11,7 @@
     font-weight: bold;
   }
   .pick-up__box {
-    .pick-up__box__title {
+    &__title {
       text-align: center;
       color: #3ccace;
       text-decoration: none;
@@ -55,7 +55,7 @@
             }
           }
           .product__price {
-            .product__price__tax {
+            &__tax {
               font-size: 10px;
    
             }
