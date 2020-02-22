@@ -1,0 +1,2 @@
+module KariHelper
+end
