@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :kari, only: :index
   resources :products, only: :new
   resources :users
+  root 'top_page#index'
 end
