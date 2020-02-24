@@ -72,6 +72,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'devise'
 gem 'ancestry'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'fog-aws'
 gem 'carrierwave'

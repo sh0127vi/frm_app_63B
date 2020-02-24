@@ -8,3 +8,10 @@ Rails.application.routes.draw do
   get 'users/index'
   root 'users#index'
 end
+  root to: "users#index"
+  get 'users/logout' => 'users#logout'
+  get 'users/card' => 'users#card'
+  get 'users/users/card_add' => 'users#card_add'
+
+
+end
