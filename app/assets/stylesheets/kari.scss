@@ -29,10 +29,9 @@
     .search_btn {
       height: 35px;
       position: absolute;
-      background-color: #3CCACE
+      background-color: #3CCACE;
     }
   }
-
   .navigation {
     .main-navi{
       height: 50px;
@@ -83,6 +82,11 @@
     }
     .menu {
       padding-left: 20px;
+    }
+    .noline {
+      text-decoration: none;
+      color: black;
+      margin-left: 20px;
     }
   }
 }
@@ -137,7 +141,6 @@
   .buy {
     height: 70px;
     width: 685px;
-
     padding-left: 15px;
     font-weight: bold;
     display: flex;
@@ -178,5 +181,271 @@
   }
 }
 
+.log_out {
+  width: 725px;
+  height: 180px;
+  margin-left: 500px;
+  margin-top: 30px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    .page {
+      width: 300px;
+      height: 50px;
+      background-color: #3CCACE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+      .btn {
+        background-color:#3CCACE;
+        color: #fff;
+        text-decoration: none;
+      }
+}
+
+.card {
+  width: 725px;
+  height: 300px;
+  margin-left: 500px;
+  margin-top: 30px;
+  background-color: #fff;
+  .list{ 
+    .pay {
+      height: 50px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      
+    }
+  }
+  .pay-card {
+    .card-list {
+      margin-top: 45px;
+      font-weight: bold;
+      margin-left: 210px;
+    }
+  }
+  .pay-add {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    .card-add {
+      width: 300px;
+      height: 50px;
+      margin-top: 15px;
+      background-color: #3CCACE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      .noline {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+  .payment-details {
+    margin-top: 45px;
+    margin-left: 500px;
+  }
+}
+
+.card_add {
+  width: 725px;
+  height: 900px;
+  margin-left: 500px;
+  margin-top: 30px;
+  background-color: #fff;
+  .title {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .details {
+    .number-details {
+      display: flex;
+      margin-left: 207px;
+      margin-top: 30px;
+      .card-number {
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .must_check {
+        background-color: #3CCACE;
+        color: #fff;
+        border-radius: 3px;
+        font-size: 13px;
+        width: 35px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+      }
+    }
+    .number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5px;
+      .cardnumber {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding-left: 10px;
+        height: 40px;
+        width: 300px;
+        
+      }
+    }
+    .image {
+      margin-left: 207px;
+      margin-top: 5px;
+      .visa {
+        height: 25px;
+      }
+      .master {
+        height: 25px;
+      }
+      .saison {
+        height: 30px;
+      }
+      .jcb {
+        height: 25px;
+      }
+      .amex {
+        height: 25px;
+      }
+      .diners {
+        height: 25px;
+      }
+      .discover {
+        height: 25px;
+      }
+    }
+    .expirationdate {
+      .expirationdate-details {
+        display: flex;
+        margin-left: 207px;
+        margin-top: 25px;
+        .date {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .must_check {
+          background-color: #3CCACE;
+          color: #fff;
+          border-radius: 3px;
+          font-size: 13px;
+          width: 35px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 10px;
+        }
+      }
+      .expirationdate-choice {
+        margin-top: 8px;
+        margin-left: 207px;
+        display: flex;
+        .month {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        .card-default {
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          padding-left: 10px;
+          height: 40px;
+          width: 90px;
+          }
+        .month-details {
+          margin: 0px 10px 0px 10px;
+          font-size: 15px;
+          }
+        }
+        .year {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .card-default {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 10px;
+            height: 40px;
+            width: 90px;
+          }
+          .year-details {
+            margin: 0px 10px 0px 10px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .securitycode {
+      .securitycode-details {
+        display: flex;
+        align-items: center;
+        margin-left: 207px;
+        margin-top: 25px;
+        .securitycode-details-title {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .must_check {
+          background-color: #3CCACE;
+          color: #fff;
+          border-radius: 3px;
+          font-size: 13px;
+          width: 35px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 10px;
+        }
+      }
+      .securitycode-cardsecurity {
+        margin-left: 207px;
+        margin-top: 5px;
+        .cardsecurity {
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          padding-left: 10px;
+          height: 40px;
+          width: 300px;
+        }
+      }
+    }
+    .card-question { 
+      color: #ea352d;
+      font-size: 15px;
+      margin-left: 355px;
+      margin-top: 3px;
+    }
+  }
+  .add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .add-btn {
+      width: 300px;
+      height: 50px;
+      background-color: #3CCACE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      margin-top: 25px;
+    }
+  }
+}
 
 
