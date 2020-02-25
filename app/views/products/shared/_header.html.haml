@@ -2,7 +2,7 @@
   .header-bar
     .header-bar__upper-side
       .header-bar__upper-side__main-icon
-        = link_to image_tag('material/logo/logo.png', alt: "FURIMA-icon", class: 'main-logo-icon'), "", width: "140px"
+        = link_to image_tag('material/logo/logo.png', alt: "FURIMA-icon", class: 'main-logo-icon'), root_path, width: "140px"
       .header-bar__upper-side__search-word-input-form
         %input.input-form{name: "search-word", placeholder: "キーワードから探す"}
         %button.submit-btn{type: 'submit'}
