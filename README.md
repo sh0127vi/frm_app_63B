@@ -40,11 +40,14 @@ Things you may want to cover:
 - has_many :products
 - has_one :address, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
+- has_many :purchases, dependent: :destroy
+- has_many :likes dependent: :destroy
+- has_many :comments
 
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false,foreign_key: true|
+|user_id|references|null: false foreign_key: true|
 |name|string|null: false|
 |detail|text|null: false|
 |category_id|references|null: false,foreign_key: true|
@@ -58,7 +61,10 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :images, dependent: :destroy
-- has_many :category, dependent: :destroy
+- belongs_to :category, dependent: :destroy
+- has_many :likes dependent: :destroy
+- has_one :purchase
+- has_many :comments
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -90,10 +96,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key: true|
-|numbar|integer|null: false|
-|year|integer|null: false|
-|month|integer|null: false|
-|CVC|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 - belongs_to :user
@@ -117,3 +121,32 @@ Things you may want to cover:
 ### Association
 - has_many :products
 - has_ancestry
+
+## purchasesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|buyer_user_id|references|null: false|
+|product_id|references|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :product
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false|
+|product_id|references|null: false|
+|body|text|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :product
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many :products
