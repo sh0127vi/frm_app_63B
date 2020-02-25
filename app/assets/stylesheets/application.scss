@@ -1,6 +1,5 @@
-@import "./config/reset";
+@import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "new";
-@import "user";
-@import "products";
+@import "modules/users/user";
+@import "modules/products/products";
