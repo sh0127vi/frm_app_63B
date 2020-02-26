@@ -1,0 +1,58 @@
+.pick-up-category
+  .pick-up__title
+    ピックアップカテゴリー
+  .pick-up__box
+    .pick-up__box__title
+      =link_to "新規投稿商品", "", class: "pick-up_category_title"
+    %ul.productlists
+      = link_to "", class: "product" do
+        %li.product
+          .product__image
+            =image_tag "material/icon/product_exam.png", alt: "product"
+          .detail
+            .product__content
+              .product__name
+                product3
+              .product__price
+                30000円
+                .product__price__tax
+                  (税抜)
+            .product__evaluation
+              .product__evaluation__star-img
+                %i.fas.fa-star
+              .product__evaluation__score
+                ０
+      = link_to "", class: "product" do
+        %li.product
+          .product__image
+            =image_tag "material/icon/product_exam.png", alt: "product"
+          .detail
+            .product__content
+              .product__name
+                product2
+              .product__price
+                20000円
+                .product__price__tax
+                  (税抜)
+            .product__evaluation
+              .product__evaluation__star-img
+                %i.fas.fa-star
+              .product__evaluation__score
+                ０
+      = link_to "", class: "product" do
+        %li.product
+          .product__image
+            =image_tag "material/icon/product_exam.png", alt: "product"
+          .detail
+            .product__content
+              .product__name
+                product1
+              .product__price
+                10000円
+                .product__price__tax
+                  (税抜)
+            .product__evaluation
+              .product__evaluation__star-img
+                %i.fas.fa-star
+              .product__evaluation__score
+                ０
