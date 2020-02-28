@@ -83,7 +83,12 @@
     .menu {
       padding-left: 20px;
     }
-    .noline {
+    .card-btn {
+      text-decoration: none;
+      color: black;
+      margin-left: 20px;
+    }
+    .logout-btn {
       text-decoration: none;
       color: black;
       margin-left: 20px;
@@ -242,7 +247,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      .noline {
+      .card-add-btn {
         text-decoration: none;
         color: #fff;
       }
