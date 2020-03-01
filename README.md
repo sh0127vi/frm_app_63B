@@ -53,8 +53,8 @@ Things you may want to cover:
 |detail|text|null: false|
 |category_id|references|null: false,foreign_key: true|
 |price|integer|null: false|
-|condition|integer|null: false|
-|city|references|null: false|
+|condition|string|null: false|
+|city|string|null: false|
 |delivery|integer|null: false|
 |fee_payer|integer|null: false|
 |delivery_area|integer|null: false|
