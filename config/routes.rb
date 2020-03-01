@@ -10,4 +10,10 @@ Rails.application.routes.draw do
     get "users/card", to: "users#card" 
     get "users/users/card_add", to: "users#card_add" 
   end
+  root to: "products#index"
+  devise_for :users
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :products, only: [:new, :index]
+  resources :users
 end
