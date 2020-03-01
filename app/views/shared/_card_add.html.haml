@@ -1,0 +1,62 @@
+.card_add 
+  .title クレジットカード情報入力
+
+  .details
+    .number-details
+      .card-number カード番号
+      %span.must_check 必須
+    .number
+      %input{type: 'text', class: 'cardnumber', placeholder: '半角数字のみ',}
+    .image
+      = image_tag(image_path('card/visa.gif'), class: 'visa')
+      = image_tag(image_path('card/master.png'), class: 'master')
+      = image_tag(image_path('card/saison.jpg'), class: 'saison')
+      = image_tag(image_path('card/jcb.gif'), class: 'jcb')
+      = image_tag(image_path('card/amex.gif'), class: 'amex')
+      = image_tag(image_path('card/diners.gif'), class: 'diners')
+      = image_tag(image_path('card/discover.gif'), class: 'discover')
+      
+    .expirationdate
+      .expirationdate-details
+        .date 有効期限
+        %span.must_check 必須
+      .expirationdate-choice
+        .month
+          %select#card_month.card-default 
+            %option{:value => "01"} 01
+            %option{:value => "02"} 02
+            %option{:value => "03"} 03
+            %option{:value => "04"} 04
+            %option{:value => "05"} 05
+            %option{:value => "06"} 06
+            %option{:value => "07"} 07
+            %option{:value => "08"} 08
+            %option{:value => "09"} 09
+            %option{:value => "10"} 10
+            %option{:value => "11"} 11
+            %option{:value => "12"} 12
+          .month-details 月
+        .year
+          %select#card_year.card-default
+            %option{:value => "20"} 20
+            %option{:value => "21"} 21
+            %option{:value => "22"} 22
+            %option{:value => "23"} 23
+            %option{:value => "24"} 24
+            %option{:value => "25"} 25
+            %option{:value => "26"} 26
+            %option{:value => "27"} 27
+            %option{:value => "28"} 28
+            %option{:value => "29"} 29
+            %option{:value => "30"} 30
+          .year-details 年
+        
+    .securitycode
+      .securitycode-details
+        .securitycode-details-title セキュリティコード
+        %span.must_check 必須
+      .securitycode-cardsecurity
+        %input{type: 'number', class: 'cardsecurity', placeholder: 'カード背面4桁もしくは3桁の番号',}
+      .card-question カード裏面の番号とは？
+  .add 
+    .add-btn 追加する

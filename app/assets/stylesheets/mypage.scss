@@ -1,0 +1,462 @@
+// Place all the styles related to the kari controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@charset "UTF-8";
+
+
+
+.wrapper {
+  background-color: rgb(245, 245, 245);
+  height: 1500px;
+}
+
+.header {
+  * {
+  box-sizing: border-box;
+  }
+  .menu {
+    height: 65px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .logo1 {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .input-box {
+      display: flex;
+      .keyword_search {
+        width: 60vw;
+        height: 35px;
+      }
+      .submit-btn {
+        padding: initial;
+        border: initial;
+        .search_btn {
+          height: 35px;
+          width: 35px;
+          background-color: #3CCACE;
+        }
+      }
+    }
+  }
+  .navigation {
+    .main-navi{
+      height: 50px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: #fff;
+    }
+  }
+}
+
+.side-bar {
+  width: 250px;
+  font-size: 14px;
+  margin-left: 200px;
+  line-height: 50px;
+  float: left;
+  .mymenu {
+   margin-top: 30px;
+   background-color: #fff;
+    .mypage{
+      font-weight: bold;
+      background-color: #eee;
+      padding-left: 20px;
+    }
+    .menu {
+      padding-left: 20px;
+    }
+  }
+  .pay {
+    margin-top: 50px;
+    background-color: #fff;
+    .mypay {
+      font-weight: bold;
+      background-color: rgb(245, 245, 245);
+    }
+    .menu {
+      padding-left: 20px;
+    }
+  }
+  .setting {
+    margin-top: 50px;
+    background-color: #fff;
+    .mysetting {
+      font-weight: bold;
+      background-color: rgb(245, 245, 245);
+    }
+    .menu {
+      padding-left: 20px;
+    }
+    .card-btn {
+      text-decoration: none;
+      color: black;
+      margin-left: 20px;
+    }
+    .logout-btn {
+      text-decoration: none;
+      color: black;
+      margin-left: 20px;
+    }
+  }
+}
+
+.main_page {
+  background-color: #fff;
+  width: 700px;
+  height: 725px;
+  margin-left: 500px;
+  margin-top: 30px;
+    .logo2 {
+      width: 80px;
+      padding-top: 40px;
+      margin-left: 310px;
+    }
+  .myname {
+    .name {
+      display: flex;
+    justify-content: center;
+    }
+    .evaluation {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .info {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    margin-top: 20px;
+    margin: 20px;
+  }
+  .message {
+    margin: 50px 50px 50px 50px;
+    line-height: 5;
+  }
+  .verification {
+    height: 70px;
+    margin: 20px 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+  }
+}
+
+.under_content {
+  margin-top: 30px;
+  margin-left: 500px;
+  width: 700px;
+  .buy {
+    height: 70px;
+    width: 685px;
+    padding-left: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    background-color: rgb(250, 250, 250);
+  }
+  .selldetails {
+      display: flex;
+      justify-content: space-around;
+      font-weight: bold;
+      align-items: center;
+      height: 70px;
+      .transaction {
+        background-color: #fff;
+        height: 70px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .pasttransaction {
+        background-color: #eee;
+        height: 70px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  }
+  .buymenu {
+    background-color: #fff;
+    color: gray;
+    font-weight: bold;
+    height: 200px;
+    display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+}
+
+.log_out {
+  width: 725px;
+  height: 180px;
+  margin-left: 500px;
+  margin-top: 30px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    .page {
+      width: 300px;
+      height: 50px;
+      background-color: #3CCACE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+      .btn {
+        background-color:#3CCACE;
+        color: #fff;
+        text-decoration: none;
+      }
+}
+
+.card {
+  width: 725px;
+  height: 300px;
+  margin-left: 500px;
+  margin-top: 30px;
+  background-color: #fff;
+  .list{ 
+    .pay {
+      height: 50px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      
+    }
+  }
+  .pay-card {
+    .card-list {
+      margin-top: 45px;
+      font-weight: bold;
+      margin-left: 210px;
+    }
+  }
+  .pay-add {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    .card-add {
+      width: 300px;
+      height: 50px;
+      margin-top: 15px;
+      background-color: #3CCACE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      .card-add-btn {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+  .payment-details {
+    margin-top: 45px;
+    margin-left: 500px;
+  }
+}
+
+.card_add {
+  width: 725px;
+  height: 900px;
+  margin-left: 500px;
+  margin-top: 30px;
+  background-color: #fff;
+  .title {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .details {
+    .number-details {
+      display: flex;
+      margin-left: 207px;
+      margin-top: 30px;
+      .card-number {
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .must_check {
+        background-color: #3CCACE;
+        color: #fff;
+        border-radius: 3px;
+        font-size: 13px;
+        width: 35px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+      }
+    }
+    .number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5px;
+      .cardnumber {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding-left: 10px;
+        height: 40px;
+        width: 300px;
+      }
+    }
+    .image {
+      margin-left: 207px;
+      margin-top: 5px;
+      .visa {
+        height: 25px;
+      }
+      .master {
+        height: 25px;
+      }
+      .saison {
+        height: 30px;
+      }
+      .jcb {
+        height: 25px;
+      }
+      .amex {
+        height: 25px;
+      }
+      .diners {
+        height: 25px;
+      }
+      .discover {
+        height: 25px;
+      }
+    }
+    .expirationdate {
+      .expirationdate-details {
+        display: flex;
+        margin-left: 207px;
+        margin-top: 25px;
+        .date {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .must_check {
+          background-color: #3CCACE;
+          color: #fff;
+          border-radius: 3px;
+          font-size: 13px;
+          width: 35px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 10px;
+        }
+      }
+      .expirationdate-choice {
+        margin-top: 8px;
+        margin-left: 207px;
+        display: flex;
+        .month {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        .card-default {
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          padding-left: 10px;
+          height: 40px;
+          width: 120px;
+          }
+        .month-details {
+          margin: 0px 10px 0px 10px;
+          font-size: 15px;
+          }
+        }
+        .year {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .card-default {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 10px;
+            height: 40px;
+            width: 120px;
+          }
+          .year-details {
+            margin: 0px 10px 0px 10px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .securitycode {
+      .securitycode-details {
+        display: flex;
+        align-items: center;
+        margin-left: 207px;
+        margin-top: 25px;
+        .securitycode-details-title {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .must_check {
+          background-color: #3CCACE;
+          color: #fff;
+          border-radius: 3px;
+          font-size: 13px;
+          width: 35px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 10px;
+        }
+      }
+      .securitycode-cardsecurity {
+        margin-left: 207px;
+        margin-top: 5px;
+        .cardsecurity {
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          padding-left: 10px;
+          height: 40px;
+          width: 300px;
+        }
+      }
+    }
+    .card-question { 
+      color: #ea352d;
+      font-size: 15px;
+      margin-left: 355px;
+      margin-top: 3px;
+    }
+  }
+  .add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .add-btn {
+      width: 310px;
+      height: 50px;
+      background-color: #3CCACE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      margin-top: 25px;
+    }
+  }
+}

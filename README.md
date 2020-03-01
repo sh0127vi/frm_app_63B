@@ -53,11 +53,11 @@ Things you may want to cover:
 |detail|text|null: false|
 |category_id|references|null: false,foreign_key: true|
 |price|integer|null: false|
-|condition|integer|null: false|
-|city|references|null: false|
+|condition|string|null: false|
+|city|string|null: false|
 |delivery|integer|null: false|
 |fee_payer|integer|null: false|
-|delivery_area|integer|null: false|
+|delivery_area|string|null: false|
 
 ### Association
 - belongs_to :user
@@ -84,11 +84,11 @@ Things you may want to cover:
 |l_name_kana|string|null: false|
 |f_name|string|null: false|
 |l_name|string|null: false|
-|postal_code|integer||
-|prefecture|string||
-|city|string||
-|street|string||
-|building|string||
+|postal_code|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|street|string|null: false|
+|building|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
@@ -114,7 +114,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :product
 
-## categoriseテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -137,8 +137,8 @@ Things you may want to cover:
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false|
-|product_id|references|null: false|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 |body|text|null: false|
 
 ### Association
