@@ -1,0 +1,21 @@
+.header
+  .menu
+    .logo
+      = image_tag(image_path('material/logo/logo.png'), class: 'logo1')
+    .input-box
+      %input{type: 'text', class: 'keyword_search', placeholder: 'キーワードから探す',}
+      %button.submit-btn{type: 'submit'}
+        .submit-btn-icon
+          = image_tag src='material/icon/icon-search1.png', alt: 'sending-btn', class: 'search_btn'
+  .navigation
+    %nav
+      %ul.main-navi
+        %li カテゴリー
+        %li ブランド
+        %li いいね
+        %li お知らせ
+        %li やることリスト
+        %li マイページ
+
+
+
