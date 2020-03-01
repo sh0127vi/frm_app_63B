@@ -4,7 +4,9 @@
       = image_tag(image_path('material/logo/logo.png'), class: 'logo1')
     .input-box
       %input{type: 'text', class: 'keyword_search', placeholder: 'キーワードから探す',}
-      %input{alt: "seachbtn", class: 'search_btn', image_path("material/icon/icon-search1.png"), :type => "image"}
+      %button.submit-btn{type: 'submit'}
+        .submit-btn-icon
+          = image_tag src='material/icon/icon-search1.png', alt: 'sending-btn', height: '100%', width: '100%', class: 'search_btn'
   .navigation
     %nav
       %ul.main-navi
