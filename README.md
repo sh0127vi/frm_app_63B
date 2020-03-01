@@ -57,7 +57,7 @@ Things you may want to cover:
 |city|string|null: false|
 |delivery|integer|null: false|
 |fee_payer|integer|null: false|
-|delivery_area|integer|null: false|
+|delivery_area|string|null: false|
 
 ### Association
 - belongs_to :user
