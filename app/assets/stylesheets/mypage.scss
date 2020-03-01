@@ -24,15 +24,18 @@
       height: 40px;
       margin-right: 10px;
     }
-    .keyword_search {
-      width: 60vw;
-      height: 35px;
-    }
-    .search_btn {
-      height: 35px;
-      width: 35px;
-      position: absolute;
-      background-color: #3CCACE;
+    .input-box {
+      display: flex;
+      .keyword_search {
+        width: 60vw;
+        height: 35px;
+      }
+      .search_btn {
+        height: 35px;
+        width: 35px;
+        position: absolute;
+        background-color: #3CCACE;
+      }
     }
   }
   .navigation {
