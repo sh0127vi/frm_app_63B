@@ -41,7 +41,8 @@ Things you may want to cover:
 - has_one :address, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
 - has_many :purchases, dependent: :destroy
-- has_many :likes dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :likes_products, through: :likes, source: :product 
 - has_many :comments
 
 ## productsテーブル
@@ -62,7 +63,8 @@ Things you may want to cover:
 - belongs_to :user
 - has_many :images, dependent: :destroy
 - belongs_to :category, dependent: :destroy
-- has_many :likes dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :likes_users, through: :user, source: :user
 - has_one :purchase
 - has_many :comments
 
@@ -83,7 +85,7 @@ Things you may want to cover:
 |f_name|string|null: false|
 |l_name|string|null: false|
 |postal_code|integer||
-|prefecture|integer||
+|prefecture|string||
 |city|string||
 |street|string||
 |building|string||
@@ -125,7 +127,7 @@ Things you may want to cover:
 ## purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|buyer_user_id|references|null: false|
+|buyer_id|references|null: false|
 |product_id|references|null: false|
 
 ### Association
