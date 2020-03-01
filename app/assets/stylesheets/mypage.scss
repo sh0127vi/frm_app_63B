@@ -30,11 +30,14 @@
         width: 60vw;
         height: 35px;
       }
-      .search_btn {
-        height: 35px;
-        width: 35px;
-        position: absolute;
-        background-color: #3CCACE;
+      .submit-btn {
+        padding: initial;
+        border: initial;
+        .search_btn {
+          height: 35px;
+          width: 35px;
+          background-color: #3CCACE;
+        }
       }
     }
   }
