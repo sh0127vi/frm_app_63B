@@ -84,11 +84,11 @@ Things you may want to cover:
 |l_name_kana|string|null: false|
 |f_name|string|null: false|
 |l_name|string|null: false|
-|postal_code|integer||
-|prefecture|string||
-|city|string||
-|street|string||
-|building|string||
+|postal_code|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|street|string|null: false|
+|building|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
