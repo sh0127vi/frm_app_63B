@@ -114,7 +114,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :product
 
-## categoriseテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
