@@ -13,7 +13,7 @@
         .login-form__lower-group
           %input.input-text{type: "email", placeholder: "パスワード", class: "login-form__lower-group-password"}
         .login-form__lower-group
-          = image_tag src="/assets/reCAPTCHA.png", class: "login-form__lower-group-image"
+          = image_tag(image_path("reCAPTCHA.png"), class: "login-form__lower-group-image")
         .login-form__lower-group
           %input.input-text{type: "submit", value: "ログイン", class: "login-form__lower-group--submit"}
         .login-form__lower-group
