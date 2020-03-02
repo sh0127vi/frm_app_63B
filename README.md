@@ -37,12 +37,12 @@ Things you may want to cover:
 |phone_number|integer|null: false|
 
 ### Association
-- has_many :products
 - has_one :address, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
+- has_many :products
 - has_many :purchases, dependent: :destroy
 - has_many :likes, dependent: :destroy
-- has_many :likes_products, through: :likes, source: :product 
+- has_many :like_products, through: :likes, source: :product 
 - has_many :comments
 
 ## productsテーブル
