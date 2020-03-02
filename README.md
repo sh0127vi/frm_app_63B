@@ -39,6 +39,8 @@ Things you may want to cover:
 ### Association
 - has_one :address, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
+- has_one :address
+- accepts_nested_attributes_for :address
 - has_many :products
 - has_many :purchases, dependent: :destroy
 - has_many :likes, dependent: :destroy
