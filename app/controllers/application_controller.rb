@@ -25,17 +25,16 @@ class ApplicationController < ActionController::Base
         :f_name,
         :l_name,
         :birthday,
-        :phone_number]
-      [address__attributes: [
-        :f_name_kana,
-        :l_name_kana.
-        :f_name,
-        :l_name,
-        :postal_code,
-        :prefecture,
-        :city,
-        :street,
-        :building
+        :phone_number,
+        address__attributes: [:f_name_kana,
+                              :l_name_kana.
+                              :f_name,
+                              :l_name,
+                              :postal_code,
+                              :prefecture,
+                              :city,
+                              :street,
+                              :building
       ]])
   end
 end
