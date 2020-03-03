@@ -75,7 +75,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         :birthday,
         :phone_number,
         address_attributes: [:f_name_kana,
-                              :l_name_kana.
+                              :l_name_kana,
                               :f_name,
                               :l_name,
                               :postal_code,

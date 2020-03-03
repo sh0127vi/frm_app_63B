@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
         :birthday,
         :phone_number,
         address_attributes: [:f_name_kana,
-                              :l_name_kana.
+                              :l_name_kana,
                               :f_name,
                               :l_name,
                               :postal_code,
