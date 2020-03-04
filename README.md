@@ -86,7 +86,7 @@ Things you may want to cover:
 |l_name_kana|string|null: false|
 |f_name|string|null: false|
 |l_name|string|null: false|
-|postal_code|integer||
+|postal_code|string||
 |prefecture|string||
 |city|string||
 |street|string||
