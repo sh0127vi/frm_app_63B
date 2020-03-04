@@ -34,7 +34,7 @@ Things you may want to cover:
 |f_name|string|null: false|
 |l_name|string|null: false|
 |birthday|date|null: false|
-|phone_number|integer|null: false|
+|phone_number|string|null: false|
 
 ### Association
 - has_one :address, dependent: :destroy
