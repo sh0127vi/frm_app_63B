@@ -6,7 +6,7 @@
         会員情報入力
     .form__lower
       .lower-contents
-        = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+        = form_with model: @user, id: 'new_user', class: 'new_user', local: true do |f|
           .form__lower-group
             = f.label :ニックネーム
             %span.form__lower-group--require
@@ -54,37 +54,15 @@
               必須
             .form__lower-block
               .form__lower-block-select
-                -# != sprintf(f.date_select(:birthday, prefix:'birthday', prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
                 = raw sprintf(                      |
                   f.date_select(                    |
                     :birthday,                      |
                     prompt: "--",                   |
                     use_month_numbers: true,        |
-                    start_year: 1900,               |
-                    end_year: (Time.now.year),      |
+                    end_year: 1900,                 |
+                    start_year: (Time.now.year),    |
                     date_separator: '%s'),          |
                   '年 ', '月 ') + '日'               |
-              -#   %select
-              -#     %option ----
-              -#     - for i in 1900..2020
-              -#       %option #{i}
-              -#   %span
-              -#     年
-              -# .form__lower-block-select
-              -#   %select
-              -#     %option --
-              -#     - for i in "01".."12"
-              -#       %option #{i}
-              -#   %span
-              -#     月
-              -# .form__lower-block-select
-              -#   %select
-              -#     %option --
-              -#     - for i in "01".."31"
-              -#       %option #{i}
-              -#   %span
-              -#     日
-              -#   %br/
             %p
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           = f.fields_for :address, Address.new do |i|
@@ -107,9 +85,6 @@
               %span.form__lower-group--require
                 必須
               .form__lower-block.line
-                -# %input.input-text{type: "name", class: "form__lower-group-number", maxlength: "3"}
-                -# %span
-                -#   ー
                 = i.number_field :postal_code, placeholder: "例)1234567", class: "input input-text form__lower-group-number"
             .form__lower-group
               = i.label :都道府県
@@ -128,13 +103,13 @@
               = i.text_field :street, class: "input input-text form__lower-group-address"
             .form__lower-group
               = i.label :マンション名、ビル名、部屋番号
-              %span.form__lower-group--require
-                必須
+              %span.form__lower-group--any
+                任意
               = i.text_field :building, class: "input input-text form__lower-group-address"
           .form__lower-group
             = f.label :電話番号
-            %span.form__lower-group--require
-              必須
+            %span.form__lower-group--any
+              任意
             = f.number_field :phone_number, placeholder: "例)0001112222", class: "input input-text form__lower-group-address"
           -# 任意項目のため今は実装しない
           -# .form__lower-group
