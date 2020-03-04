@@ -33,7 +33,7 @@ Things you may want to cover:
 |l_name_kana|string|null: false|
 |f_name|string|null: false|
 |l_name|string|null: false|
-|birthday|integer|null: false|
+|birthday|date|null: false|
 |phone_number|integer|null: false|
 
 ### Association
