@@ -66,8 +66,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def user_params
-    params.permit(:sign_up, keys: [
-      :nickname, 
+    params.require(:user).permit(:sign_up, keys: [
+        :nickname, 
         :f_name_kana, 
         :l_name_kana,
         :f_name,
