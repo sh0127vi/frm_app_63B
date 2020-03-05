@@ -23,5 +23,6 @@ module FrmApp63b
         "<div class=\"has-error\">#{html_tag}<span class=\"help-block\">#{instance.error_message.first}</span></div>".html_safe
       end
     end
+    config.i18n.default_locale = :ja
   end
 end
