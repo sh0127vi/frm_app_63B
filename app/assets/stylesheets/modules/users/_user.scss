@@ -41,6 +41,13 @@
       }
       &-group {
         margin-top: 32px;
+        .has-error {
+          .help-block {
+            color: red;
+            font-size: 14.5px;
+            font-weight: lighter;
+          }
+        }
         .input-text {
           display: block;
           margin-top: 8px;
