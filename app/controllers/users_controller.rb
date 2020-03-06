@@ -2,14 +2,13 @@ class UsersController < ApplicationController
   def index
   end
 
+  def new
+  end
+
   def create
     @user = User.new(user_params)
     @user.build_address
-    if @user.save
-      redirect_to :root_path
-    else
-      render new_user_registration_path
-    end
+    @user.save
   end
 
   def edit
@@ -40,7 +39,8 @@ class UsersController < ApplicationController
                               :prefecture,
                               :city,
                               :street,
-                              :building
+                              :building,
+                              :id
     ]])
   end
 end
