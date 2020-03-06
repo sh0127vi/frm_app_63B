@@ -25,9 +25,12 @@ class User < ApplicationRecord
                                     confirmation: true,
                                     length: { minimum: 7 }
   validates :f_name_kana,           presence: true,
-                                    format: { with: /\A[ぁ-んー－]+\z/, message: "かな入力してください" }
+                                    format: { with: /\A[ぁ-んー－]+\z/, message: "全角かなで入力してください" }
   validates :l_name_kana,           presence: true,
-                                    format: { with: /\A[ぁ-んー－]+\z/, message: "かな入力してください" }
-  validates :f_name,                presence: true
-  validates :l_name,                presence: true
+                                    format: { with: /\A[ぁ-んー－]+\z/, message: "全角かなで入力してください" }
+  validates :f_name,                presence: true,
+                                    format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "全角で入力してください" }
+  validates :l_name,                presence: true,
+                                    format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "全角で入力してください" }
+  validates :birthday,              presence: true
 end
