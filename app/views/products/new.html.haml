@@ -29,12 +29,12 @@
                 %h2.label 商品名
                 %span.must_check 必須
                 .goods_form-explain-title
-                  =f.text_field :name, placeholder:"商品名（必須40文字まで)",class:"goods_form-explain-field"
+                  =f.text_field :name, placeholder:"商品名（必須40文字まで)",class:"goods_form-explain-field", required: true
                 %br
                 %h2.label 商品の説明
                 %span.must_check 必須
                 .goods_form-explain-text
-                  =f.text_area :name, placeholder:"商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例：2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"goods_form-explain-area"
+                  =f.text_area :name, placeholder:"商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例：2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"goods_form-explain-area", required: true
 
               .goods_form-detail.clearfix
                 %h3.goods_form-detail-title 商品の詳細
@@ -43,13 +43,13 @@
                     %h2.label カテゴリー
                     %span.must_check 必須
                     %br
-                    = f.select :category, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-category-list'}
+                    = f.select :category, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-category-list', required: true}
                   %br
                   .goods_form-detail-status
                     %h2.label 商品の状態
                     %span.must_check 必須
                     %br
-                    = f.select :status, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-status-list'}
+                    = f.select :status, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-status-list', required: true}
 
               .goods_form-fee.clearfix
                 %h3.goods_form_fee-title 配送について
@@ -58,19 +58,19 @@
                     %h2.label 配送料の負担
                     %span.must_check 必須
                     %br
-                    = f.select :fee, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-price-list'}
+                    = f.select :fee, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-price-list', required: true}
                   %br
                   .goods_form-fee-adress
                     %h2.label 発送元の地域
                     %span.must_check 必須
                     %br
-                    = f.select :adress, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-adress-list'}
+                    = f.select :adress, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-adress-list', required: true}
                   %br
                   .goods_form-fee-blank
                     %h2.label 発送までの日数
                     %span.must_check 必須
                     %br
-                    = f.select :blank, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-blank-list'}
+                    = f.select :blank, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-blank-list', required: true}
 
               .goods_form-price.clearfix
                 %h3.goods_form-price-number 販売価格(300~9,999,999)
@@ -83,7 +83,7 @@
                     .goods_form-price-list-list1-input
                       ¥
                       .goods_form-price-list-list1-input-box
-                        =f.text_field :price, placeholder:"例) 300",class:"goods_form-price-list-list1-input-box-field"
+                        =f.text_field :price, placeholder:"例) 300",class:"goods_form-price-list-list1-input-box-field",required: true；
                   %li.goods_form-price-list-list2
                     .goods_form-price-list-list2-title
                       販売手数料(10%)
