@@ -2,22 +2,20 @@ class UsersController < ApplicationController
   def index
   end
 
-  def new
-  end
-
   def create
     @user = User.new(user_params)
     @user.build_address
-    @user.save
+    if @user.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-  end
-
-  def show
   end
 
   private
