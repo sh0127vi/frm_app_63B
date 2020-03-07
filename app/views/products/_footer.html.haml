@@ -6,44 +6,42 @@
       %br
         今すぐ無料ダウンロード！
     .image__area--link
-      %a{ href: "#", class: "image__area--link-apple"}
-        =link_to image_tag('material/logo/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', height: "60px", width: "190px"),""
-      %a{ href: "#", class: "image__area--link-google"}
-        =link_to image_tag('material/logo/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg', height: "60px", width: "190px"),""
+      =link_to image_tag('material/logo/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', height: "60px", width: "190px", class: "image__area--link-apple")
+      =link_to image_tag('material/logo/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg', height: "60px", width: "190px", class: "image__area--link-google")
   .information__area 
     .information__area--contents
       .information__area--content
-        %p{ class: "content"}
+        %p.content
           FURIMAについて
-        %ul{ class: "content-list"}
-          %li{ class: "list"} 
-            %a{href: "#"} 会社概要(運営会社)
-          %li{ class: "list"} 
-            %a{ href: "#"}プライバシーポリシー
-          %li{ class: "list"} 
-            %a{ href: "#"} FURIMA利用規約
-          %li{ class: "list"} 
-            %a{ href: "#"} ポイントに関する特約
+        %ul.content-list
+          %li.list
+            = link_to "会社概要(運営会社)", '#' 
+          %li.list
+            = link_to "プライバシーポリシー", '#' 
+          %li.list 
+            = link_to "利用規約", '#'      
+          %li.list
+            = link_to "ポイントに関する特約", '#'
         
       .information__area--content
-        %p{ class: "content"}
+        %p.content
           FURIMAを見る
-        %ul{ class: "content-list"}
-          %li{ class: "list"} 
-            %a{ href: "#"} カテゴリー一覧
-          %li{ class: "list"} 
-            %a{ href: "#"} ブランド一覧
+        %ul.content-list
+          %li.list 
+            = link_to "カテゴリー一覧", '#'
+          %li.list
+            = link_to "ブランド一覧", '#'
 
       .information__area--content
-        %p{ class: "content"}
+        %p.content
           ヘルプ＆ガイド
-        %ul{ class: "content-list"}
-          %li{ class: "list"} 
-            %a{ href: "#"} FURIMAガイド
-          %li{ class: "list"} 
-            %a{ href: "#"} FURIMAロゴ利用ガイドライン
-          %li{ class: "list"} 
-            %a{ href: "#" } お知らせ
+        %ul.content-list
+          %li.list
+            = link_to "FURIMAガイド", '#'
+          %li.list
+            =link_to "FURIMAロゴ利用ガイドライン", '#'
+          %li.list 
+            = link_to "お知らせ", '#'
     .footer__logo
       =link_to image_tag('material/logo/logo-white.png', alt: "logo", class: "footer__logo--frima", height: "50", width: "150"),""
       %br 
