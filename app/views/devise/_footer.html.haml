@@ -1,0 +1,18 @@
+.footer-block
+  .footer-block__nav
+    %ul
+      %li
+        = link_to '#', class: "info" do
+          = 'プライバシーポリシー'
+      %li
+        = link_to '#', class: "info" do
+          = 'フリマ利用規約'
+      %li
+        = link_to '#', class: "info" do
+          ='特定商取引に関する表記'
+  .footer-block__logo
+    = image_tag(image_path("logo-white1.png"), class: "footer-block__logo-image")
+    %p.notice
+      FURIMA
+  %p.copyright
+    ©︎ FURIMA, Inc.
