@@ -23,10 +23,18 @@ html {
     display: flex;
     justify-content: space-between;
     &--images {
-      margin-left: 20px;
-      background-color: grey;
-      height: 330px;
-      width: 300px;
+      .active-image {
+        margin-left: 20px;
+        background-color: grey;
+        height: 330px;
+        width: 300px;
+      }
+      .each-images {
+        background-color: #666666;
+        height: 60px;
+        width: 60px;
+        margin-left: 20px;
+      }
       
     }
     &--table {
