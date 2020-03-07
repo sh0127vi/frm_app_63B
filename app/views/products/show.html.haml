@@ -12,63 +12,60 @@
     .goods__details--mains--table
       %table{ border: "1", bordercolor: "#cccccc"}
         %tr 
-          %td{ class: "left-data", width: "120px", height: "80px"} 出品者
-          %td{ class: "right-data"} user_name 評価
+          %td.left-data{width: "120px", height: "80px"} 出品者
+          %td.right-data user_name 評価
         %tr  
-          %td{ class: "left-data", width: "120px", height: "80px"} カテゴリー
-          %td{ class: "right-data"} メンズ 靴 スニーカー
+          %td.left-data{width: "120px", height: "80px"} カテゴリー
+          %td.right-data メンズ 靴 スニーカー
         %tr
-          %td{ class: "left-data", height: "40px"} ブランド
-          %td{ class: "right-data"} ナイキ
+          %td.left-data{height: "40px"} ブランド
+          %td.right-data ナイキ
         %tr  
-          %td{ class: "left-data", height: "40px"}  商品のサイズ
-          %td{ class: "right-data"}  26.5cm
+          %td.left-data{height: "40px"}  商品のサイズ
+          %td.right-data 26.5cm
         %tr
-          %td{ class: "left-data", height: "40px"}  商品の状態
-          %td{ class: "right-data"}  傷や汚れなし
+          %td.left-data{height: "40px"}  商品の状態
+          %td.right-data 傷や汚れなし
         %tr
-          %td{ class: "left-data", height: "40px"}  配送料の負担
-          %td{ class: "right-data"} 送料込み（出品者負担）
+          %td.left-data{height: "40px"}  配送料の負担
+          %td.right-data 送料込み（出品者負担）
         %tr
-          %td{ class: "left-data", height: "40px"} 配送の方法
-          %td{ class: "right-data"}  郵便局
+          %td.left-data{height: "40px"} 配送の方法
+          %td.right-data 郵便局
         %tr
-          %td{ class: "left-data", height: "40px"}  配送元地域
-          %td{ class: "right-data"}  未定
+          %td.left-data{height: "40px"}  配送元地域
+          %td.right-data  未定
         %tr
-          %td{ class: "left-data", height: "40px"}  発送日の目安
-          %td{ class: "right-data"}  2~3日
+          %td.left-data{height: "40px"}  発送日の目安
+          %td.right-data 2~3日
 
   .goods__details--price
     %span ¥2,500 
     (税込)送料込み
   .goods__details--buybtn
-    %a{ href: '#', class: "btn"}
-      購入画面にすすむ
+    = link_to "購入画面にすすむ", '#', class: "btn"
+      
   .goods__details--comment
-    まだまだ使えます。ああああああああああああああああああああああああああああああああああ
-    あああああああああああああああああああああああああああああああああああああああああああ
-    あああああああああああああああああああああああああああああああああおあああああああああ
+    まだまだ使えます。
   .goods__details--else
-    %button{ class: "good-btn"}
+    %button.good-btn
       いいね!　2
-    %button{ class: "report-btn"}
+    %button.report-btn
       不適切な商品の報告
-    %a{ href: "#", class: "safety-rule"}
-      %i{ class: "fas fa-lock lock-icon"}　安心・安全への取り組み
+    = link_to '#', class: "safety-rule" do
+      %i.fas.fa-lock.lock-icon 
+      = "安心・安全への取り組み"
 
 .page
   .around__goods
-    %a{ href: "#", class: "after-goods"}
-      < playstatino4 
-    %a{ href: "#", class: "before-goods"}
-      nintendo64 >
+    = link_to "< playstatino4", "#", class: "after-goods"
+    = link_to "nintendo64 >", "#", class: "before-goods"
 
   .icon__area
     .icon__area--icons
-      %i{class: "fab fa-twitter-square fa-3x twitter-icon"}
-      %i{ class: "fab fa-facebook-square fa-3x facebook-icon"}
-      %i{ class: "fab fa-pinterest-square fa-3x pinterest-icon"}
+      %i.fab.fa-twitter-square.fa-3x.twitter-icon
+      %i.fab.fa-facebook-square.fa-3x.facebook-icon
+      %i.fab.fa-pinterest-square.fa-3x.pinterest-icon
 
   .related__goods
     .related__goods--username
