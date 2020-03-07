@@ -5,7 +5,7 @@ html {
 
 .goods__details {
   background-color: white;
-  width: 700px;
+  width: 780px;
   margin: 0 auto;
   padding: 30px 50px;
   &--title {
@@ -38,9 +38,13 @@ html {
       
     }
     &--table {
-      margin-right: 30px;
+      margin-right: 20px;
       .left-data {
         background-color: #F8F8FF;
+        padding-left: 5px;
+      }
+      .right-data {
+        padding-left: 5px;
       }
     }
   }
@@ -90,7 +94,7 @@ html {
     }
     .safety-rule {
       color: #00BFFF;
-      margin-left: 220px;
+      margin-left: 200px;
       text-decoration: none;
       .lock-icon {
 
