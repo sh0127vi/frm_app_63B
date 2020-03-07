@@ -4,9 +4,9 @@ ja:
       user:
         nickname: ニックネーム
         f_name_kana: 名前(かな)
-        l_name_kana: 苗字(かな)
+        l_name_kana: 名字(かな)
         f_name: 名前
-        l_name: 苗字
+        l_name: 名字
         birthday: 生年月日
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
