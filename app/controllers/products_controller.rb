@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   def new 
   end
 
-  def show
+  def buy
   end
   
 end
