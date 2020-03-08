@@ -1,11 +1,12 @@
 // 商品詳細ページのcss
-html {
+
+body {
   background-color: rgb(245, 245, 245);
 }
 
 .goods__details {
   background-color: white;
-  width: 700px;
+  width: 750px;
   margin: 0 auto;
   padding: 30px 50px;
   &--title {
@@ -94,7 +95,7 @@ html {
     }
     .safety-rule {
       color: #00BFFF;
-      margin-left: 200px;
+      margin-left: 180px;
       text-decoration: none;
       .lock-icon {
 
@@ -104,7 +105,7 @@ html {
 }
 
 .page {
-  width: 800px;
+  width: 750px;
   margin: 0 auto;
 
   .around__goods {
@@ -116,7 +117,7 @@ html {
     }
     .before-goods {
       text-decoration: none;
-      margin-left: 580px;
+      margin-left: 530px;
       color: #00BFFF;
     }
   }
@@ -124,7 +125,7 @@ html {
   .icon__area {
     background-color: white;
     height: 150px;
-    width: 800px;
+    width: 750px;
     margin-bottom: 20px;
     &--icons {
       text-align: center;
