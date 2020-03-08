@@ -7,6 +7,14 @@ Rails.application.routes.draw do
     get "card", to: "users#card" 
     get "card_add", to: "users#card_add" 
   end
-  resources :products, only: [:new, :index, :show]
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :products, only: [:new, :index] do
+    collection do
+      get "buy"
+    end
+  end
+  
+
   resources :users
 end
