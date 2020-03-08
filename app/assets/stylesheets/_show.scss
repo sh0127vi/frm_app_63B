@@ -1,0 +1,183 @@
+// 商品詳細ページのcss
+
+body {
+  background-color: rgb(245, 245, 245);
+}
+
+.goods__details {
+  background-color: white;
+  width: 750px;
+  margin: 0 auto;
+  padding: 30px 50px;
+  &--title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+  &--summary {
+    color: #666666;
+    padding: 0 20px 20px 20px;
+    font-size: 17px;
+  }
+  &--mains {
+    display: flex;
+    justify-content: space-between;
+    &--images {
+      .active-image {
+        margin-left: 20px;
+        background-color: grey;
+        height: 320px;
+        width: 300px;
+      }
+      .each-images {
+        background-color: #666666;
+        height: 75px;
+        width: 75px;
+        margin-left: 20px;
+      }
+      
+    }
+    &--table {
+      margin-right: 20px;
+      .left-data {
+        background-color: #F8F8FF;
+        padding: 2px;
+      }
+      .right-data {
+        padding: 2px;
+      }
+    }
+  }
+  &--price {
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    span {
+      font-weight: bold;
+      font-size: 40px;
+      padding-right: 10px;
+    }
+  }
+  &--buybtn {
+    background-color: #3ccace;
+    height: 60px;
+    width: 620px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 30px;
+    .btn {
+      line-height: 60px;
+      text-decoration: none;
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+  &--comment {
+    margin: 15px 15px 25px 15px;
+    font-size: 17px;
+  }
+  &--else {
+    margin-bottom: 20px;
+    .good-btn {
+      background-color: #dddddd;
+      border-radius: 30px;
+      font-size: 13px;
+      padding: 7px 13px;
+      margin: 0 10px;
+    }
+    .report-btn {
+      background-color: #dddddd;
+      border-radius: 30px;
+      font-size: 13px;
+      padding: 7px 13px;
+    }
+    .safety-rule {
+      color: #00BFFF;
+      margin-left: 180px;
+      text-decoration: none;
+      .lock-icon {
+
+      }
+    }
+  }
+}
+
+.page {
+  width: 750px;
+  margin: 0 auto;
+
+  .around__goods {
+    margin: 15px 0;
+    font-size: 16px;
+    .after-goods {
+      text-decoration: none;
+      color: #00BFFF;
+    }
+    .before-goods {
+      text-decoration: none;
+      margin-left: 530px;
+      color: #00BFFF;
+    }
+  }
+
+  .icon__area {
+    background-color: white;
+    height: 150px;
+    width: 750px;
+    margin-bottom: 20px;
+    &--icons {
+      text-align: center;
+      line-height: 180px;
+      .twitter-icon {
+        color:#1E90FF;
+        padding: 3px;
+      }
+      .facebook-icon {
+        color: #136FFF;
+        padding: 3px;
+      }
+      .pinterest-icon {
+        color: red;
+        padding: 3px;
+      }
+    }
+  }
+
+  .related__goods {
+    .related__goods--username {
+      font-size: 23px;
+      color: #00BFFF;
+      margin-bottom: 10px;
+    }
+    .related__goods--images {
+      display: flex;
+      justify-content: space-between;
+      .related__goods--image {
+        border: 1px solid;
+        height: 270px;
+        width: 230px;
+        margin-bottom: 30px;
+        &-foto {
+          border-bottom: 1px solid red;
+          height: 180px;
+          width: 230px;
+        }
+        &-name {
+          padding: 10px;
+        }
+        &-price {
+          padding: 10px;
+        }
+      }
+    }
+
+    .related__goods--category {
+      font-size: 23px;
+      color: #00BFFF;
+      margin-bottom: 10px;
+    }
+  }
+}
