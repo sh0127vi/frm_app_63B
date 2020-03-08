@@ -1,7 +1,7 @@
 
 .products_buy {
   background-color: #f5f5f5;
-  margin: unset;
+  height: 100vh;
   .header {
     height: 128px;
     width: 100%;
@@ -16,105 +16,109 @@
     }
   }
 
-  .main_contents{
-    background-color: #fff;
-    width: 700px;
-    margin: 0 auto;
-    .verification {
-      text-align: center;
-      padding-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .product_details {
-      height: 150px;
-      .main {
-        display: flex;
-        align-items: center;
-        padding-left: 140px;
+  .main_contents {
+    min-height: 500px;
+    .main_details {
+      background-color: #fff;
+      width: 700px;
+      margin: 0 auto;
+      .verification {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .product_details {
         height: 150px;
-        background-color: #fff;
-        .image {
-          .product {
-            width: 100px;
+        .main {
+          display: flex;
+          align-items: center;
+          padding-left: 140px;
+          height: 150px;
+          background-color: #fff;
+          .image {
+            .product {
+              width: 100px;
+            }
+          }
+          .details {
+            margin-left: 30px;
           }
         }
-        .details {
-          margin-left: 30px;
-        }
       }
-    }
-    .purchase_registration {
-      .purchase_registration_main {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        font-weight: bold;
-        width: 700px;
-        background-color: #fff;
-        height: 100px;
-        .payment {
-          font-size: 18px;
-        }
-        .amount {
-          font-size: 25px;
-        }
-      }
-      .purchase_btn {
-        height: 110px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .btn {
-          background-color: gray;
-          height: 45px;
-          width: 300px;
-          color: #fff;
+      .purchase_registration {
+        .purchase_registration_main {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
           font-weight: bold;
-          font-size: 15px;
+          width: 700px;
+          background-color: #fff;
+          height: 100px;
+          .payment {
+            font-size: 18px;
+          }
+          .amount {
+            font-size: 25px;
+          }
+        }
+        .purchase_btn {
+          height: 110px;
           display: flex;
           align-items: center;
           justify-content: center;
+          .btn {
+            background-color: gray;
+            height: 45px;
+            width: 300px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
         }
       }
+    }
+  }
+    .footer {
+      height: 280px;
+      background-color: #f5f5f5;
+      &-block {
+        width: 456px;
+        margin: 0px auto;
+        padding: 50px 0;
+        &__nav {
+          ul {
+            display: flex;
+            justify-content: space-evenly; 
+            li {
+              display: block;       
+            }
+            .info {
+              color: #333;
+              font-size: 13px;
+            }
+          }
+        }
+        &__logo {
+          text-align: center;
+          &-image {
+            margin-top: 30px;
+            width: 12%;
+            height: auto;
+          }
+          .notice {
+            font-size: 13px;
+            color: #888;
+          }
+        }
+        .copyright {
+          text-align: center;
+          font-size: 13px;
+        }
     }
   }
 }
 
-.footer {
-  height: 280px;
-  &-block {
-    width: 456px;
-    margin: 0px auto;
-    padding: 50px 0;
-    &__nav {
-      ul {
-        display: flex;
-        justify-content: space-evenly; 
-        li {
-          display: block;       
-        }
-        .info {
-          color: #333;
-          font-size: 13px;
-        }
-      }
-    }
-    &__logo {
-      text-align: center;
-      &-image {
-        margin-top: 30px;
-        width: 12%;
-        height: auto;
-      }
-      .notice {
-        font-size: 13px;
-        color: #888;
-      }
-    }
-    .copyright {
-      text-align: center;
-      font-size: 13px;
-    }
-  }
-}
