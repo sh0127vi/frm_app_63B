@@ -1,0 +1,29 @@
+.products_buy
+  .header
+    = render partial:"devise/header"
+
+  .main_contents
+    .verification
+      購入内容の確認
+
+    .product_details
+      .main
+        .image
+          =image_tag "material/icon/product_exam.png", alt: "product", class: "product"
+        .details
+          .title
+            MacBook Pro 15インチ　未使用品　コアi9
+          .money
+            ¥235,000 (税込)
+
+    .purchase_registration
+      .purchase_registration_main
+        .payment
+          支払い金額	
+        .amount
+          ¥235,000
+      .purchase_btn
+        %input{type: "submit", value: "購入する", class: "btn"}/
+
+  .footer
+    = render partial:"devise/footer"
