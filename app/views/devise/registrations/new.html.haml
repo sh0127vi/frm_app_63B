@@ -1,175 +1,151 @@
 .sign_up
   = render "header"
-  %form.form
+  .form
     .form__upper
       %h2
         会員情報入力
     .form__lower
       .lower-contents
-        .form__lower-group
-          %label
-            ニックネーム
-          %span.form__lower-group--require
-            必須
-          %input.input-text{type: "text", placeholder: "例)フリマ太郎", class: "form__lower-group-nickname"}
-        .form__lower-group
-          %label
-            メールアドレス
-          %span.form__lower-group--require
-            必須
-          %input.input-text{type: "email", placeholder: "PC・携帯どちらでも可", class: "form__lower-group-address"}
-        .form__lower-group
-          %label
-            パスワード
-          %span.form__lower-group--require
-            必須
-          %input.input-text{type: "password", placeholder: "7文字以上の半角英数字", class: "form__lower-group-password", minlength: "7"}
-          %p
-            ※ 英字と数字の両方を含めて設定してください
-        .form__lower-group
-          %label
-            パスワード再入力
-          %span.form__lower-group--require
-            必須
-          %input.input-text{type: "password", placeholder: "パスワード再確認", class: "form__lower-group-password_confirmation"}
-        .form__lower-group
-          %p.verification
-            本人確認
-          %p.attention
-            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-          %label
-            名前入力(漢字)
-          %span.form__lower-group--require
-            必須
-          .form__lower-block
-            %input.input-text{type: "name", placeholder: "例)山田", class: "form__lower-group-name"}
-            %input.input-text{type: "name", placeholder: "例)彩", class: "form__lower-group-name"}
-        .form__lower-group
-          %label
-            名前入力(ひらがな)
-          %span.form__lower-group--require
-            必須
-          .form__lower-block
-            %input.input-text{type: "name", placeholder: "例)やまだ", class: "form__lower-group-name"}
-            %input.input-text{type: "name", placeholder: "例)あや", class: "form__lower-group-name"}
-        .form__lower-group
-          %label
-            生年月日入力
-          %span.form__lower-group--require
-            必須
-          .form__lower-block
-            .form__lower-block-select
-              %select
-                %option ----
-                - for i in 1900..2020
-                  %option #{i}
-              %span
-                年
-            .form__lower-block-select
-              %select
-                %option --
-                - for i in "01".."12"
-                  %option #{i}
-              %span
-                月
-            .form__lower-block-select
-              %select
-                %option --
-                - for i in "01".."31"
-                  %option #{i}
-              %span
-                日
-              %br/
-          %p
-            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-        .form__lower-group
-          %label
-            送付先氏名
-          %span.form__lower-group--require
-            必須
-          .form__lower-block
-            %input.input-text{type: "name", placeholder: "例)山田", class: "form__lower-group-name"}
-            %input.input-text{type: "name", placeholder: "例)彩", class: "form__lower-group-name"}
-        .form__lower-group
-          %label
-            送付先氏名(ひらがな)
-          %span.form__lower-group--require
-            必須
-          .form__lower-block
-            %input.input-text{type: "name", placeholder: "例)やまだ", class: "form__lower-group-name"}
-            %input.input-text{type: "name", placeholder: "例あや", class: "form__lower-group-name"}
-        .form__lower-group
-          %label
-            郵便番号
-          %span.form__lower-group--require
-            必須
-          .form__lower-block.line
-            %input.input-text{type: "name", class: "form__lower-group-number", maxlength: "3"}
-            %span
-              ー
-            %input.input-text{type: "name", class: "form__lower-group-number", maxlength: "4"}
-        .form__lower-group
-          %label
-            都道府県
-          %span.form__lower-group--require
-            必須
-          %input.input-text{type: "text", class: "form__lower-group-address"}
-        .form__lower-group
-          %label
-            市区町村
-          %span.form__lower-group--require
-            必須
-          %input.input-text{type: "text", class: "form__lower-group-address"}
-        .form__lower-group
-          %label
-            番地
-          %span.form__lower-group--require
-            必須
-          %input.input-text{type: "text", class: "form__lower-group-address"}
-        .form__lower-group
-          %label
-            マンション名、ビル名、部屋番号
-          %span.form__lower-group--require
-            必須
-          %input.input-text{type: "text", class: "form__lower-group-address"}
-        .form__lower-group
-          %label
-            電話番号
-          %span.form__lower-group--require
-            必須
-          %input.input-text{type: "text", class: "form__lower-group-address"}
-        .form__lower-group
-          %label
-            クレジットカード登録
-          %span.form__lower-group--any
-            任意
-          .form__lower-block
-            %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
-            %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
-            %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
-            %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
-          .form__lower-block
-            .form__lower-block-select
-              %select
-                %option --
-                - for i in "01".."12"
-                  %option #{i}
-              %span
-                ／
-            .form__lower-block-select
-              %select
-                %option --
-                - for i in "00".."99"
-                  %option #{i}
-          .form__lower-block
-            %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "3"}
-        .form__lower-group
-          %input.input-text{type: "submit", value: "登録する", class: "form__lower-group--submit"}
-          %p.notice
-            「登録する」のボタンを押すことにより、
-            = link_to '#' do
-              = '利用規約'
+        = form_with model: @user, id: 'new_user', class: 'new_user', local: true do |f|
+          .form__lower-group
+            = f.label :ニックネーム
+            %span.form__lower-group--require
+              必須
+            = f.text_field :nickname, autofocus: true, autocomplete: true, placeholder: "例)フリマ太郎", class: "input input-text form__lower-group-nickname"
+          .form__lower-group
+            = f.label :メールアドレス
+            %span.form__lower-group--require
+              必須
+            = f.email_field :email, autofocus: true, autocomplete: true, placeholder: "PC・携帯どちらでも可", class: "input input-text form__lower-group-address"
+          .form__lower-group
+            = f.label :パスワード
+            %span.form__lower-group--require
+              必須
+            = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "input input-text form__lower-group-password", minlength: "7"
             %p
-              に同意したものとみなします
+              ※ 英字と数字の両方を含めて設定してください
+          .form__lower-group
+            = f.label :パスワード再入力
+            %span.form__lower-group--require
+              必須
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード再確認", class: "input input-text form__lower-group-password_confirmation"
+          .form__lower-group
+            %p.verification
+              本人確認
+            %p.attention
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .form__lower-group
+            = f.label :お名前（漢字）
+            %span.form__lower-group--require
+              必須
+            .form__lower-block
+              = f.text_field :l_name, placeholder: "例)山田", class: "input input-text form__lower-group-name"
+              = f.text_field :f_name, placeholder: "例)彩", class: "input input-text form__lower-group-name"
+          .form__lower-group
+            = f.label :お名前（ひらがな全角）
+            %span.form__lower-group--require
+              必須
+            .form__lower-block
+              = f.text_field :l_name_kana, placeholder: "例)やまだ", class: "input input-text form__lower-group-name"
+              = f.text_field :f_name_kana, placeholder: "例)あや", class: "input input-text form__lower-group-name"
+          .form__lower-group
+            = f.label :生年月日入力
+            %span.form__lower-group--require
+              必須
+            .form__lower-block
+              .form__lower-block-select
+                = raw sprintf(                      |
+                  f.date_select(                    |
+                    :birthday,                      |
+                    prompt: "--",                   |
+                    use_month_numbers: true,        |
+                    end_year: 1900,                 |
+                    start_year: (Time.now.year),    |
+                    date_separator: '%s'),          |
+                  '年 ', '月 ') + '日'               |
+            %p
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          = f.fields_for :address, Address.new do |i|
+            .form__lower-group
+              = i.label :送付先氏名（漢字）
+              %span.form__lower-group--require
+                必須
+              .form__lower-block
+                = i.text_field :l_name, placeholder: "例)山田", class: "input input-text form__lower-group-name"
+                = i.text_field :f_name, placeholder: "例)彩", class: "input input-text form__lower-group-name"
+            .form__lower-group
+              = i.label :送付先氏名（ひらがな全角）
+              %span.form__lower-group--require
+                必須
+              .form__lower-block
+                = i.text_field :l_name_kana, placeholder: "例)やまだ", class: "input input-text form__lower-group-name"
+                = i.text_field :f_name_kana, placeholder: "例あや", class: "input input-text form__lower-group-name"
+            .form__lower-group
+              = i.label :郵便番号
+              %span.form__lower-group--require
+                必須
+              .form__lower-block.line
+                = i.number_field :postal_code, placeholder: "例)1234567", class: "input input-text form__lower-group-number"
+              %p
+                ※ハイフンなし半角数字7桁で入力してください
+            .form__lower-group
+              = i.label :都道府県
+              %span.form__lower-group--require
+                必須
+              = i.text_field :prefecture, class: "input input-text form__lower-group-address"
+            .form__lower-group
+              = i.label :市区町村
+              %span.form__lower-group--require
+                必須
+              = i.text_field :city, class: "input input-text form__lower-group-address"
+            .form__lower-group
+              = i.label :番地
+              %span.form__lower-group--require
+                必須
+              = i.text_field :street, class: "input input-text form__lower-group-address"
+            .form__lower-group
+              = i.label :マンション名、ビル名、部屋番号
+              %span.form__lower-group--any
+                任意
+              = i.text_field :building, class: "input input-text form__lower-group-address"
+          .form__lower-group
+            = f.label :電話番号
+            %span.form__lower-group--any
+              任意
+            = f.number_field :phone_number, placeholder: "例)0001112222", class: "input input-text form__lower-group-address"
+          -# 仕様に入っていないため、今は実装しない
+          -# .form__lower-group
+          -#   %label
+          -#     クレジットカード登録
+          -#   %span.form__lower-group--any
+          -#     任意
+          -#   .form__lower-block
+          -#     %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
+          -#     %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
+          -#     %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
+          -#     %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
+          -#   .form__lower-block
+          -#     .form__lower-block-select
+          -#       %select
+          -#         %option --
+          -#         - for i in "01".."12"
+          -#           %option #{i}
+          -#       %span
+          -#         ／
+          -#     .form__lower-block-select
+          -#       %select
+          -#         %option --
+          -#         - for i in "00".."99"
+          -#           %option #{i}
+            -# .form__lower-block
+            -#   %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "3"}
+          .form__lower-group.actions
+            = f.submit "登録する", class: "input input-text form__lower-group--submit"
+            %p.notice
+              「登録する」のボタンを押すことにより、
+              = link_to '#' do
+                = '利用規約'
+              %p
+                に同意したものとみなします
   .footer
     = render "footer"

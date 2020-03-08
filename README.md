@@ -33,16 +33,18 @@ Things you may want to cover:
 |l_name_kana|string|null: false|
 |f_name|string|null: false|
 |l_name|string|null: false|
-|birthday|integer|null: false|
-|phone_number|integer|null: false|
+|birthday|date|null: false|
+|phone_number|string|null: false|
 
 ### Association
-- has_many :products
 - has_one :address, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
+- has_one :address
+- accepts_nested_attributes_for :address
+- has_many :products
 - has_many :purchases, dependent: :destroy
 - has_many :likes, dependent: :destroy
-- has_many :likes_products, through: :likes, source: :product 
+- has_many :like_products, through: :likes, source: :product 
 - has_many :comments
 
 ## productsテーブル
@@ -84,11 +86,11 @@ Things you may want to cover:
 |l_name_kana|string|null: false|
 |f_name|string|null: false|
 |l_name|string|null: false|
-|postal_code|integer|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|street|string|null: false|
-|building|string|null: false|
+|postal_code|string||
+|prefecture|string||
+|city|string||
+|street|string||
+|building|string||
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
