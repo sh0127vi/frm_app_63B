@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
   def new 
     @product=Product.new
-    @product.image.new
+    @product.images.new
   end
 
   def show
