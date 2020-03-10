@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   
-  resources :products, only: [:new, :index, :show] do
+  resources :products, only: [:new, :create, :index, :show] do
     collection do
       get "buy"
     end
