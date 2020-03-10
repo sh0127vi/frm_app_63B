@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   end
 
   def new 
+    @product=Product.new
+    @product.image.new
   end
 
   def show
