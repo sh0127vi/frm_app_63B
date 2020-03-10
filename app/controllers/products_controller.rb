@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  def index
+  def index_Top_page
   end
 
   def new 

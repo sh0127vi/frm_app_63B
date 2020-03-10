@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "products#index"
+  root to: "products#index_Top_page"
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
-  end
+  end  
 
   resources :users do
     collection do
