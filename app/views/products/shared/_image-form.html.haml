@@ -1,0 +1,8 @@
+.goods_form-image-box
+  = form_with model:product, local:true do|f|
+    =f.file_field :image, class: "goods_form-image-box-file"
+    %pre.goods_form-image-box-text
+      = preserve do
+        :escaped
+        <div>ドラッグ&ドロップ</div>
+        <div>またはクリックしてファイルをアップロード</div>

@@ -6,7 +6,7 @@
         .goods_main-header
           %h2.goods_main-header-text
             商品の情報を入力
-        = form_with model:@post, local:true do|f|
+        = form_with model:@product, local:true do|f|
           .goods_info
             %section.l-shipping_goods_info
             .goods_form
@@ -17,13 +17,7 @@
                   %span.must_check 必須
                 %br
                 %p.goods_form-image-text 最大１０枚までアップロードできます
-                .goods_form-image-box
-                  =f.file_field :image, class: "goods_form-image-box-file"
-                  %pre.goods_form-image-box-text
-                    = preserve do
-                      :escaped
-                      <div>ドラッグ&ドロップ</div>
-                      <div>またはクリックしてファイルをアップロード</div>
+                = render partial:"products/shared/image-form", locals: {product:@product}
 
               .goods_form-explain.clearfix
                 %h2.label 商品名
