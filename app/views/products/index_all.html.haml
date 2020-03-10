@@ -1,0 +1,16 @@
+.header
+  = render 'products/shared/header'
+.index-all
+  .index__category
+    .index__category__title
+      カテゴリー
+    .category__name
+
+    .products-list
+      .products__list__name
+        アイテム一覧
+      %ul.products
+        =render 'products/shared/product'
+
+.footer
+  = render 'products/shared/footer'

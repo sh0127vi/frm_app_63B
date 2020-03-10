@@ -20,7 +20,10 @@ Rails.application.routes.draw do
   resources :products, only: [:new, :index, :show] do
     collection do
       get "buy"
+      get "index_Top_page"
+      get "index_all"
     end
+
   end
   
 end
