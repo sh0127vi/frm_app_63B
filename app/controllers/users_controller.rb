@@ -2,6 +2,15 @@ class UsersController < ApplicationController
   def index
   end
 
+  def logout
+  end
+
+  def card
+  end
+
+  def card_add
+  end
+
   def create
     @user = User.new(user_params)
     @user.build_address
@@ -17,6 +26,7 @@ class UsersController < ApplicationController
 
   def update
   end
+
 
   private
 
@@ -39,6 +49,7 @@ class UsersController < ApplicationController
                               :street,
                               :building,
                               :id
-    ]])
+    
+                              ]])
   end
 end
