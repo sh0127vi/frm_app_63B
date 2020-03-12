@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   
 
-  resources :users, only: [:index, :logout, :card, :card_add] do
+  resources :users, only: [:index] do
     collection do
     get "index", to: "users#index"
     get "logout", to: "users#logout"
