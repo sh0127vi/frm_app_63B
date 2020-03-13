@@ -5,10 +5,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index] do
     collection do
-    get "index", to: "users#index"
-    get "logout", to: "users#logout"
-    get "card", to: "users#card" 
-    get "card_add", to: "users#card_add" 
+      get "logout", to: "users#logout"
+      get "card", to: "users#card" 
+      get "card_add", to: "users#card_add" 
     end
   end
 
