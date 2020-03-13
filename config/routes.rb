@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: [:new, :index, :show, ] do
+  resources :products, only: [:new, :index, :show] do
     collection do
       get "buy"
     end
