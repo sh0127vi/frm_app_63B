@@ -19,7 +19,9 @@
     }
 
     &-html{
-      
+      position: absolute;
+      width: 100%;
+      height: 100%;
     &-text{
       position: absolute;
       font-size: 14px;
@@ -35,3 +37,31 @@
   }
   }
   }
+  
+.image_table{
+  width: 100%;
+  height: 100%;
+  &-body{
+
+  }
+  &-line{
+
+  }
+  &-line1{
+    border-bottom :dotted 3px;
+    border-color: rgb(204, 204, 204);
+  }
+  &-line2{
+
+  }
+}
+
+.right-border{
+  border-right :dotted 3px;
+  border-color : rgb(204, 204, 204);
+}
+
+.image_td{
+  height: 50%;
+  width: 20%;
+}
