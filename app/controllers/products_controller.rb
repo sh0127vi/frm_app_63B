@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(1)
+    @image = @product.images.find(1)
   end
 
   def buy
