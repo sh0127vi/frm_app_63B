@@ -6,18 +6,18 @@
   .goods__details--title 
     = @product.name
   .goods__details--summary
-    = "#{@product.name}は#{@product.user.nickname}さんから出品されました。NIKEの商品で、○○県から２−３日で発送されます。"
+    = "#{@product.name}は#{@product.user.nickname}さんから出品されました。"
   .goods__details--mains
     .goods__details--mains--images
       .active-image
       .each-images
-      //- @image.each do |f|
-        = f.image
+        =image_tag @image.image, class: "each-image"
     .goods__details--mains--table
       %table{ border: "1", bordercolor: "#cccccc"}
         %tr 
           %td.left-data{height: "40"} 出品者
-          %td.right-data user_name 評価
+          %td.right-data 
+            = @product.user.nickname
         %tr  
           %td.left-data{height: "40"} カテゴリー
           %td.right-data メンズ 靴 スニーカー
@@ -29,7 +29,8 @@
           %td.right-data 26.5cm
         %tr
           %td.left-data{height: "40px"}  商品の状態
-          %td.right-data 傷や汚れなし
+          %td.right-data 
+            = @product.condition
         %tr
           %td.left-data{height: "40px"}  配送料の負担
           %td.right-data 送料込み（出品者負担）
@@ -38,19 +39,21 @@
           %td.right-data 郵便局
         %tr
           %td.left-data{height: "40px"}  配送元地域
-          %td.right-data  未定
+          %td.right-data  
+            = @product.delivery_area
         %tr
           %td.left-data{height: "40px"}  発送日の目安
           %td.right-data 2~3日
 
   .goods__details--price
-    %span ¥2,500 
+    %span 
+      = "¥#{@product.price}円" 
     (税込)送料込み
 
   // -if current_user_id == products.user_id
 
   .goods__details--buybtn
-    = link_to "購入画面にすすむ", '#', class: "btn"
+    = link_to "購入画面にすすむ", 'buy', class: "btn"
       
   .goods__details--comment
     まだまだ使えます。
