@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(1)
   end
 
   def buy

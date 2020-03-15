@@ -1,15 +1,17 @@
 // frm_appの商品詳細ページのマークアップ
 .top-page-header
   = render "products/shared/header"
+  
 .goods__details
   .goods__details--title 
-    NIKE ナイキ スニーカー
+    = @product.name
   .goods__details--summary
-    「NIKEスニーカー」は○○回の取引実績を持つusernameさんから出品されました。NIKEの商品で、○○県から２−３日で発送されます。
+    = "#{@product.name}は#{@product.user.nickname}さんから出品されました。NIKEの商品で、○○県から２−３日で発送されます。"
   .goods__details--mains
     .goods__details--mains--images
       .active-image
       .each-images
+        = @product.images
     .goods__details--mains--table
       %table{ border: "1", bordercolor: "#cccccc"}
         %tr 
@@ -43,6 +45,9 @@
   .goods__details--price
     %span ¥2,500 
     (税込)送料込み
+
+  // -if current_user_id == products.user_id
+
   .goods__details--buybtn
     = link_to "購入画面にすすむ", '#', class: "btn"
       
