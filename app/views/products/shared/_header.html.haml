@@ -17,9 +17,9 @@
       - if user_signed_in?
         %ul.header-bar__menu-bar__right-side
           %li.login-tab
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu-bar__log-in"
-          -# %li.new-member-registraion-ta
-          -#   = link_to "マイページ", user_path(current_user.id)
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu-bar__log-out"
+          %li.new-member-registraion-tab
+            = link_to "マイページ", users_path(current_user.id), class: "mypage1"
       - else
         %ul.header-bar__menu-bar__right-side
           %li.login-tab

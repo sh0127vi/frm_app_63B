@@ -89,7 +89,7 @@
         .login-tab {
           padding-left: 30px;
 
-          .menu-bar__log-in {
+          .menu-bar__log-out {
             color: #000000;
             text-decoration: none;
           }
@@ -98,7 +98,7 @@
         .new-member-registraion-tab {
           padding-left: 30px;
 
-          .menu-bar__new {
+          .mypage1 {
             color: #000000;
             text-decoration: none;
           }
@@ -111,48 +111,6 @@
 
 .upper_content {
   min-height: 1600px;
-  .header {
-    * {
-    box-sizing: border-box;
-    }
-    .menu {
-      height: 65px;
-      width: 100vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .logo1 {
-        height: 40px;
-        margin-right: 10px;
-      }
-      .input-box {
-        display: flex;
-        .keyword_search {
-          width: 60vw;
-          height: 35px;
-        }
-        .submit-btn {
-          padding: initial;
-          border: initial;
-          .search_btn {
-            height: 35px;
-            width: 35px;
-            background-color: #3CCACE;
-          }
-        }
-      }
-    }
-    .navigation {
-      .main-navi{
-        height: 50px;
-        font-size: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        background-color: #fff;
-      }
-    }
-  }
 
   .side-bar {
     width: 250px;
