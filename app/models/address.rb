@@ -1,6 +1,6 @@
 class Address < ApplicationRecord
   # アソシエーション
-  belongs_to :user, inverse_of: :address
+  belongs_to :user, optional: true
 
   # バリデーション
   validates :f_name_kana, presence: { message: "名前(かな)を入力してください" },

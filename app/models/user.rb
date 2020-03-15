@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # アソシエーション
-  has_one :address, dependent: :destroy, inverse_of: :user
-  accepts_nested_attributes_for :address
+  has_one :address
+  # accepts_nested_attributes_for :address
   has_one :credit_card, dependent: :destroy
   has_many :products
   has_many :purchases, dependent: :destroy
