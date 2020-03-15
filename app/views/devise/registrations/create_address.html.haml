@@ -1,1 +1,14 @@
-完了
+.sign_up
+  = render "header"
+  .form
+    .form__upper
+      %h2
+        会員情報入力
+    .form__lower.form_width
+      .lower-contents.content
+        %h1
+          会員登録が完了しました
+      .form__lower-group.actions
+        = link_to "トップページへ戻る", root_path, class: "input redirect input-text form__lower-group--submit"
+  .footer
+    = render "footer"
