@@ -39,6 +39,12 @@
                     %br
                     = f.select :category, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-category-list', required: true}
                   %br
+                  -# .goods_form-detail-bland
+                  -#   %h2.label ブランド
+                  -#   %span.must_check 任意
+                  -#   %br
+                  -#   = f.select :category, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-category-list', required: true}
+                  -# %br
                   .goods_form-detail-status
                     %h2.label 商品の状態
                     %span.must_check 必須
@@ -78,16 +84,16 @@
                       ¥
                       .goods_form-price-list-list1-input-box
                         =f.text_field :price, placeholder:"例) 300",class:"goods_form-price-list-list1-input-box-field",required: true;
-                  %li.goods_form-price-list-list2
-                    .goods_form-price-list-list2-title
-                      販売手数料(10%)
-                      %span.goods_form-price-list-list2-default
-                        ー
-                  %li.goods_form-price-list-list3
-                    .goods_form-price-list-list3-label 
-                      販売利益
-                      %span.goods_form-price-list-list3-default
-                        ー
+                  -# %li.goods_form-price-list-list2
+                  -#   .goods_form-price-list-list2-title
+                  -#     販売手数料(10%)
+                  -#     %span.goods_form-price-list-list2-default
+                  -#       ー
+                  -# %li.goods_form-price-list-list3
+                  -#   .goods_form-price-list-list3-label 
+                  -#     販売利益
+                  -#     %span.goods_form-price-list-list3-default
+                  -#       ー
               .goods_form-send
                 .goods_form-send-term
                   %p
