@@ -6,7 +6,8 @@
         会員情報入力
     .form__lower
       .lower-contents
-        = form_with model: @user, id: 'new_user', class: 'new_user', local: true do |f|
+        = form_for(@user, url: user_registration_path) do |f|
+          -# = render "devise/shared/error_messages", resource: @user
           .form__lower-group
             = f.label :ニックネーム
             %span.form__lower-group--require
@@ -65,84 +66,10 @@
                   '年 ', '月 ') + '日'               |
             %p
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-          = f.fields_for :address, Address.new do |i|
-            .form__lower-group
-              = i.label :送付先氏名（漢字）
-              %span.form__lower-group--require
-                必須
-              .form__lower-block
-                = i.text_field :l_name, placeholder: "例)山田", class: "input input-text form__lower-group-name"
-                = i.text_field :f_name, placeholder: "例)彩", class: "input input-text form__lower-group-name"
-            .form__lower-group
-              = i.label :送付先氏名（ひらがな全角）
-              %span.form__lower-group--require
-                必須
-              .form__lower-block
-                = i.text_field :l_name_kana, placeholder: "例)やまだ", class: "input input-text form__lower-group-name"
-                = i.text_field :f_name_kana, placeholder: "例あや", class: "input input-text form__lower-group-name"
-            .form__lower-group
-              = i.label :郵便番号
-              %span.form__lower-group--require
-                必須
-              .form__lower-block.line
-                = i.number_field :postal_code, placeholder: "例)1234567", class: "input input-text form__lower-group-number"
-              %p
-                ※ハイフンなし半角数字7桁で入力してください
-            .form__lower-group
-              = i.label :都道府県
-              %span.form__lower-group--require
-                必須
-              = i.text_field :prefecture, class: "input input-text form__lower-group-address"
-            .form__lower-group
-              = i.label :市区町村
-              %span.form__lower-group--require
-                必須
-              = i.text_field :city, class: "input input-text form__lower-group-address"
-            .form__lower-group
-              = i.label :番地
-              %span.form__lower-group--require
-                必須
-              = i.text_field :street, class: "input input-text form__lower-group-address"
-            .form__lower-group
-              = i.label :マンション名、ビル名、部屋番号
-              %span.form__lower-group--any
-                任意
-              = i.text_field :building, class: "input input-text form__lower-group-address"
-          .form__lower-group
-            = f.label :電話番号
-            %span.form__lower-group--any
-              任意
-            = f.number_field :phone_number, placeholder: "例)0001112222", class: "input input-text form__lower-group-address"
-          -# 仕様に入っていないため、今は実装しない
-          -# .form__lower-group
-          -#   %label
-          -#     クレジットカード登録
-          -#   %span.form__lower-group--any
-          -#     任意
-          -#   .form__lower-block
-          -#     %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
-          -#     %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
-          -#     %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
-          -#     %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "4"}
-          -#   .form__lower-block
-          -#     .form__lower-block-select
-          -#       %select
-          -#         %option --
-          -#         - for i in "01".."12"
-          -#           %option #{i}
-          -#       %span
-          -#         ／
-          -#     .form__lower-block-select
-          -#       %select
-          -#         %option --
-          -#         - for i in "00".."99"
-          -#           %option #{i}
-            -# .form__lower-block
-            -#   %input.input-text{type: "name", class: "form__lower-group-card", maxlength: "3"}
-          .form__lower-group.actions
-            = f.submit "登録する", class: "input input-text form__lower-group--submit"
+            .form__lower-group.actions
+            = f.submit "次へ", class: "input input-text form__lower-group--submit"
             %p.notice
-              「登録する」のボタンを押すことにより、
+              「次へ」のボタンを押すことにより、
               = link_to '#' do
                 = '利用規約'
               %p

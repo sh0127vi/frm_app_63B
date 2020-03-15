@@ -1,0 +1,62 @@
+.sign_up
+  = render "header"
+  .form
+    .form__upper
+      %h2
+        会員情報入力
+    .form__lower
+      .lower-contents
+        = form_for @address do |f|
+          -# = render "devise/shared/error_messages", resource: @address
+          .form__lower-group
+            = f.label :送付先氏名（漢字）
+            %span.form__lower-group--require
+              必須
+            .form__lower-block
+              = f.text_field :l_name, placeholder: "例)山田", class: "input input-text form__lower-group-name"
+              = f.text_field :f_name, placeholder: "例)彩", class: "input input-text form__lower-group-name"
+          .form__lower-group
+            = f.label :送付先氏名（ひらがな全角）
+            %span.form__lower-group--require
+              必須
+            .form__lower-block
+              = f.text_field :l_name_kana, placeholder: "例)やまだ", class: "input input-text form__lower-group-name"
+              = f.text_field :f_name_kana, placeholder: "例あや", class: "input input-text form__lower-group-name"
+          .form__lower-group
+            = f.label :郵便番号
+            %span.form__lower-group--require
+              必須
+            .form__lower-block.line
+              = f.number_field :postal_code, placeholder: "例)1234567", class: "input input-text form__lower-group-number"
+            %p
+              ※ハイフンなし半角数字7桁で入力してください
+          .form__lower-group
+            = f.label :都道府県
+            %span.form__lower-group--require
+              必須
+            = f.text_field :prefecture, class: "input input-text form__lower-group-address"
+          .form__lower-group
+            = f.label :市区町村
+            %span.form__lower-group--require
+              必須
+            = f.text_field :city, class: "input input-text form__lower-group-address"
+          .form__lower-group
+            = f.label :番地
+            %span.form__lower-group--require
+              必須
+            = f.text_field :street, class: "input input-text form__lower-group-address"
+          .form__lower-group
+            = f.label :マンション名、ビル名、部屋番号
+            %span.form__lower-group--any
+              任意
+            = f.text_field :building, class: "input input-text form__lower-group-address"
+          .form__lower-group
+            = f.label :電話番号
+            %span.form__lower-group--any
+              任意
+            = f.text_field :phone_number, placeholder: "例)0001112222", class: "input input-text form__lower-group-address"
+          .form__lower-group
+            .form__lower-group.actions
+            = f.submit "登録する", class: "input input-text form__lower-group--submit"
+  .footer
+    = render "footer"
