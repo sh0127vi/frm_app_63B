@@ -4,7 +4,7 @@
       .goods_form-image-field-box-inner
         =f.fields_for :images do |i|
           .goods_form-image-field-box-inner-html
-          %label.goods_form-image-field-box-inner-html-text{data: {index:"i.index"}}
+          %label.goods_form-image-field-box-inner-html-text
             <div>ドラッグ&ドロップ</div>
             <div>またはクリックしてファイルをアップロード</div>
             =i.file_field :images, class: "goods_form-image-field-box-inner-file"
