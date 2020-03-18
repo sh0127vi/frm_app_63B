@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def index_all
+    @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
   end
 
   def new 

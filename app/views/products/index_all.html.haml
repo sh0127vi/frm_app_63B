@@ -21,13 +21,7 @@
       .products-list__name
         アイテム一覧
       %ul.products
-        =render 'products/shared/product'
-        =render 'products/shared/product'
-        =render 'products/shared/product'
-        =render 'products/shared/product'
-        =render 'products/shared/product'
-        =render 'products/shared/product'
-
+        = render partial: 'products/shared/product', collection: @products
 
 .footer
   = render 'products/shared/footer'
