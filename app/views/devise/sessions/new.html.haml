@@ -14,7 +14,7 @@
           .login-form__lower-group
             = f.password_field :password, placeholder: "パスワード", class: "input input-text login-form__lower-group-password"
           .login-form__lower-group
-            = recaptcha_tags
+            = recaptcha_tags callback: 'successRecaptchaVerified'
           .login-form__lower-group.actions
             = f.submit "ログイン", class: "input input-text login-form__lower-group--submit"
           .login-form__lower-group
