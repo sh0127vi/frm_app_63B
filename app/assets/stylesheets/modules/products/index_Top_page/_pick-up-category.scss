@@ -34,13 +34,14 @@
       .product {
         background-color: #ffffff;
         width: 220px;
-        margin: 0 20px;
+        margin: 0 20px 0 0;
         text-decoration: none;
         color: #000000;
 
         .product__image{
-          width: 220px;
-          height: 150px;
+          width: 200px;
+          height: 200px;
+          margin: auto;
         }
         .detail {
           display: flex;

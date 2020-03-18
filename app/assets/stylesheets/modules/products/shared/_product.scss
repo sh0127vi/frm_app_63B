@@ -1,16 +1,17 @@
 .product-wrap {
+  text-decoration: none;
+  color: #000000;
   .product {
     background-color: #ffffff;
     width: 220px;
     margin: 10px 20px;
-    text-decoration: none;
-    color: #000000;
     padding: 10px;
 
 
     .product__image{
-      width: 220px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
+      margin: auto;
     }
     .detail {
       display: flex;
