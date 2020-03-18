@@ -12,6 +12,19 @@
       width: 200px;
       height: 200px;
       margin: auto;
+      position: relative;
+
+      &__sold-out-logo {
+        position: absolute;
+        z-index: 2;
+      }
+
+      &__sold-out-product-image {
+        position: absolute;
+        z-index: 1;
+
+      }
+
     }
     .detail {
       display: flex;

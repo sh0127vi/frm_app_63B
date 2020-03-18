@@ -1,10 +1,16 @@
 = link_to "", class: "product-wrap" do
   %li.product
     .product__image
-      - if product.images.present?
-        = image_tag product.images.first.images, alt: "product-img"
-      -else
-        = image_tag "material/icon/icon_no_image.png", alt: "product-non-img", width: "200px", height: "200px"
+      - if product.purchase.present?
+        .product__image__sold-out-logo
+          = image_tag "material/icon/icon_sold_out.png", alt: "product__image__sold-out", width: "200px", height: "200px", class: "sold-out-img"
+        .product__image__sold-out-product-image
+          = image_tag product.images.first.images, alt: "product-img"
+      - else
+        - if product.images.present?
+          = image_tag product.images.first.images, alt: "product-img"
+        -else
+          = image_tag "material/icon/icon_no_image.png", alt: "product-non-img", width: "200px", height: "200px"
     .detail
       .product__content
         .product__name
