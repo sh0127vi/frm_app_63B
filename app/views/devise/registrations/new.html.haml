@@ -1,5 +1,5 @@
 .sign_up
-  = render "header"
+  = render "registration_header"
   .form
     .form__upper
       %h2
@@ -7,7 +7,6 @@
     .form__lower
       .lower-contents
         = form_for(@user, url: user_registration_path) do |f|
-          -# = render "devise/shared/error_messages", resource: @user
           .form__lower-group
             = f.label :ニックネーム
             %span.form__lower-group--require

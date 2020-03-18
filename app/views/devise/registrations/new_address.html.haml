@@ -1,5 +1,5 @@
 .sign_up
-  = render "header"
+  = render "address_header"
   .form
     .form__upper
       %h2
@@ -7,7 +7,6 @@
     .form__lower
       .lower-contents
         = form_for @address do |f|
-          -# = render "devise/shared/error_messages", resource: @address
           .form__lower-group
             = f.label :送付先氏名（漢字）
             %span.form__lower-group--require

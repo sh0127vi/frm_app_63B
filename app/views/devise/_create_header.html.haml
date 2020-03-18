@@ -1,0 +1,16 @@
+.header
+  .header__title
+    = link_to image_tag(image_path('logo.png'), class: "header__title-image"), root_path
+    %nav.progress
+      %ul.progress-bar
+        %li.registration#registration
+          会員情報
+          .progress-status
+          .progress-status_bar
+        %li.address_info#address
+          お届け先住所入力
+          .progress-status
+          .progress-status_bar
+        %li.done#done
+          完了
+          .progress-status
