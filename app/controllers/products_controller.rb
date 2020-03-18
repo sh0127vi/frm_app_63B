@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   def index_Top_page
+    @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
   end
 
   def index_all

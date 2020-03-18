@@ -5,54 +5,5 @@
     .pick-up__box__title
       =link_to "新規投稿商品", index_all_products_path, class: "pick-up_category_title"
     %ul.productlists
-      = link_to "", class: "product" do
-        %li.product
-          .product__image
-            =image_tag "material/icon/product_exam.png", alt: "product"
-          .detail
-            .product__content
-              .product__name
-                product3
-              .product__price
-                30000円
-                .product__price__tax
-                  (税抜)
-            .product__evaluation
-              .product__evaluation__star-img
-                %i.fas.fa-star
-              .product__evaluation__score
-                ０
-      = link_to "", class: "product" do
-        %li.product
-          .product__image
-            =image_tag "material/icon/product_exam.png", alt: "product"
-          .detail
-            .product__content
-              .product__name
-                product2
-              .product__price
-                20000円
-                .product__price__tax
-                  (税抜)
-            .product__evaluation
-              .product__evaluation__star-img
-                %i.fas.fa-star
-              .product__evaluation__score
-                ０
-      = link_to "", class: "product" do
-        %li.product
-          .product__image
-            =image_tag "material/icon/product_exam.png", alt: "product"
-          .detail
-            .product__content
-              .product__name
-                product1
-              .product__price
-                10000円
-                .product__price__tax
-                  (税抜)
-            .product__evaluation
-              .product__evaluation__star-img
-                %i.fas.fa-star
-              .product__evaluation__score
-                ０
+      - @products.each do |p|
+        = render 'products/shared/product', product: p
