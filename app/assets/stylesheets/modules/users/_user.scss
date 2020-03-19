@@ -1,6 +1,90 @@
 * {
   box-sizing: border-box;
 }
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.progress {
+  padding: 40px 0 0 44px;
+  border: 0;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  text-align: center;
+  &-bar{
+    margin: 0;
+    li {
+      margin: 0 40px 0 0;
+      padding: 0;
+      position: relative;
+      z-index: 40;
+      display: inline-block;
+      min-width: 60px;
+      font-size: 12px;
+      color: gray;
+      .progress-status {
+        position: absolute;
+        left: 40%;
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        background: gray;
+        border-radius: 50%;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+.progress-status_bar {
+  position: absolute;
+  left: 43%;
+  top: 31px;
+  bottom: 5px;
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: grey;
+  z-index: 1;
+}
+
+.end .progress-status_bar {
+  width: 0px;
+}
+
+.registration {
+  color: #ea352d !important;
+  .progress-status {
+    background: #ea352d !important;
+  }
+}
+
+#registration .progress-status_bar {
+  background: #ea352d;
+}
+
+.address_info {
+  color: #ea352d !important;
+  .progress-status {
+    background: #ea352d !important;
+  }
+}
+
+#address .progress-status_bar {
+  background: #ea352d;
+}
+
+#done {
+  color: #ea352d;
+  .progress-status {
+    background: #ea352d;
+  }
+}
+
 .sign_up {
   background-color: #f5f5f5;
   margin: unset;
@@ -20,9 +104,14 @@
   .form {
     width: 700px;
     height: 100%;
+    min-height: 400px;
     background-color: #fff;
     margin: 0 auto;
     text-align: center;
+    .form_width {
+      width: 500px;
+      margin: 0 auto;
+    }
     &__upper {
       h2 {
         padding: 32px;
@@ -38,6 +127,13 @@
         max-width: 350px;
         margin: 0 auto;
         text-align: left;
+      }
+      .content {
+        text-align: center;
+        h1 {
+          font-size: 30px;
+          margin-bottom: 100px;
+        }
       }
       &-group {
         margin-top: 32px;
