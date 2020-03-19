@@ -11,7 +11,7 @@
     .goods__details--mains--images
       .active-image
       .each-images
-        =image_tag @image.image, class: "each-image"
+        =image_tag @image.image, class: "each-image active"
     .goods__details--mains--table
       %table{ border: "1", bordercolor: "#cccccc"}
         %tr 
@@ -71,6 +71,8 @@
     = link_to "< playstatino4", "#", class: "after-goods"
     = link_to "nintendo64 >", "#", class: "before-goods"
 
+
+//コメントフォームを作る
   .icon__area
     .icon__area--icons
       %i.fab.fa-twitter-square.fa-3x.twitter-icon
