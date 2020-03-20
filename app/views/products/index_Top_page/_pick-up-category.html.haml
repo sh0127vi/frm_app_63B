@@ -5,5 +5,5 @@
     .pick-up__box__title
       =link_to "新規投稿商品", index_all_products_path, class: "pick-up_category_title"
     %ul.productlists
-      - @products.each do |p|
+      - @products.first(3).each do |p|
         = render 'products/shared/product', product: p
