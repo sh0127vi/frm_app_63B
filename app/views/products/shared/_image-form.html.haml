@@ -2,23 +2,29 @@
   .goods_form-image-field-box
     = form_with model:product, local:true do|f|
       .goods_form-image-field-box-inner
+        .image_preview
+          - if product.persisted?
+            - product.images.each_with_index do |image, i|
+              = image_tag image.image.url, data: { index: i }, size: "100×100"
         =f.fields_for :images do |i|
           .goods_form-image-field-box-inner-html
-          %label.goods_form-image-field-box-inner-html-text
-            <div>ドラッグ&ドロップ</div>
-            <div>またはクリックしてファイルをアップロード</div>
-            =i.file_field :images, class: "goods_form-image-field-box-inner-file"
-      %table.image_table
-        %tbody.image_table-body
-          %tr.image_table-line.image_table-line1
-            %td.image_td.image1.right-border{data: {index:1}}
-            %td.image_td.image2.right-border{data: {index:2}}
-            %td.image_td.image3.right-border{data: {index:3}}
-            %td.image_td.image4.right-border{data: {index:4}}
-            %td.image_td.image5{data: {index:5}}
-          %tr.image_table-line.image_table-line2
-            %td.image_td.image6.right-border{data: {index:6}}
-            %td.image_td.image7.right-border{data: {index:7}}
-            %td.image_td.image8.right-border{data: {index:8}}
-            %td.image_td.image9.right-border{data: {index:9}}
-            %td.image_td.image10{data: {index:10}}
+            =i.file_field :images, class: "goods_form-image-field-box-inner-html-file",id:"js_field_one",accept: "image/*",data: {image:i.index}
+            %pre.goods_form-image-field-box-inner-html-text 
+              ドラッグ&ドロップ
+              またはクリックしてファイルをアップロード
+
+
+      -# %table.image_table
+      -#   %tbody.image_table-body
+      -#     %tr.image_table-line.image_table-line1
+      -#       %td.image_td.image1.right-border{data: {index:@index[0]}}
+      -#       %td.image_td.image2.right-border{data: {index:@index[1]}}
+      -#       %td.image_td.image3.right-border{data: {index:@index[2]}}
+      -#       %td.image_td.image4.right-border{data: {index:@index[3]}}
+      -#       %td.image_td.image5{data: {index:@index[4]}}
+      -#     %tr.image_table-line.image_table-line2
+      -#       %td.image_td.image6.right-border{data: {index:@index[5]}}
+      -#       %td.image_td.image7.right-border{data: {index:@index[6]}}
+      -#       %td.image_td.image8.right-border{data: {index:@index[7]}}
+      -#       %td.image_td.image9.right-border{data: {index:@index[8]}}
+      -#       %td.image_td.image10{data: {index:@index[9]}}
