@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
-  prepend_before_action :check_captcha, only: [:create]
   # prepend_before_action :configure_sign_in_params, only: [:create]
+  prepend_before_action :check_captcha, only: [:create]
 
   # GET /resource/sign_in
   # def new
@@ -19,8 +19,10 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
   private
+  # def configure_sign_in_params
+  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password])
+  # end
 
   def check_captcha
     unless verify_recaptcha
@@ -28,9 +30,4 @@ class Users::SessionsController < Devise::SessionsController
       respond_with_navigational(resource) { render :new }
     end 
   end
-
-  # # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_in_params
-  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attributes])
-  # end
 end
