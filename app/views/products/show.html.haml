@@ -50,7 +50,11 @@
       = "¥#{@product.price}円" 
     (税込)送料込み
 
-  // -if current_user_id == products.user_id
+  // -if user_signed_in? && current_user_id == products.user_id
+  //   .goods__details--buybtn
+         = link_to "商品の編集", "#", class: "btn1"
+         = link_to "出品の取り消し", "#", class: "btn2"
+     -else
 
   .goods__details--buybtn
     = link_to "購入画面にすすむ", 'buy', class: "btn"
