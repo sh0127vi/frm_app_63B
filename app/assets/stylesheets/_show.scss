@@ -129,23 +129,23 @@ body {
 
   .icon__area {
     background-color: white;
-    height: 150px;
+    height: 190px;
     width: 750px;
     margin-bottom: 20px;
-    &--icons {
+    .comment-form {
       text-align: center;
-      line-height: 180px;
-      .twitter-icon {
-        color:#1E90FF;
-        padding: 3px;
-      }
-      .facebook-icon {
-        color: #136FFF;
-        padding: 3px;
-      }
-      .pinterest-icon {
-        color: red;
-        padding: 3px;
+      margin: 15px 50px;
+    }
+    .comment-submit {
+      margin: 0 auto;
+      background-color: #3ccace;
+      width: 250px;
+      padding: 10px 30px;
+      border-radius: 30px;
+      text-align: center;
+      .submit-btn {
+        text-decoration: none;
+        color: white;
       }
     }
   }

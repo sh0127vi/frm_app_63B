@@ -72,10 +72,10 @@
     = link_to "nintendo64 >", "#", class: "before-goods"
 
   .icon__area
-    .icon__area--icons
-      %i.fab.fa-twitter-square.fa-3x.twitter-icon
-      %i.fab.fa-facebook-square.fa-3x.facebook-icon
-      %i.fab.fa-pinterest-square.fa-3x.pinterest-icon
+    = form_with model: @comment do |form|
+      = form.text_area :body, class: "comment-form", size: "70x4"
+    .comment-submit
+      = link_to "コメントを投稿する", "#", class: "submit-btn"
 
   .related__goods
     .related__goods--username
