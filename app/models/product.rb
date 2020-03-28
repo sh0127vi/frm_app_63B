@@ -27,5 +27,11 @@ class Product < ApplicationRecord
 
   # バリデーション
   validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
-  
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :detail, presence: true, length: { maximum: 1000 }
+  validates :condition, presence: true
+  validates :fee_payer, presence: true #配送料の負担
+  validates :delivery_area, presence: true #発送元の地域
+  validates :delivery, presence: true #発送までの日数
+
 end
