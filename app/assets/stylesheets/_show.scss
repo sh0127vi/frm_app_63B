@@ -29,6 +29,10 @@ body {
         background-color: grey;
         height: 310px;
         width: 300px;
+        .big-image {
+          height: 310px;
+          width:300px;
+        }
       }
       .each-images {
         background-color: #666666;
@@ -129,25 +133,20 @@ body {
 
   .icon__area {
     background-color: white;
-    height: 190px;
+    height: 180px;
     width: 750px;
     margin-bottom: 20px;
+    text-align: center;
     .comment-form {
-      text-align: center;
-      margin: 15px 50px;
+      margin: 15px 50px 10px 50px;
     }
-    .comment-submit {
-      margin: 0 auto;
-      background-color: #3ccace;
+    .submit-form {
       width: 250px;
-      padding: 10px 30px;
+      background-color: #3ccace;
+      color: white;
       border-radius: 30px;
-      text-align: center;
-      .submit-btn {
-        text-decoration: none;
-        color: white;
-      }
-    }
+      padding: 10px 0;
+    } 
   }
 
   .related__goods {

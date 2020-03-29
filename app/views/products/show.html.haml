@@ -10,8 +10,10 @@
   .goods__details--mains
     .goods__details--mains--images
       .active-image
+        =image_tag @image.image, class: "big-image"
       .each-images
-        =image_tag @image.image, class: "each-image active"
+        =image_tag @image.image, class: "each-image"
+
     .goods__details--mains--table
       %table{ border: "1", bordercolor: "#cccccc"}
         %tr 
@@ -50,14 +52,13 @@
       = "¥#{@product.price}円" 
     (税込)送料込み
 
-  // -if user_signed_in? && current_user_id == products.user_id
-  //   .goods__details--buybtn
-         = link_to "商品の編集", "#", class: "btn1"
-         = link_to "出品の取り消し", "#", class: "btn2"
-     -else
-
-  .goods__details--buybtn
-    = link_to "購入画面にすすむ", 'buy', class: "btn"
+  - if user_signed_in? && current_user_id == products.user_id
+    .goods__details--buybtn
+      = link_to "商品の編集", "#", class: "btn1"
+      = link_to "出品の取り消し", "#", class: "btn2"
+  - else
+    .goods__details--buybtn
+      = link_to "購入画面にすすむ", 'buy', class: "btn"
       
   .goods__details--comment
     まだまだ使えます。
@@ -76,41 +77,13 @@
     = link_to "nintendo64 >", "#", class: "before-goods"
 
   .icon__area
-    = form_with model: @comment do |form|
-      = form.text_area :body, class: "comment-form", size: "70x4"
-    .comment-submit
-      = link_to "コメントを投稿する", "#", class: "submit-btn"
+    = form_with model: @comment, class: "forms" do |form|
+      = form.text_area :body, class: "comment-form", size: "70x3", placeholder: "コメントを入力してください"
+      = form.submit "コメントする", class: "submit-form"
 
   .related__goods
     .related__goods--username
       usernameさんのその他の出品
-    .related__goods--images
-      .related__goods--image
-        .related__goods--image-foto
-          foto
-        .related__goods--image-name
-          name
-        .related__goods--image-price
-          price
-      .related__goods--images
-        .related__goods--image
-          .related__goods--image-foto
-            foto
-          .related__goods--image-name
-            name
-          .related__goods--image-price
-            price
-      .related__goods--images
-        .related__goods--image
-          .related__goods--image-foto
-            foto
-          .related__goods--image-name
-            name
-          .related__goods--image-price
-            price
-
-    .related__goods--category
-      nikeスニーカーのその他の出品
     .related__goods--images
       .related__goods--image
         .related__goods--image-foto
