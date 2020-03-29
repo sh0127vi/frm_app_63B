@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: [:new, :index, :show] do
+  resources :products, only: [:new, :index, :show, :destroy] do
     collection do
       get "buy"
       get "index_Top_page"
