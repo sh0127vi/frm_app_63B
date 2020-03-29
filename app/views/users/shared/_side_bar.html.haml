@@ -24,8 +24,10 @@
     %li.mysetting 設定
     %li.menu プロフィール
     %li.menu 発送元・お届け先住所変更
-    = link_to card_users_path, class: "card-btn" do
-      支払い方法
+    = link_to credit_card_path(current_user.id), class: "card-btn" do
+      %li.menu 支払い方法
+    = link_to new_credit_card_path, class: "card-btn" do
+      %li.menu クレジットカードの登録
     %li.menu メール・パスワード
     %li.menu 本人情報
     %li.menu 電話番号の確認

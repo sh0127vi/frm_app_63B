@@ -1,11 +1,11 @@
-class CreditCardController < ApplicationController
+class CreditCardsController < ApplicationController
 
   require "payjp"
 
   def new
-
   end
 
   def show
   end
+  
 end
