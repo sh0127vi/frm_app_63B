@@ -1,12 +1,12 @@
 .card_add 
   .title クレジットカード情報入力
 
-  .details
+  = form_tag("", method: :post, id: "charge-form", class: "details") do
     .number-details
       .card-number カード番号
       %span.must_check 必須
     .number
-      %input{type: 'text', class: 'cardnumber', placeholder: '半角数字のみ',}
+      %input{type: 'text', class: 'cardnumber', id: "payment_card_no", placeholder: '半角数字のみ',}
     .image
       = image_tag(image_path('card/visa.gif'), class: 'visa')
       = image_tag(image_path('card/master.png'), class: 'master')
@@ -22,7 +22,7 @@
         %span.must_check 必須
       .expirationdate-choice
         .month
-          %select#card_month.card-default 
+          %select#paymant_card_month.card-default 
             %option{:value => "01"} 01
             %option{:value => "02"} 02
             %option{:value => "03"} 03
@@ -37,7 +37,7 @@
             %option{:value => "12"} 12
           .month-details 月
         .year
-          %select#card_year.card-default
+          %select#payment_card_year.card-default
             %option{:value => "20"} 20
             %option{:value => "21"} 21
             %option{:value => "22"} 22
@@ -56,7 +56,7 @@
         .securitycode-details-title セキュリティコード
         %span.must_check 必須
       .securitycode-cardsecurity
-        %input{type: 'number', class: 'cardsecurity', placeholder: 'カード背面4桁もしくは3桁の番号',}
+        %input{type: 'number', class: 'cardsecurity', id: "payment_card_cvc", placeholder: 'カード背面4桁もしくは3桁の番号',}
       .card-question カード裏面の番号とは？
-  .add 
-    .add-btn 追加する
+    .add 
+      %button.add-btn#payment_card_submit-button{type: "submit"} 登録する

@@ -1,7 +1,7 @@
 
-document.addEventListener('DOMContentLoaded', function(){
+(function(){
 
-  let submit = document.getElementById("token_submit");
+  let submit = document.getElementById("#payment_card_submit-button");
 
   Payjp.setPublicKey('pk_test_48fc34de544ae5c99d8d81c3'); //公開鍵の記述
 
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function(){
     let card = { //入力されたカード情報を取得
         number: $("#payment_card_no").val(),
         cvc: $("#payment_card_cvc").val(),
-        exp_month: $("#payment_expiration_date_1i").val(),
-        exp_year: $("#payment_expiration_date_2i").val(),
+        exp_month: $("#payment_card_month").val(),
+        exp_year: $("#payment_card_year").val(),
     };
     Payjp.createToken(card, function(s, response) {  // トークンを生成
       if (status === 200) { //成功した場合

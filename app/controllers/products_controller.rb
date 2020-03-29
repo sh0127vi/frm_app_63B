@@ -54,6 +54,7 @@ class ProductsController < ApplicationController
   end
 
   def buy
+    payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
   end
 
   def destroy
