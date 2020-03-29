@@ -1,0 +1,17 @@
+.wrapper
+  .top-page-header
+    = render "products/shared/header"
+  .main-content
+    = render "products/index_Top_page/main-title"
+    = render "products/index_Top_page/top-introduction"
+    = render "products/index_Top_page/middle-links"
+    = render "products/index_Top_page/characteristic"
+  .pick-ups
+    .pick-up__category
+      = render "products/index_Top_page/pick-up-category"
+    .pick-up__brand
+      = render "products/index_Top_page/pick-up-brand"
+  .exhibition
+    = render "products/shared/exhibition-btn"
+
+  = render "products/shared/footer"

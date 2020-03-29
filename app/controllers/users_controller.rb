@@ -12,13 +12,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    @user.build_address
-    if @user.save
-      redirect_to root_path
-    else
-      render :new
-    end
   end
 
   def edit
@@ -38,7 +31,6 @@ class UsersController < ApplicationController
         :f_name,
         :l_name,
         :birthday,
-        :phone_number,
         address_attributes: [:f_name_kana,
                               :l_name_kana,
                               :f_name,
@@ -48,8 +40,8 @@ class UsersController < ApplicationController
                               :city,
                               :street,
                               :building,
+                              :phone_number,
                               :id
-    
                               ]])
   end
 end
