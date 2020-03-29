@@ -12,12 +12,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(1)
-    @image = @product.images.find(1)
+    @product = Product.find(params[:id])
+    @image = @product.images.all
   end
 
   def buy
   end
   
+  private
 end
 

@@ -10,9 +10,10 @@
   .goods__details--mains
     .goods__details--mains--images
       .active-image
-        =image_tag @image.image, class: "big-image"
+        
       .each-images
-        =image_tag @image.image, class: "each-image"
+        - @image.each do |img|
+          = image_tag img.images, class: "each-image"
 
     .goods__details--mains--table
       %table{ border: "1", bordercolor: "#cccccc"}
@@ -52,7 +53,7 @@
       = "¥#{@product.price}円" 
     (税込)送料込み
 
-  - if user_signed_in? && current_user_id == products.user_id
+  - if user_signed_in? && current_user.id == @product.user.id
     .goods__details--buybtn
       = link_to "商品の編集", "#", class: "btn1"
       = link_to "出品の取り消し", "#", class: "btn2"

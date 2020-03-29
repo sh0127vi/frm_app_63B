@@ -1,4 +1,4 @@
-= link_to "", class: "product-wrap" do
+= link_to product_path(product.id),  class: "product-wrap" do
   %li.product
     .product__image
       - if product.purchase.present?
