@@ -1,9 +1,7 @@
 .wrapper
   .upper_content
     = render "products/shared/header"
-    - breadcrumb :card_add
-    = breadcrumbs pretext: "",separator: " &rsaquo; "
     = render "users/shared/side_bar"
-    = render "credit_cards/show/show"
+    = render "credit_cards/create/create"
     = render "products/shared/exhibition-btn"
   = render "products/shared/footer"

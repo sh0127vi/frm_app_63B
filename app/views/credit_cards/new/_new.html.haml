@@ -1,12 +1,12 @@
 .card_add 
   .title クレジットカード情報入力
 
-  = form_tag("", method: :post, id: "charge-form", class: "details") do
+  = form_tag(credit_cards_path, method: :post, id: "charge-form", class: "details") do
     .number-details
       .card-number カード番号
       %span.must_check 必須
     .number
-      %input{type: 'text', class: 'cardnumber', id: "payment_card_no", placeholder: '半角数字のみ',}
+      = text_field_tag 'number', "", class: 'cardnumber', id: "payment_card_no", placeholder: '半角数字のみ'
     .image
       = image_tag(image_path('card/visa.gif'), class: 'visa')
       = image_tag(image_path('card/master.png'), class: 'master')
@@ -56,7 +56,7 @@
         .securitycode-details-title セキュリティコード
         %span.must_check 必須
       .securitycode-cardsecurity
-        %input{type: 'number', class: 'cardsecurity', id: "payment_card_cvc", placeholder: 'カード背面4桁もしくは3桁の番号',}
+        %input{type: 'text', class: 'cardsecurity', id: "payment_card_cvc", placeholder: 'カード背面4桁もしくは3桁の番号',}
       .card-question カード裏面の番号とは？
     .add 
       %button.add-btn#payment_card_submit-button{type: "submit"} 登録する
