@@ -7,4 +7,10 @@ $(function() {
     $(this).parent().addClass("active");
   });
 
+  $(".each-image").css('opacity', '.4');
+  $(".each-image").first().css('opacity', '10');
+  $(".each-image").click(function() {
+    $(".each-image").css('opacity', '.4');
+    $(this).css('opacity','10');
+  });
 });
