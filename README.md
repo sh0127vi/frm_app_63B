@@ -34,7 +34,6 @@ Things you may want to cover:
 |f_name|string|null: false|
 |l_name|string|null: false|
 |birthday|date|null: false|
-|phone_number|string|null: false|
 
 ### Association
 - has_one :address, dependent: :destroy
@@ -86,11 +85,12 @@ Things you may want to cover:
 |l_name_kana|string|null: false|
 |f_name|string|null: false|
 |l_name|string|null: false|
-|postal_code|string||
-|prefecture|string||
-|city|string||
-|street|string||
+|postal_code|string|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|street|string|null: false|
 |building|string||
+|phone_number|string||
 |user_id|references|null: false, foreign_key: true|
 
 ### Association

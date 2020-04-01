@@ -8,15 +8,15 @@
         = link_to new_user_registration_path do
           = '新規会員登録'
       .login-form__lower
-        = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
+        = form_with model: @user, local: true, url: user_session_path, id: 'new_user', class: 'new_user' do |f|
           .login-form__lower-group
             = f.email_field :email, placeholder: "メールアドレス", class: "input input-text login-form__lower-group-address"
           .login-form__lower-group
             = f.password_field :password, placeholder: "パスワード", class: "input input-text login-form__lower-group-password"
           .login-form__lower-group
-            = image_tag(image_path("reCAPTCHA.png"), class: "login-form__lower-group-image")
+            = recaptcha_tags
           .login-form__lower-group.actions
-            = f.submit value: "ログイン", class: "input input-text login-form__lower-group--submit"
+            = f.submit "ログイン", class: "input input-text login-form__lower-group--submit"
           .login-form__lower-group
             = link_to new_user_password_path do
               = 'パスワードをお忘れの方'

@@ -1,20 +1,30 @@
 Rails.application.routes.draw do
-  root to: "products#index"
-  devise_for :users
+  root to: "products#index_Top_page"
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
   devise_scope :user do
-    get "users", to: "users#index"
-    get "logout", to: "users#logout"
-    get "card", to: "users#card" 
-    get "card_add", to: "users#card_add" 
-  end
+    get 'addresses', to: 'users/registrations#new_address'
+    post 'addresses', to: 'users/registrations#create_address'
+  end  
 
-  
-  resources :products, only: [:new, :create, :index, :show] do
+  resources :users do
     collection do
-      get "buy"
+      get "logout", to: "users#logout"
+      get "card", to: "users#card" 
+      get "card_add", to: "users#card_add" 
     end
   end
-  
 
-  resources :users
+  resources :products, only: [:new, :create, :index, :show] do
+    resource :comments, only: [:new, :create, :index]
+    collection do
+      get "buy"
+      get "index_Top_page"
+      get "index_all"
+    end
+
+  end
+  
 end
