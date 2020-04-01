@@ -12,6 +12,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    @image = @product.images.all
   end
 
   def buy
@@ -22,5 +24,6 @@ class ProductsController < ApplicationController
     @product.destroy
   end
   
+  private
 end
 

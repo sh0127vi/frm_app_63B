@@ -1,32 +1,37 @@
 // frm_appの商品詳細ページのマークアップ
 .top-page-header
   = render "products/shared/header"
+  
 .goods__details
   .goods__details--title 
-    NIKE ナイキ スニーカー
+    = @product.name
   .goods__details--summary
-    「NIKEスニーカー」は○○回の取引実績を持つusernameさんから出品されました。NIKEの商品で、○○県から２−３日で発送されます。
+    = "#{@product.name}は#{@product.user.nickname}さんから出品されました。"
   .goods__details--mains
     .goods__details--mains--images
       .active-image
+        = image_tag @image.first.images, class: "active-image"
       .each-images
+        - @image.each do |img|
+          = image_tag img.images, class: "each-image"
+
     .goods__details--mains--table
       %table{ border: "1", bordercolor: "#cccccc"}
         %tr 
           %td.left-data{height: "40"} 出品者
-          %td.right-data user_name 評価
+          %td.right-data 
+            = @product.user.nickname
         %tr  
           %td.left-data{height: "40"} カテゴリー
-          %td.right-data メンズ 靴 スニーカー
+          %td.right-data 
+            = @product.category.name
         %tr
           %td.left-data{height: "40px"} ブランド
           %td.right-data ナイキ
-        %tr  
-          %td.left-data{height: "40px"}  商品のサイズ
-          %td.right-data 26.5cm
         %tr
           %td.left-data{height: "40px"}  商品の状態
-          %td.right-data 傷や汚れなし
+          %td.right-data 
+            = @product.condition
         %tr
           %td.left-data{height: "40px"}  配送料の負担
           %td.right-data 送料込み（出品者負担）
@@ -34,26 +39,31 @@
           %td.left-data{height: "40px"} 配送の方法
           %td.right-data 郵便局
         %tr
-          %td.left-data{height: "40px"}  配送元地域
-          %td.right-data  未定
+          %td.left-data{height: "40px"}  配送先地域
+          %td.right-data  
+            = @product.delivery_area
         %tr
           %td.left-data{height: "40px"}  発送日の目安
-          %td.right-data 2~3日
+          %td.right-data 
+            = @product.delivery
 
   .goods__details--price
-    %span ¥2,500 
+    %span 
+      = "¥#{@product.price}円" 
     (税込)送料込み
+
   - if user_signed_in? && current_user.id == @product.user.id
-    .goods__details--buybtn
-      = link_to '商品の編集', "#", class: "btn1"
-      = link_to '出品の取り消し', product_path(@product.id), method: :delete, class: "btn2"
+    .goods__details--option
+      .btn1
+        = link_to "商品の編集", "#", class: "btn1"
+      .btn2
+        = link_to "出品の取り消し", "#", class: "btn2"
   - else
     .goods__details--buybtn
-      = link_to “購入画面にすすむ“, ‘buy’, class: “btn”
-  
+      = link_to "購入画面にすすむ", 'buy', class: "btn"
       
   .goods__details--comment
-    まだまだ使えます。
+    = @product.detail
   .goods__details--else
     %button.good-btn
       いいね!　2
@@ -65,68 +75,16 @@
 
 .page
   .around__goods
-    = link_to "< playstatino4", "#", class: "after-goods"
-    = link_to "nintendo64 >", "#", class: "before-goods"
+    - if @product.previous.present?
+      = link_to "＜ #{@product.previous.name}", @product.previous ,class: "before-goods"
+    - if @product.next.present?
+      .back-goods
+      = link_to "#{@product.next.name} ＞", @product.next ,class: "after-goods"
 
   .icon__area
-    .icon__area--icons
-      %i.fab.fa-twitter-square.fa-3x.twitter-icon
-      %i.fab.fa-facebook-square.fa-3x.facebook-icon
-      %i.fab.fa-pinterest-square.fa-3x.pinterest-icon
-
-  .related__goods
-    .related__goods--username
-      usernameさんのその他の出品
-    .related__goods--images
-      .related__goods--image
-        .related__goods--image-foto
-          foto
-        .related__goods--image-name
-          name
-        .related__goods--image-price
-          price
-      .related__goods--images
-        .related__goods--image
-          .related__goods--image-foto
-            foto
-          .related__goods--image-name
-            name
-          .related__goods--image-price
-            price
-      .related__goods--images
-        .related__goods--image
-          .related__goods--image-foto
-            foto
-          .related__goods--image-name
-            name
-          .related__goods--image-price
-            price
-
-    .related__goods--category
-      nikeスニーカーのその他の出品
-    .related__goods--images
-      .related__goods--image
-        .related__goods--image-foto
-          foto
-        .related__goods--image-name
-          name
-        .related__goods--image-price
-          price
-      .related__goods--images
-        .related__goods--image
-          .related__goods--image-foto
-            foto
-          .related__goods--image-name
-            name
-          .related__goods--image-price
-            price
-      .related__goods--images
-        .related__goods--image
-          .related__goods--image-foto
-            foto
-          .related__goods--image-name
-            name
-          .related__goods--image-price
-            price
+    = form_with model: @comment, class: "forms" do |form|
+      = form.text_area :body, class: "comment-form", size: "70x3", placeholder: "コメントを入力してください"
+      = form.submit "コメントする", class: "submit-form"
 
 = render "products/shared/footer"
+
