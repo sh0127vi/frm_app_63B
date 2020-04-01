@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: [:new, :index, :show] do
+    resource :comments, only: [:new, :create, :index]
     collection do
       get "buy"
       get "index_Top_page"
