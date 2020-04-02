@@ -14,6 +14,9 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @image = @product.images.all
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
+    @comment = @product.comments.build
   end
 
   def buy
