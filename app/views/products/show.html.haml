@@ -90,7 +90,7 @@
           .message__text
             = c.body
             .message__text--date
-              = c.created_at
+              = c.created_at.to_s(:datetime_jp)
     .comment
       - if current_user
         = form_with model: [@product, @comment], local: true, class: "forms" do |form|
