@@ -32,6 +32,7 @@ class Product < ApplicationRecord
   validates :condition, presence: true
   validates :city, presence: true          #city 配送元
   validates :delivery, presence: true      #発送までの日数 stringに変更
+  validates :fee_payer, presence: true     #配送料の負担
   
 
 end

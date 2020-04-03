@@ -86,6 +86,20 @@ describe Product do
   end
 
 
+#  発送先の地域
+#   it "発送先の地域が空では登録できない " do
+#     product = build(:product, delivery_area: "")
+#     product.valid?
+#     expect(product.errors[:delivery_area]).to include("Delivery areaを入力してください")
+#   end
+
+#   it "発送先の地域が空でなければ登録できる " do
+#     product = build(:product, delivery_area: "a")
+#     product.valid?
+#     expect(product).to be_valid
+#   end
+
+
 # 発送までの日数
   it "発送までの日数が空では登録できない " do
     product = build(:product, delivery: "")
