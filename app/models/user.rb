@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_one :address
   accepts_nested_attributes_for :address
   has_one :credit_card, dependent: :destroy
-  has_many :products
+  has_many :products, dependent: :destroy
   has_many :purchases, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_products, through: :likes, source: :product
