@@ -1,10 +1,10 @@
 class Product < ApplicationRecord
   # アソシエーション
-  belongs_to :user, foreign_key: 'user_id'
-  belongs_to :category
-  belongs_to :brand, optional: true
-  has_one    :purchase
+  belongs_to :user
   has_many   :images,      dependent: :destroy
+  belongs_to :brand, optional: true
+  belongs_to :category
+  has_one    :purchase
   has_many   :comments
   has_many   :likes, dependent: :destroy
   has_many   :like_users, through: :likes, source: :user
@@ -26,12 +26,14 @@ class Product < ApplicationRecord
   
 
   # バリデーション
-  validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
   validates :name, presence: true, length: { maximum: 40 }
   validates :detail, presence: true, length: { maximum: 1000 }
+  validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
   validates :condition, presence: true
-  validates :fee_payer, presence: true #配送料の負担
-  validates :delivery_area, presence: true #発送元の地域
-  validates :delivery, presence: true #発送までの日数
+  validates :city, presence: true          #city 配送元
+  validates :delivery, presence: true      #発送までの日数 stringに変更
+  validates :fee_payer, presence: true     #配送料の負担
+  validates :delivery_area, presence: true #発送先の地域 出品で不必要
+  
 
 end
