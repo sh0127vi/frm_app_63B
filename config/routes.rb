@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: [:new, :index, :show, :destroy] do
+    resources :likes, only: [:create, :destroy, :show]
     resource :comments, only: [:new, :create, :index]
     collection do
       get "buy"
