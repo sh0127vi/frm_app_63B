@@ -24,7 +24,11 @@
           .product__price__tax
             (税抜)
       .product__evaluation
-        .product__evaluation__star-img
-          %i.far.fa-star
+        - if product.like_user(current_user.id)
+          .product__evaluation__star-img
+            %i.fas.fa-star
+        - else
+          .product__evaluation__star-img
+            %i.far.fa-star
         .product__evaluation__score
           = product.likes_count
