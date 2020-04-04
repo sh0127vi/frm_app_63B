@@ -124,7 +124,9 @@ text-align: center;
     }
     &-category{
       &-list{
-        @include list;
+        select.listing-select-wrapper__box--select {
+          @include list;
+        }
       }
     }
     &-status{

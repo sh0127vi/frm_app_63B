@@ -42,8 +42,8 @@
                   .goods_form-detail-category
                     %h2.label カテゴリー
                     %span.must_check 必須
-                    %br
-                    = f.select :category, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-category-list'}
+                    .goods_form-detail-category-list
+                      = f.select :category_id, @category_parent_array, {prompt:"---"}, {class: 'listing-select-wrapper__box--select', id:  'parent_category', name: '', required: true}
                   %br
                   .goods_form-detail-status
                     %h2.label 商品の状態
