@@ -66,7 +66,7 @@
     = @product.detail
   .goods__details--else
     %button.good-btn
-      いいね!　2
+      = render partial: 'likes/like', locals: {product: @product, likes: @likes}
     %button.report-btn
       不適切な商品の報告
     = link_to '#', class: "safety-rule" do
