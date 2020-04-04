@@ -1,0 +1,19 @@
+.like_list
+  %p.like_list_user
+    = @user.nickname
+    さんのいいね！一覧
+  .like_list_order
+    - if @like_products.length == 0
+      %p いいね！はまだありません
+    - else
+      - @like_products.each do |product|
+        .like_list_order__group
+          .like_list_order__group-user
+            = link_to product_path(product.id) do
+              = image_tag product.images.first.images_url
+          .like_list_order__group-name
+            %ol
+              %li
+                = product.name
+              %li
+                = product.price
