@@ -164,6 +164,35 @@
     }
   }
 
+  .like_list {
+    background-color: #fff;
+    width: 500px;
+    min-height: 200px;
+    margin-left: 600px;
+    margin-top: 30px;
+    &_order {
+      text-align: center;
+      p {
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      &__group {
+        display: flex;
+        justify-content: start;
+        &-user {
+          margin-left: 100px;
+        }
+        &-name {
+          margin-left: 30px;
+        }
+      }
+    }
+    &_user {
+      text-align: center;
+      height: 70px;
+      line-height: 70px;
+    }
+  }
   .main_page {
     background-color: #fff;
     width: 700px;
