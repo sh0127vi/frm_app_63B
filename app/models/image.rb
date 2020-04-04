@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
   # アソシエーション
-  belongs_to :product
-  mount_uploader :image, ImageUploader
+  belongs_to :product, optional: true
+  mount_uploader :images, ImageUploader
 end
