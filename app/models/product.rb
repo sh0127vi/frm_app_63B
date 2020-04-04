@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   # アソシエーション
 
-  belongs_to :user
+  belongs_to :user, foreign_key: 'user_id'
   has_many   :images,      dependent: :destroy
   belongs_to :category
   belongs_to :brand, optional: true
