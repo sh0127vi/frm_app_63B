@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Product.create!(
+  name: '本',
+  detail: '自己啓発',
+  price: '2000',
+  condition: '中古',
+  city: '滋賀',
+  delivery: '100',
+  fee_payer: '100',
+  delivery_area: '草津',
+  user_id: '6',
+  category_id: '1'
+)
+Image.create!(
+  product_id: '8',
+  images: 'https://illust8.com/wp-content/uploads/2019/04/thick-book_illust_3551.png'
+)
+
+

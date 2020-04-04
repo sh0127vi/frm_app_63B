@@ -1,11 +1,11 @@
-.pick-up-category
+.pick-up-brand
   .pick-up__title
-    ピックアップカテゴリー
+    ピックアップブランド
   .pick-up__box
     .pick-up__box__title
-      =link_to "新規投稿商品", "", class: "pick-up_category_title"
+      =link_to "アーカイバ", "", class: "pick-up_brand_title"
     %ul.productlists
-      = link_to "", class: "product" do
+      = link_to "products/show", class: "product" do
         %li.product
           .product__image
             =image_tag "material/icon/product_exam.png", alt: "product"

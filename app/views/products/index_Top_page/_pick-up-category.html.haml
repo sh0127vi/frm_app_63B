@@ -1,0 +1,8 @@
+.pick-up-category
+  .pick-up__title
+    ピックアップカテゴリー
+  .pick-up__box
+    .pick-up__box__title
+      =link_to "新規投稿商品", index_all_products_path, class: "pick-up_category_title"
+    %ul.productlists
+      = render partial: 'products/shared/product', collection: @products.first(3)

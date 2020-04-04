@@ -1,0 +1,90 @@
+// frm_appの商品詳細ページのマークアップ
+.top-page-header
+  = render "products/shared/header"
+  
+.goods__details
+  .goods__details--title 
+    = @product.name
+  .goods__details--summary
+    = "#{@product.name}は#{@product.user.nickname}さんから出品されました。"
+  .goods__details--mains
+    .goods__details--mains--images
+      .active-image
+        = image_tag @image.first.images.url, class: "active-image"
+      .each-images
+        - @image.each do |img|
+          = image_tag img.images.url, class: "each-image"
+
+    .goods__details--mains--table
+      %table{ border: "1", bordercolor: "#cccccc"}
+        %tr 
+          %td.left-data{height: "40"} 出品者
+          %td.right-data 
+            = @product.user.nickname
+        %tr  
+          %td.left-data{height: "40"} カテゴリー
+          %td.right-data 
+            = @product.category.name
+        %tr
+          %td.left-data{height: "40px"} ブランド
+          %td.right-data ナイキ
+        %tr
+          %td.left-data{height: "40px"}  商品の状態
+          %td.right-data 
+            = @product.condition
+        %tr
+          %td.left-data{height: "40px"}  配送料の負担
+          %td.right-data 送料込み（出品者負担）
+        %tr
+          %td.left-data{height: "40px"} 配送の方法
+          %td.right-data 郵便局
+        %tr
+          %td.left-data{height: "40px"}  配送元地域
+          %td.right-data  
+            = @product.city
+        %tr
+          %td.left-data{height: "40px"}  発送日の目安
+          %td.right-data 
+            = @product.delivery
+
+  .goods__details--price
+    %span 
+      = "¥#{@product.price}円" 
+    (税込)送料込み
+
+  - if user_signed_in? && current_user.id == @product.user.id
+    .goods__details--option
+      .btn1
+        = link_to "商品の編集", "#", class: "btn1"
+      .btn2
+        = link_to '出品の取り消し', product_path(@product.id), method: :delete, class: "btn2"
+  - else
+    .goods__details--buybtn
+      = link_to "購入画面にすすむ", 'buy', class: "btn"
+      
+  .goods__details--comment
+    = @product.detail
+  .goods__details--else
+    %button.good-btn
+      いいね!　2
+    %button.report-btn
+      不適切な商品の報告
+    = link_to '#', class: "safety-rule" do
+      %i.fas.fa-lock.lock-icon 
+      = "安心・安全への取り組み"
+
+.page
+  .around__goods
+    - if @product.previous.present?
+      = link_to "＜ #{@product.previous.name}", @product.previous ,class: "before-goods"
+    - if @product.next.present?
+      .back-goods
+      = link_to "#{@product.next.name} ＞", @product.next ,class: "after-goods"
+
+  .icon__area
+    = form_with model: @comment, class: "forms" do |form|
+      = form.text_area :body, class: "comment-form", size: "70x3", placeholder: "コメントを入力してください"
+      = form.submit "コメントする", class: "submit-form"
+
+= render "products/shared/footer"
+

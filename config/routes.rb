@@ -1,21 +1,35 @@
 Rails.application.routes.draw do
-  root to: "products#index"
-  devise_for :users
+  root to: "products#index_Top_page"
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
   devise_scope :user do
-    get "users", to: "users#index"
-    get "users/logout", to: "users#logout"
-    get "users/card", to: "users#card" 
-    get "users/card_add", to: "users#card_add" 
+    get 'addresses', to: 'users/registrations#new_address'
+    post 'addresses', to: 'users/registrations#create_address'
+  end  
+
+  resources :users do
+    collection do
+      get "logout", to: "users#logout"
+      get "card", to: "users#card" 
+      get "card_add", to: "users#card_add" 
+    end
   end
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :products, only: [:new, :index]
+
+
+  resources :products, only: [:new, :create, :index, :show, :destroy] do
+  resource :comments, only: [:new, :create, :index]
   resources :users
-  
-  resources :products, only: [:index, :show, :new, :edit, :destroy] do
+
     collection do
+      get "buy"
+      get "index_Top_page"
+      get "index_all"
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
+
   end
 end

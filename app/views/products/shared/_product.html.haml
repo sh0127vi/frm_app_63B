@@ -1,0 +1,30 @@
+= link_to product_path(product.id),  class: "product-wrap" do
+  %li.product
+    .product__image
+      - if product.purchase.present?
+        .product__image__sold-out-logo
+          = image_tag "material/icon/icon_sold_out.png", alt: "product__image__sold-out", width: "200px", height: "200px", class: "sold-out-img"
+        .product__image__sold-out-product-image
+          - if product.images.present?
+            = image_tag product.images.first.images, alt: "product-img", class: "product-img"
+          -else
+            = image_tag "material/icon/icon_no_image.png", alt: "product-non-img", width: "200px", height: "200px"
+      - else
+        - if product.images.present?
+          = image_tag product.images.first.images.url, class: "product-img"
+        -else
+          = image_tag "material/icon/icon_no_image.png", alt: "product-non-img", width: "200px", height: "200px"
+          
+    .detail
+      .product__content
+        .product__name
+          = product.name
+        .product__price
+          = product.price
+          .product__price__tax
+            (税抜)
+      .product__evaluation
+        .product__evaluation__star-img
+          %i.fas.fa-star
+        .product__evaluation__score
+          ０
