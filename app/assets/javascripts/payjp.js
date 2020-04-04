@@ -1,11 +1,11 @@
 
-window.addEventListener('DOMContentloaded', function(){
+window.addEventListener('DOMContentLoaded', function(){
 
   let submit = document.getElementById("payment_card_submit-button");
 
   Payjp.setPublicKey('pk_test_48fc34de544ae5c99d8d81c3'); //公開鍵の記述
 
-  submit.addEventListener('click', function(e){ //ボタンが押されたらトークン作成開始。ボタンのクラス名まだない。
+    submit.addEventListener('click', function(e){ //ボタンが押されたらトークン作成開始。
 
     e.preventDefault(); //ボタンを1度無効化
 
@@ -16,14 +16,13 @@ window.addEventListener('DOMContentloaded', function(){
         exp_year: document.getElementById("payment_card_year").value
     };
 
-
     Payjp.createToken(card, function(status, response) {  // トークンを生成
       if (status === 200) { //成功した場合
-        $("#payment_card_no").removeAttr("name");
-        $("#payment_card_cvc").removeAttr("name");
-        $("#payment_card_month").removeAttr("name");
-        $("#payment_card_year").removeAttr("name"); //データを自サーバにpostしないように削除
-        $("#card_token").append(
+        $(".number").removeAttr("name");
+        $(".cvc").removeAttr("name");
+        $(".exp_month").removeAttr("name");
+        $(".exp_year").removeAttr("name"); //データを自サーバにpostしないように削除
+        $("#charge-form").append(
           $('<input type="hidden" name="payjp_token">').val(response.id)
         ); //取得したトークンを送信できる状態にします
         document.inputForm.submit();

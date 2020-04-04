@@ -4,10 +4,18 @@ class CreditCardsController < ApplicationController
 
   def new
     card = CreditCard.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    redirect_to action: "index" if card.exists?
   end
   
-  def show
+  def index
+    card = current_user.credit_card
+    if card.blank?
+      redirect_to action: "new" 
+    else
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @customer_card = customer.cards.retrieve(card.card_id)
+    end
   end
 
   def create
@@ -17,11 +25,12 @@ class CreditCardsController < ApplicationController
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
-        card_id: params["payjp_token"]
+        email: current_user.email,
+        card: params["payjp_token"],
+        metadata: {user_id: current_user.id}
       )
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "show"
       else
         redirect_to action: "create"
       end
