@@ -6,7 +6,7 @@
         .goods_main-header
           %h2.goods_main-header-text
             商品の情報を入力
-        = form_with model:@product, local:true do|f|
+        = form_with model: @product,local: true do|f|
           .goods_info
             %section.l-shipping_goods_info
             .goods_form
@@ -17,7 +17,16 @@
                   %span.must_check 必須
                 %br
                 %p.goods_form-image-text 最大１０枚までアップロードできます
-                = render partial:"products/shared/image-form", locals: {product:@product}
+                .goods_field
+                  .goods_field-box
+                    .goods_field-box-inner
+                      =f.fields_for :images do |i|
+                        .goods_field-box-inner-html#js_html
+                          =i.file_field :images,multipart: true,class: "goods_field-box-inner-html-file",id:"image_0",accept: "image/*",data: {image:i.index}
+                          .goods_field-box-inner-html_text
+                            %img{alt: "カメラ", src: "/assets/material/icon/icon_camera.png", width: "40"}
+                            %p クリックしてファイルをアップロード
+
 
               .goods_form-explain.clearfix
                 %h2.label 商品名
@@ -28,7 +37,7 @@
                 %h2.label 商品の説明
                 %span.must_check 必須
                 .goods_form-explain-text
-                  =f.text_area :name, placeholder:"商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例：2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"goods_form-explain-area", required: true
+                  =f.text_area :detail, placeholder:"商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例：2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"goods_form-explain-area", required: true
 
               .goods_form-detail.clearfix
                 %h3.goods_form-detail-title 商品の詳細
@@ -37,19 +46,19 @@
                     %h2.label カテゴリー
                     %span.must_check 必須
                     %br
-                    = f.select :category, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-category-list', required: true}
+                    = f.select :category_id,  [["1",1]], { include_blank: "選択して下さい"},{ autofocus: 'true', class: 'goods_form-detail-category-list', required: true}
                   %br
-                  -# .goods_form-detail-bland
-                  -#   %h2.label ブランド
-                  -#   %span.must_check 任意
-                  -#   %br
-                  -#   = f.select :category, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-category-list', required: true}
-                  -# %br
+                  .goods_form-detail-bland
+                    %h2.label ブランド
+                    %span.must_check 任意
+                    %br
+                    = f.select :brand_id, [["ユニクロ",1],["GU",2]], { include_blank: "選択して下さい"}, { autofocus: 'true', class: 'goods_form-fee-price-list'}
+                  %br
                   .goods_form-detail-status
                     %h2.label 商品の状態
                     %span.must_check 必須
                     %br
-                    = f.select :status, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-detail-status-list', required: true}
+                    = f.select :condition, [["新品、未使用","新品、未使用"],["未使用に近い","未使用に近い"],["目立った傷や汚れ無し","目立った傷や汚れ無し"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]], { include_blank: "選択して下さい"}, { autofocus: 'true', class: 'goods_form-fee-price-list', required: true}
 
               .goods_form-fee.clearfix
                 %h3.goods_form_fee-title 配送について
@@ -58,19 +67,19 @@
                     %h2.label 配送料の負担
                     %span.must_check 必須
                     %br
-                    = f.select :fee, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-price-list', required: true}
+                    = f.select :fee_payer, [["送料込み(出品者負担)", "出品者負担"],["着払い(購入者負担)", "購入者負担"]], { include_blank: "選択して下さい"}, { autofocus: 'true', class: 'goods_form-fee-price-list', required: true}
                   %br
                   .goods_form-fee-adress
                     %h2.label 発送元の地域
                     %span.must_check 必須
                     %br
-                    = f.select :adress, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-adress-list', required: true}
+                    = f.select :city, [["北海道","北海道"],["青森県","青森県"],["岩手県","岩手県"],["宮城県","宮城県"],["秋田県","秋田県"],["山形県","山形県"],["福島県","福島県"],["宮城県","宮城県"],["栃木県","栃木県"],["群馬県","群馬県"],["埼玉県","埼玉県"],["千葉県","千葉県"],["東京都","東京都"],["神奈川県","神奈川県"],["新潟県","新潟県"],["富山県","富山県"],["石川県","石川県"],["福井県","福井県"],["山梨県","山梨県"],["長野県","長野県"],["岐阜県","岐阜県"],["静岡県","静岡県"],["愛知県","愛知県"],["三重県","三重県"],["滋賀県","滋賀県"],["京都府","京都府"],["大阪府","大阪府"],["兵庫県","兵庫県"],["奈良県","奈良県"],["和歌山県","和歌山県"],["鳥取県","鳥取県"],["島根県","島根県"],["岡山県","岡山県"],["広島県","広島県"],["山口県","山口県"],["徳島県","徳島県"],["香川県","香川県"],["愛媛県","愛媛県"],["高知県","高知県"],["福岡県","福岡県"],["佐賀県","佐賀県"],["長崎県","長崎県"],["熊本県","熊本県"],["大分県","大分県"],["宮崎県","宮崎県"],["鹿児島県","鹿児島県"],["沖縄県","沖縄県"],["未定","未定"]], { include_blank: "選択して下さい"}, { autofocus: 'true', class: 'goods_form-fee-price-list', required: true}
                   %br
                   .goods_form-fee-blank
                     %h2.label 発送までの日数
                     %span.must_check 必須
                     %br
-                    = f.select :blank, options_for_select(1..200), {}, { autofocus: 'true', class: 'goods_form-fee-blank-list', required: true}
+                    = f.select :delivery, [["1~2日で発送","1~2日で発送"],["2~3日で発送","2~3日で発送"],["4~7日で発送","4~7日で発送"]], { include_blank: "選択して下さい"}, { autofocus: 'true', class: 'goods_form-fee-price-list', required: true}
 
               .goods_form-price.clearfix
                 %h3.goods_form-price-number 販売価格(300~9,999,999)
@@ -84,16 +93,6 @@
                       ¥
                       .goods_form-price-list-list1-input-box
                         =f.text_field :price, placeholder:"例) 300",class:"goods_form-price-list-list1-input-box-field",required: true;
-                  -# %li.goods_form-price-list-list2
-                  -#   .goods_form-price-list-list2-title
-                  -#     販売手数料(10%)
-                  -#     %span.goods_form-price-list-list2-default
-                  -#       ー
-                  -# %li.goods_form-price-list-list3
-                  -#   .goods_form-price-list-list3-label 
-                  -#     販売利益
-                  -#     %span.goods_form-price-list-list3-default
-                  -#       ー
               .goods_form-send
                 .goods_form-send-term
                   %p
@@ -103,7 +102,7 @@
                   %p
                     また、出品をもちまして加盟店規約に同意したことになります。
 
-                =f.submit :contents,value:"出品する",class:"goods_form-send-redbtn"
+                =f.submit value:"出品する",class:"goods_form-send-redbtn"
                 %br
                 = link_to "戻る", root_path, class:'goods_form-send-graybtn'
     .footer
