@@ -12,10 +12,22 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    @image = @product.images.all
   end
 
   def buy
   end
+
+  def destroy
+    @product = Product.find(params[:id])
+    if @product.destroy
+      redirect_to root_path
+    else
+      render product_path(params[:id])
+    end
+  end
   
+  private
 end
 
