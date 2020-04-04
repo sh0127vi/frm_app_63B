@@ -10,10 +10,10 @@
   .goods__details--mains
     .goods__details--mains--images
       .active-image
-        = image_tag @image.first.images, class: "active-image"
+        = image_tag @image.first.images.url, class: "active-image"
       .each-images
         - @image.each do |img|
-          = image_tag img.images, class: "each-image"
+          = image_tag img.images.url, class: "each-image"
 
     .goods__details--mains--table
       %table{ border: "1", bordercolor: "#cccccc"}
@@ -39,9 +39,9 @@
           %td.left-data{height: "40px"} 配送の方法
           %td.right-data 郵便局
         %tr
-          %td.left-data{height: "40px"}  配送先地域
+          %td.left-data{height: "40px"}  配送元地域
           %td.right-data  
-            = @product.delivery_area
+            = @product.city
         %tr
           %td.left-data{height: "40px"}  発送日の目安
           %td.right-data 
