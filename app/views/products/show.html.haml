@@ -98,7 +98,7 @@
           = form.submit "コメントする", class: "submit-form"
       - else
         .comment__message
-          コメントにはログインが必要です
+          = link_to "ログインしてコメントをしてみましょう", user_session_path, class: "comment-link"
 
 = render "products/shared/footer"
 

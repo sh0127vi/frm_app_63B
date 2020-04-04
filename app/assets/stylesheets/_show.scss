@@ -209,7 +209,13 @@ body {
       } 
       .comment__message {
         font-size: 20px;
-        padding-top: 20px;
+        padding-top: 50px;
+        .comment-link {
+          background-color: #3ccace;
+          color: white;
+          padding: 20px 30px;
+          border-radius: 30px;
+        }
       }
     }
     
