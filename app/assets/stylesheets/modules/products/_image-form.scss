@@ -1,75 +1,65 @@
-.goods_form-image-field{
-  height: 300px;
-  width: 600px;
-  background-color: #f5f5f5;
+.goods_field{
+  height: 156px;
+  width: 100%;
   margin-top: 10px;
 
   &-box{
     width: 100%;
     height: 100%;
-    border: dotted 3px;
+    border: dotted 2px;
     border-color: rgb(204, 204, 204);
     box-sizing: border-box;
-    
     &-inner{
+      width: 100%;
       &-html{
-        font-size: 14px;
-        width: 594px;
-        height: 294px;
+        width: calc(100% - 1px);
+        height: 150px;
+        margin: auto;
         text-align: center;
         background-color: #f5f5f5;
         line-height:1;
         font-weight: bolder;
-    &-file{
-      display: none;
-      opacity: 0;
-      width: 100%;
-      height: 100%;
-    }
-    &-text{
+        flex:1 1 0%;
+        flex-wrap: wrap;
+    &_text{
       position: relative;
-      bottom: 163px;
+      bottom: 105px;
+      z-index: 0;
+    }
+    &-file{
+      cursor: pointer;
     }
   }
   }
   }
   }
 
-  #js_field_one{
+  #image{
+  &_0{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
     display: block;
     cursor: pointer;
-  }
-  
+  }};
 
-
-// .image_table{
-//   width: 100%;
-//   height: 100%;
-//   &-body{
-
-//   }
-//   &-line{
-
-//   }
-//   &-line1{
-//     border-bottom :dotted 3px;
-//     border-color: rgb(204, 204, 204);
-//   }
-//   &-line2{
-
-//   }
-// }
-
-// .right-border{
-//   border-right :dotted 3px;
-//   border-color : rgb(204, 204, 204);
-// }
-
-// .image_td{
-//   height: 50%;
-//   width: 20%;
-// }
-
-// .div-text{
-  
-// }
+ .margin_img{
+   width: 20%;
+   height: 150px;
+   padding-top:5px;
+   background-color: #fff;
+ }
+ .nest_img{
+   height: 100%;
+ }
+ .delete_btn{
+   width: 110px;
+   height: 33px;
+   line-height: 33px;
+   background-color: #f5f5f5;
+   color:#3ccace;
+   cursor: pointer;
+   margin: 0 auto;
+ }
