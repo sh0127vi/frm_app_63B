@@ -1,0 +1,58 @@
+.create {
+  &__frame {
+    width: 725px;
+    height: 300px;
+    margin-left: 500px;
+    margin-top: 30px;
+    background-color: #fff;
+
+    &__message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 80px;
+      padding-bottom: 50px;
+      font-size: 30px;
+
+    }
+
+    &__btns {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding:0 45px;
+      bottom: 10px;
+
+      .my_page_link {
+        width: 250px;
+        height: 50px;
+        margin-top: 15px;
+        background-color: #3CCACE;
+        display: flex;
+        align-items: center;
+        
+        &__btn {
+          text-decoration: none;
+          color: #fff;
+          font-size: 25px;
+          margin: auto; 
+        }
+      }
+      .credit_cards_index_link {
+        width: 250px;
+        height: 50px;
+        margin-top: 15px;
+        background-color: #3CCACE;
+        display: flex;
+        align-items: center;
+
+        &__btn {
+          text-decoration: none;
+          color: #fff;
+          font-size: 25px;
+          margin: auto; 
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,10 @@ class CreditCardsController < ApplicationController
     card = CreditCard.where(user_id: current_user.id)
     redirect_to action: "index" if card.exists?
   end
+
+  def show
+    render "create"
+  end
   
   def index
     card = current_user.credit_card

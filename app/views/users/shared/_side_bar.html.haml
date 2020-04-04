@@ -24,7 +24,7 @@
     %li.mysetting 設定
     %li.menu プロフィール
     %li.menu 発送元・お届け先住所変更
-    = link_to credit_cards_path(current_user.id, current_user.credit_card.customer_id, current_user.credit_card.card_id), class: "card-btn" do
+    = link_to credit_cards_path(current_user.id), class: "card-btn" do
       %li.menu 支払い方法
     = link_to new_credit_card_path, class: "card-btn" do
       %li.menu クレジットカードの登録
