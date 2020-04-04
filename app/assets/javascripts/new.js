@@ -98,11 +98,9 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
     var count = $('.img').length;
     var target_image = $(this).parent().parent();
     var imgId = target_image.attr("id");
-    console.log(imgId);
     $(`#image_${imgId}`).remove();
     target_image.remove();
     if(count==1){
-      console.log("aaaa");
       text_html = build_text();
       $('.goods_field-box-inner-html').css({'display':''});
       $('.goods_field-box-inner-html').append(text_html);
@@ -125,7 +123,6 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
     }else if(count<9){
       $("#js_html input:last").css({'width': `calc(100% - (20% * (${$('.img').length} - 5)))`});
     }else if(count==10){
-      console.log(file_tag);
       image_file.append(file_tag);
       $("#js_html input:last").css({'width': `calc(100% - (20% * (${$('.img').length} - 5)))`});
     }
