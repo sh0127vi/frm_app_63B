@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def index_all
+    @parents = Category.all.order("id ASC").limit(13)
     @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
   end
 
