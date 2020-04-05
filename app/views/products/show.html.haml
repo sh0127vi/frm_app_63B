@@ -28,7 +28,10 @@
         %tr
           %td.left-data{height: "40px"} ブランド
           %td.right-data
-            = @product.brand.name
+            - if @product.brand.present?
+              = @product.brand.name
+            - else
+              未登録
         %tr
           %td.left-data{height: "40px"}  商品の状態
           %td.right-data 
