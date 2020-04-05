@@ -46,7 +46,7 @@
                     %h2.label カテゴリー
                     %span.must_check 必須
                     .goods_form-detail-category-list
-                      = f.select :category_id, @category_parent_array, {prompt:"---"}, {class: 'listing-select-wrapper__box--select', id:  'parent_category', name: '', required: true}
+                      = f.select :category_id, @category_parent_array, {prompt:"---"}, {class: 'listing-select-wrapper__box--select', id:  'parent_category', name: ''}
                   %br
                   .goods_form-detail-bland
                     %h2.label ブランド

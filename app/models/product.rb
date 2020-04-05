@@ -1,10 +1,10 @@
 class Product < ApplicationRecord
   # アソシエーション
-  belongs_to :user, foreign_key: 'user_id'
-  belongs_to :category
-  belongs_to :brand, optional: true
-  has_one    :purchase
+  belongs_to :user
   has_many   :images,      dependent: :destroy
+  belongs_to :brand, optional: true
+  belongs_to :category
+  has_one    :purchase
   has_many   :comments
   has_many   :likes, dependent: :destroy
   has_many   :like_users, through: :likes, source: :user
@@ -22,4 +22,17 @@ class Product < ApplicationRecord
   def like_user(user_id)
     likes.find_by(user_id: user_id)
   end
+  # アソシエーション
+  
+
+  # バリデーション
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :detail, presence: true, length: { maximum: 1000 }
+  validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
+  validates :condition, presence: true
+  validates :city, presence: true          #city 配送元
+  validates :delivery, presence: true      #発送までの日数 stringに変更
+  validates :fee_payer, presence: true     #配送料の負担
+  
+
 end

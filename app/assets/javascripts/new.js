@@ -9,7 +9,7 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
   
     var html = `<div class="margin_img" id="${alt}">
                   <div class="nest_img">
-                    <img class="img" src="${src}" height="110" width="110">
+                    <img class="img" src="${src}" >
                       <div class = "delete_btn" >
                       削除
                       </div>

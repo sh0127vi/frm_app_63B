@@ -5,7 +5,8 @@
     %li.menu やることリスト
     %li.menu
       = link_to 'いいね！一覧', product_like_path(current_user, product_id: :id)
-    %li.menu 出品する
+    %li.menu 
+      = link_to '出品する', new_product_path
     %li.menu 出品した商品-出品中
     %li.menu 出品した商品-取引中
     %li.menu 出品した商品-売却済み

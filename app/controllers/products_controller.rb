@@ -10,15 +10,19 @@ class ProductsController < ApplicationController
   end
 
   def new 
-    @product=Product.new
-    @product.images.build
-    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    if user_signed_in?
+      @product=Product.new
+      @product.images.build
+      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    else
+      redirect_to user_session_path
+    end
   end
 
   def create
     @product = Product.new(product_params)
     @category_parent_array = Category.where(ancestry: nil).pluck(:name)
-    if @product.save!
+    if @product.save
       redirect_to root_path
     else
       render :new
