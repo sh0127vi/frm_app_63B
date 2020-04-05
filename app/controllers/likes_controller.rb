@@ -3,9 +3,11 @@ class LikesController < ApplicationController
   before_action :move_to_index
 
   def create
-    @like = Like.create(user_id: current_user.id, product_id: params[:product_id])
-    @likes = Like.where(product_id: params[:product_id])
-    @product.reload
+    if @like = Like.create(user_id: current_user.id, product_id: params[:product_id])
+       @likes = Like.where(product_id: params[:product_id])
+       @product.reload
+    else
+      flash[:notice] = "いいね！の登録に失敗しました"
   end
 
   def destroy
@@ -14,7 +16,7 @@ class LikesController < ApplicationController
        @likes = Like.where(product_id: params[:product_id])
        @product.reload
     else
-      flash[:notice] = "お気に入りの削除に失敗しました"
+      flash[:notice] = "いいね！の削除に失敗しました"
     end
   end
 
