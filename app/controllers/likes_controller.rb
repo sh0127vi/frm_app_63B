@@ -10,9 +10,12 @@ class LikesController < ApplicationController
 
   def destroy
     @like = Like.find_by(user_id: current_user.id, product_id: params[:product_id])
-    @like.destroy
-    @likes = Like.where(product_id: params[:product_id])
-    @product.reload
+    if @like.destroy
+       @likes = Like.where(product_id: params[:product_id])
+       @product.reload
+    else
+      flash[:notice] = "お気に入りの削除に失敗しました"
+    end
   end
 
   def show
