@@ -12,7 +12,6 @@ FactoryBot.define do
     city            {"a"}
     delivery        {"1"}
     fee_payer       {"1"}
-    delivery_area   {"a"}
     
   end
 end
