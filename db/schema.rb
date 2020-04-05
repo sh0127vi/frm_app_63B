@@ -91,8 +91,8 @@ ActiveRecord::Schema.define(version: 2020_04_04_090700) do
     t.string "city", null: false
     t.integer "delivery", null: false
     t.integer "fee_payer", null: false
-    t.integer "likes_count"
     t.bigint "brand_id"
+    t.integer "likes_count"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
