@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @parents = Category.all.order("id ASC").limit(13)
     @product = Product.find(params[:id])
     @image = @product.images.all
     @category = Category.find((@product).category_id)
