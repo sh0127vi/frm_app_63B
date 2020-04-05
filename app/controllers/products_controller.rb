@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
     if @product.save
       redirect_to root_path
     else
