@@ -24,7 +24,7 @@
                         .goods_field-box-inner-html#js_html
                           =i.file_field :images,multipart: true,class: "goods_field-box-inner-html-file",id:"image_0",accept: "image/*",data: {image:i.index}
                           .goods_field-box-inner-html_text
-                            %img{alt: "カメラ", src: "/assets/material/icon/icon_camera.png", width: "40"}
+                            = image_tag(image_path("material/icon/icon_camera.png"), width:"40")
                             %p クリックしてファイルをアップロード
 
 
