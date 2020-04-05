@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Product do
-  describe '商品出品' do
+  describe '#new' do
 
 
 # 商品名40文字まで
@@ -86,20 +86,6 @@ describe Product do
   end
 
 
-#  発送先の地域
-#   it "発送先の地域が空では登録できない " do
-#     product = build(:product, delivery_area: "")
-#     product.valid?
-#     expect(product.errors[:delivery_area]).to include("Delivery areaを入力してください")
-#   end
-
-#   it "発送先の地域が空でなければ登録できる " do
-#     product = build(:product, delivery_area: "a")
-#     product.valid?
-#     expect(product).to be_valid
-#   end
-
-
 # 発送までの日数
   it "発送までの日数が空では登録できない " do
     product = build(:product, delivery: "")
@@ -127,22 +113,16 @@ describe Product do
       expect(product).to be_valid
     end
 
-    it "価格が空では登録できない " do
-      product = build(:product, price: "")
+    it "価格が10000000以下であれば登録できる" do
+      product = build(:product, price: "9999999")
       product.valid?
-      expect(product.errors[:price]).to include("Priceを入力してください", "は数値で入力してください")
+      expect(product).to be_valid
     end
 
     it "価格が10000000以上であれば登録できない" do
       product = build(:product, price: "10000000")
       product.valid?
       expect(product.errors[:price]).to include("は9999999以下の値にしてください")
-    end
-
-    it "価格が10000000以下であれば登録できる" do
-      product = build(:product, price: "9999999")
-      product.valid?
-      expect(product).to be_valid
     end
 
   end

@@ -1,9 +1,9 @@
 FactoryBot.define do
 
   factory :product do
-    association :user
-    association :category
     
+    name {"a"}
+    detail {"a"}
     
     name            {"a"}
     detail          {"a"}
@@ -14,4 +14,5 @@ FactoryBot.define do
     fee_payer       {"1"}
     
   end
+
 end
