@@ -10,6 +10,7 @@ class Product < ApplicationRecord
   has_many   :like_users, through: :likes, source: :user
 
   accepts_nested_attributes_for :images, allow_destroy: true
+  
   def previous
     Product.where("id < ?", self.id).order("id DESC").first
   end

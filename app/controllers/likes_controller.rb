@@ -22,6 +22,7 @@ class LikesController < ApplicationController
   end
 
   def show
+    @parents = Category.all.order("id ASC").limit(13)
     @user = User.find(params[:id])
     @products = @user.products
     @like_products = @user.likes.order("created_at DESC").map{|like| like.product}
