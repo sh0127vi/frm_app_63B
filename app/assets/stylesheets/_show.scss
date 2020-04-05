@@ -28,6 +28,7 @@ body {
         height: 310px;
         width: 300px;
         margin-left: 10px;
+        object-fit: contain;
         .big-image {
           height: 310px;
           width:300px;
@@ -41,6 +42,7 @@ body {
         flex-wrap: wrap;
         margin-left: 20px;
         margin-top: 5px;
+        object-fit: contain;
         .each-image {
           height: 60px;
           width: 60px;
