@@ -3,7 +3,11 @@ class CommentsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     comment = Comment.create(comment_params)
-    redirect_to "/products/#{@product.id}"
+    if comment.save
+      redirect_to product_path(@product)
+    else
+      render js: "alert('コメントの送信に失敗しました');"
+    end
   end
 
   private
