@@ -8,6 +8,7 @@ class LikesController < ApplicationController
        @product.reload
     else
       flash[:notice] = "いいね！の登録に失敗しました"
+    end
   end
 
   def destroy
