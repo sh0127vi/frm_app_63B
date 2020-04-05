@@ -1,0 +1,21 @@
+- if user_signed_in?
+  - if product.like_user(current_user.id)
+    .like_label__unlike
+      = link_to product_like_path(product_id: product.id, id: product.likes[0].id), method: :delete, remote: true do
+        %i.fas.fa-star
+        %span いいね
+        %span
+          = product.likes_count
+  - else
+    .like_label__like
+      = link_to product_likes_path(product.id), method: :post, remote: true do
+        %i.far.fa-star
+        %span いいね
+        %span
+          = product.likes_count
+- else
+  .like_label__like
+    %i.far.fa-star
+    %span いいね
+    %span
+      = product.likes_count

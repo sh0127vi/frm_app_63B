@@ -18,11 +18,10 @@ Rails.application.routes.draw do
   end
 
 
-
   resources :products, only: [:new, :create, :index, :show, :destroy] do
-  resource :comments, only: [:new, :create, :index]
+    resources :likes, only: [:create, :destroy, :show]
+    resource :comments, only: [:new, :create, :index]
   resources :users
-
     collection do
       get "buy"
       get "index_Top_page"
