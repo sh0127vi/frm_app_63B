@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_29_070237) do
+ActiveRecord::Schema.define(version: 2020_04_04_090700) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "f_name_kana", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_03_29_070237) do
     t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,6 +70,15 @@ ActiveRecord::Schema.define(version: 2020_03_29_070237) do
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_likes_on_product_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -81,7 +91,9 @@ ActiveRecord::Schema.define(version: 2020_03_29_070237) do
     t.string "city", null: false
     t.integer "delivery", null: false
     t.integer "fee_payer", null: false
-    t.string "delivery_area", null: false
+    t.bigint "brand_id"
+    t.integer "likes_count"
+    t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -117,6 +129,9 @@ ActiveRecord::Schema.define(version: 2020_03_29_070237) do
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
   add_foreign_key "credit_cards", "users"
+  add_foreign_key "likes", "products"
+  add_foreign_key "likes", "users"
+  add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
   add_foreign_key "purchases", "products"

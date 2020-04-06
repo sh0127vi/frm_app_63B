@@ -9,9 +9,25 @@
           .submit-btn-icon
             = image_tag src='material/icon/icon-search1.png', alt: 'sending-btn', height: '100%', width: '100%'
     .header-bar__menu-bar
-      %ul.header-bar__menu-bar__left-side
-        %li.category-tab
-          = link_to "カテゴリー", "users", class: "menu-bar__category"
+
+      .header-bar__menu-bar__left-side
+        .header-bar__menu-bar__left-side__category-box
+          %li.list
+            = link_to '#' do
+              = icon('fas', 'fas fa-list-ul', class: 'icon')
+              ="カテゴリーから探す"
+            %ul.category1
+              - @parents.each do |parent|
+                %li.parent__list
+                  = link_to parent.name
+                  %ul.category2
+                    - parent.children.each do |child|
+                      %li.child__list
+                        =link_to child.name
+                        %ul.category3
+                          - child.children.each do |grandchild|
+                            %li.grandchild__list
+                              = link_to grandchild.name
         %li.brand-tab
           = link_to "ブランド", "", class: "menu-bar__brand"
       - if user_signed_in?
@@ -26,4 +42,5 @@
             = link_to "ログイン", user_session_path, class: "menu-bar__log-in"
           %li.new-member-registraion-tab
             = link_to "新規会員登録", new_user_registration_path, class: "menu-bar__new"
+          
           

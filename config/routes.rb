@@ -17,14 +17,18 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: [:new, :index, :show, :destroy] do
-    resource :comments, only: :create
+
+  resources :products, only: [:new, :create, :index, :show, :destroy] do
+    resources :likes, only: [:create, :destroy, :show]
+    resource :comments, only: [:new, :create, :index]
+  resources :users
     collection do
       get "buy"
       get "index_Top_page"
       get "index_all"
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
 
   end
-  
 end

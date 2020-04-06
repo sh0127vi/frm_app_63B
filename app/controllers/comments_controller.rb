@@ -6,8 +6,7 @@ class CommentsController < ApplicationController
     if comment.save
       redirect_to product_path(@product), notice: 'コメントが送信されました'
     else
-      flash.now[:alert] = 'コメントを入力してください'
-      redirect_to product_path(@product)
+      redirect_to product_path(@product), alert: 'コメントを入力してください'
     end
   end
 

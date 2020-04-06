@@ -78,7 +78,7 @@ gem 'font-awesome-sass'
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'payjp'
 gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'recaptcha', require: "recaptcha/rails"
+gem 'payjp'

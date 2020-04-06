@@ -2,6 +2,8 @@
     display: flex;
     padding: 15px, 0, 0;
     margin: 0, auto;
+    background-color: white;
+    height: 110px;
 
     .header-bar {
       box-sizing: border-box;
@@ -14,9 +16,7 @@
         align-items: center;
         display: flex;
         padding-bottom: 10px;
-
         &__main-icon {
-
           .main-logo-icon {
           width: 140px;
           }
@@ -26,7 +26,6 @@
           display: flex;
           margin-left: 30px;
           text-align: left;
-
 
 
           .input-form {
@@ -46,27 +45,130 @@
       }
     
       .header-bar__menu-bar {
+        height: 40px;
+        width: 100%;
+        text-align: left;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 10px;
-        font-size: 14px;
-
-        &__left-side {
+        font-size: 13px;
+        a{
+          text-decoration: none;
+          color: darkslategrey;
+          font-weight: bold;
+          transition: 0.2s ;
+        }
+        a:hover{
+          color: #12acf6;
+        }
+        .left {
           display: flex;
-          justify-content: left; 
-          
-          .category-tab{
-            padding-right: 30px;
-
-            .menu-bar__category {
-              color: #000000;
-              text-decoration: none;
+          justify-content: left;
+          text-align: left; 
+        }
+        &__left-side{
+          display: flex;
+          justify-content: start;
+          &__category-box{
+            height: 100%;
+            width: 150px;
+            margin-left: 30px;
+            li.list {
+              position: relative;
+              list-style: none;
+                a{
+                  span{
+                  &:hover {
+                  color: #0095EE;
+                    }
+                  }
+                }
+                ul.category1{
+                  display: none;
+                  box-sizing: border-box;
+                  background-color: rgb(255, 255, 255);
+                  width: 210px;
+                  line-height: 50px;
+                  list-style: block;
+                  text-align: center;
+                  cursor: pointer;
+                  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+                  font-size: 11px;
+                  li.parent__list {
+                    &:hover {
+                    background-color: #ea352d;
+                    a {
+                      color: #fff;
+                      display: block;
+                    }
+                    }
+                    ul.category2{
+                      display: none;
+                      background-color: rgb(255, 255, 255);
+                      bottom: 0px;
+                      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+                      display: none;
+                      left: 210px;
+                      line-height: 30px;
+                      position: absolute;
+                      top: 40px;
+                      width: 210px;
+                      cursor: pointer;
+                      text-align: center;
+                      li.child__list {
+                        background-color: rgb(255, 255, 255);
+                        &:hover {
+                          background-color: #e6e6e6;
+                        }
+                        a{
+                          color:#000;
+                        }
+                        ul.category3{
+                          display: none;
+                          background-color: rgb(255, 255, 255);
+                          bottom: 0px;
+                          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+                          display: none;
+                          left: 210px;
+                          position: absolute;
+                          top: 0px;
+                          width: 270px;
+                          cursor: pointer;
+                          text-align: center;
+                          li.grandchild__list{
+                            background-color: rgb(255, 255, 255);
+                            a{
+                              color:#000;
+                            }
+                          }
+                          li{
+                            &:hover {
+                            background-color: #e6e6e6;
+                            a {
+                              color: #fff;
+                            }
+                            }
+                          }
+                        }
+                      }
+                      li{
+                        &:hover {
+                        background-color: #ea352d;
+                        a {
+                          color: #fff;
+                        }
+                        }
+                      }
+                    }
+                  }
+                }
+              
             }
-
-
           }
+        }
+      }
           .brand-tab{
             padding-right: 30px;
+            list-style: none;
 
             .menu-bar__brand {
               color: #000000;
@@ -95,9 +197,6 @@
               color: #000000;
               text-decoration: none;
             }
-
-          }
-        }
-      }
-    }
-  }
+            }
+           }
+         }

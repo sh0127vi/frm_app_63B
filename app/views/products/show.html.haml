@@ -10,10 +10,10 @@
   .goods__details--mains
     .goods__details--mains--images
       .active-image
-        = image_tag @image.first.images, class: "active-image"
+        = image_tag @image.first.images.url, class: "active-image"
       .each-images
         - @image.each do |img|
-          = image_tag img.images, class: "each-image"
+          = image_tag img.images.url, class: "each-image"
 
     .goods__details--mains--table
       %table{ border: "1", bordercolor: "#cccccc"}
@@ -27,7 +27,11 @@
             = @product.category.name
         %tr
           %td.left-data{height: "40px"} ブランド
-          %td.right-data ナイキ
+          %td.right-data
+            - if @product.brand.present?
+              = @product.brand.name
+            - else
+              未登録
         %tr
           %td.left-data{height: "40px"}  商品の状態
           %td.right-data 
@@ -39,9 +43,9 @@
           %td.left-data{height: "40px"} 配送の方法
           %td.right-data 郵便局
         %tr
-          %td.left-data{height: "40px"}  配送先地域
+          %td.left-data{height: "40px"}  配送元地域
           %td.right-data  
-            = @product.delivery_area
+            = @product.city
         %tr
           %td.left-data{height: "40px"}  発送日の目安
           %td.right-data 
@@ -66,7 +70,7 @@
     = @product.detail
   .goods__details--else
     %button.good-btn
-      いいね!　2
+      = render partial: 'likes/like', locals: {product: @product, likes: @likes}
     %button.report-btn
       不適切な商品の報告
     = link_to '#', class: "safety-rule" do

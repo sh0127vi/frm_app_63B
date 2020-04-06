@@ -11,8 +11,8 @@
             = image_tag "material/icon/icon_no_image.png", alt: "product-non-img", width: "200px", height: "200px"
       - else
         - if product.images.present?
-          = image_tag product.images.first.images, alt: "product-img", class: "product-img"
-        - else
+          = image_tag product.images.first.images.url, class: "product-img"
+        -else
           = image_tag "material/icon/icon_no_image.png", alt: "product-non-img", width: "200px", height: "200px"
           
     .detail
@@ -24,7 +24,13 @@
           .product__price__tax
             (税抜)
       .product__evaluation
-        .product__evaluation__star-img
-          %i.fas.fa-star
-        .product__evaluation__score
-          ０
+        - if product.like_user(current_user)
+          .product__evaluation__star-img
+            %i.fas.fa-star
+          .product__evaluation__score
+            = product.likes_count
+        - else
+          .product__evaluation__star-img
+            %i.far.fa-star
+          .product__evaluation__score
+            = product.likes_count
