@@ -82,3 +82,4 @@ gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'payjp'
+gem 'gretel'
