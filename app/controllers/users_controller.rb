@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  before_action :set_category
+
   def index
-    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def logout
@@ -23,6 +24,10 @@ class UsersController < ApplicationController
 
 
   private
+
+  def set_category
+    @parents = Category.all.order("id ASC").limit(13)
+  end
 
   def user_params
     params.require(:user).permit(:sign_up, keys: [
