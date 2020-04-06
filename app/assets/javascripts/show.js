@@ -13,4 +13,8 @@ $(function() {
     $(".each-image").css('opacity', '.4');
     $(this).css('opacity','10');
   });
+
+  $(function() {
+    setTimeout("$('.notifications').fadeOut('show')",2000)
+  })
 });

@@ -86,9 +86,23 @@
       = link_to "#{@product.next.name} ＞", @product.next ,class: "after-goods"
 
   .icon__area
-    = form_with model: @comment, class: "forms" do |form|
-      = form.text_area :body, class: "comment-form", size: "70x3", placeholder: "コメントを入力してください"
-      = form.submit "コメントする", class: "submit-form"
+    .messages
+      .message
+        - @comments.each do |c|
+          .message__name
+            = c.user.nickname
+          .message__text
+            = c.body
+            .message__text--date
+              = c.created_at.to_s(:datetime_jp)
+    .comment
+      - if current_user
+        = form_with model: [@product, @comment], local: true, class: "forms" do |form|
+          = form.text_area :body, class: "comment-form", size: "70x3", placeholder: "コメントを入力してください"
+          = form.submit "コメントする", class: "submit-form"
+      - else
+        .comment__message
+          = link_to "ログインしてコメントをしてみましょう", user_session_path, class: "comment-link"
 
 = render "products/shared/footer"
 

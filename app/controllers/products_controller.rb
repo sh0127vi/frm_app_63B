@@ -34,6 +34,9 @@ class ProductsController < ApplicationController
     @parents = Category.all.order("id ASC").limit(13)
     @product = Product.find(params[:id])
     @image = @product.images.all
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
+    @comment = @product.comments.build
     @category = Category.find((@product).category_id)
   end
 
