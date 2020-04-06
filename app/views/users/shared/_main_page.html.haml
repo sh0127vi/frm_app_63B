@@ -3,7 +3,8 @@
     = image_tag(image_path('material/icon/member_photo_noimage_thumb.png'), class: 'logo2')
   .myname
     %ul.name
-      %li aaaaaaa
+      %li 
+        = current_user.nickname
     %ul.evaluation
       %li 評価 0
       %li 出品数 0
