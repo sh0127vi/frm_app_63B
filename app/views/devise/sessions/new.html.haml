@@ -1,5 +1,7 @@
 .sign_up
   = render "header"
+  - breadcrumb :session_user
+  = breadcrumbs pretext: "",separator: " &rsaquo; "
   .main
     .login-form
       .login-form__upper

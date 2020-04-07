@@ -1,7 +1,7 @@
-// frm_appの商品詳細ページのマークアップ
 .top-page-header
   = render "products/shared/header"
-  
+  - breadcrumb :product_show
+  = breadcrumbs pretext: "",separator: " &rsaquo; "
 .goods__details
   .goods__details--title 
     = @product.name
@@ -24,7 +24,11 @@
         %tr  
           %td.left-data{height: "40"} カテゴリー
           %td.right-data 
-            = @product.category.name
+            = "#{@product.category.parent.parent.name}"
+            %br/
+            = ">#{@product.category.parent.name}"
+            %br/
+            = ">#{@product.category.name}"
         %tr
           %td.left-data{height: "40px"} ブランド
           %td.right-data
@@ -49,7 +53,7 @@
         %tr
           %td.left-data{height: "40px"}  発送日の目安
           %td.right-data 
-            = @product.delivery
+            = "#{@product.delivery}日"
 
   .goods__details--price
     %span 
@@ -64,7 +68,7 @@
         = link_to '出品の取り消し', product_path(@product.id), method: :delete, class: "btn2"
   - else
     .goods__details--buybtn
-      = link_to "購入画面にすすむ", 'buy', class: "btn"
+      = link_to "購入画面にすすむ", buy_products_path(@product), class: "btn"
       
   .goods__details--comment
     = @product.detail
