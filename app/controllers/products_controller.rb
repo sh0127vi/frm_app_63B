@@ -64,6 +64,11 @@ class ProductsController < ApplicationController
       render product_path(params[:id])
     end
   end
+
+  def search
+    @products = Product.search(params[:keyword])
+    @parents = Category.all.order("id ASC").limit(13)
+  end
   
   private
 
