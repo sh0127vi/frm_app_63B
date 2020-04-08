@@ -66,7 +66,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.search(params[:keyword])
+    @products = Product.search(params[:keyword]).order("created_at DESC").limit(25)
     @parents = Category.all.order("id ASC").limit(13)
   end
   
