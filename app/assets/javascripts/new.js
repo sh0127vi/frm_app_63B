@@ -70,9 +70,9 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
 
       if (count>4){
         image_file.css({'height':''});
-        image_file.css({'height':'300'});
+        image_file.css({'height':'292.046'});
         $('.goods_field-box').css({'height':''});
-        $('.goods_field-box').css({'height':'305'});
+        $('.goods_field-box').css({'height':'296.023'});
         $('.goods_form-image').css({'height':''});
         $('.goods_form-image').css({'height':'460'});
       }
@@ -106,7 +106,7 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
       $('.goods_field-box-inner-html').append(text_html);
       $("#js_html input:last").css({
         'width':'100%',
-        'height':'150px',
+        'height':'146.023px'
       });
     }else if (count<6){
       image_file.css({'height':''});
@@ -118,7 +118,7 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
     }else if(count==5){
       $("#js_html input:last").css({
         'width':'100%',
-        'height':'150px'
+        'height':'146.023px'
       });
     }else if(count<9){
       $("#js_html input:last").css({'width': `calc(100% - (20% * (${$('.img').length} - 5)))`});
