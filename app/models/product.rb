@@ -22,9 +22,12 @@ class Product < ApplicationRecord
   def like_user(user_id)
     likes.find_by(user_id: user_id)
   end
-  # アソシエーション
-  
 
+  def self.search(search)
+    return Product.all unless search
+    Product.where('name LIKE(?)', "%#{search}%")
+  end
+  
   # バリデーション
   validates :name, presence: true, length: { maximum: 40 }
   validates :detail, presence: true, length: { maximum: 1000 }

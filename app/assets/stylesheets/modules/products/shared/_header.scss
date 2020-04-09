@@ -22,23 +22,29 @@
           }
         }
         &__search-word-input-form {
+          height: 36px;
           width: 100%;
           display: flex;
           margin-left: 30px;
           text-align: left;
-
 
           .input-form {
             display: flex;
             width: 100%;
           }
           .submit-btn {
-            background-color: #3CCACE;
             box-sizing: border-box;
             height: 36px;
             width: 36px;
+            background-color: transparent;
+            position: relative;
+            z-index: 1;
+            font-size: 0px;
             .submit-btn-icon {
               width: 100%;
+              position: absolute;
+              left: 0;
+              background-color: #3CCACE;
             }
           }
         }
