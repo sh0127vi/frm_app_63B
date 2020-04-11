@@ -27,9 +27,11 @@ Rails.application.routes.draw do
       get 'search'
     end
 
-    member do
-      get "buy"
-      post "pay"
+    resource :purchases do
+      member do
+        get "buy"
+        post "pay"
+      end
     end
   end
 
