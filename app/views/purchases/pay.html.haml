@@ -1,9 +1,4 @@
-.products_buy
-  .header
-    = render partial:"products/shared/header"
-  .main_contents
-    .main_details
-      .verification
-        購入が完了しました。
-  .footer
-    = render partial:"devise/footer"
+= render "products/shared/header"
+= render "purchases/pay/pay"
+.footer
+  = render "devise/footer"

@@ -58,9 +58,10 @@
               padding-right: 60px;
               vertical-align: middle;
               display: inline;
+              font-weight: bold;
 
               .number {
-                font-size: 25px;
+                font-size: 20px;
                 text-align: center;
                 line-height: 50px;
                 display: inline;
@@ -75,7 +76,7 @@
                   padding: 10px;
                 }
                 &__info {
-                  font-size: 22px;
+                  font-size: 20px;
                   padding: 10px;
 
                 }

@@ -1,5 +1,5 @@
 
-.products_buy {
+.buy {
   background-color: #f5f5f5;
   margin: unset;
   .header {
@@ -23,25 +23,33 @@
     margin-top: 100px;
     .verification {
       text-align: center;
-      padding-top: 20px;
+      padding:20px 0;
       font-size: 20px;
       font-weight: bold;
     }
     .product_details {
       height: 150px;
+      width: 400px;
+      margin: 0 auto;
+      border: solid #3CCACE 1px;
+      border-radius: 20px;
+      padding: 0 20px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+
       .main {
         display: flex;
         align-items: center;
-        padding-left: 140px;
-        height: 150px;
+        justify-content: center;
         background-color: #fff;
         .image {
+          margin-right: 30px;
           .product {
             width: 100px;
           }
         }
         .details {
-          margin-left: 30px;
+          font-size: 20px;
         }
       }
     }
@@ -50,20 +58,26 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        font-weight: bold;
         width: 700px;
         background-color: #fff;
         height: 100px;
         .payment {
-          font-size: 18px;
+          font-size: 25px;
         }
         .amount {
-          font-size: 25px;
+          font-size: 30px;
+          font-weight: bold;
         }
       }
       .purchase_function {
-        .credit_card_info_title {
 
+        .credit_card_info_title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          font-size: 20px;
+          
           .credit_card_info {
             display: flex;
             align-items: center;
@@ -92,7 +106,7 @@
               display: inline;
 
               .number {
-                font-size: 25px;
+                font-size: 20px;
                 text-align: center;
                 line-height: 50px;
                 display: inline;
@@ -107,7 +121,7 @@
                   padding: 10px;
                 }
                 &__info {
-                  font-size: 22px;
+                  font-size: 20px;
                   padding: 10px;
 
                 }
@@ -122,16 +136,35 @@
           align-items: center;
           justify-content: center;
           .btn {
-            background-color: gray;
-            height: 45px;
-            width: 300px;
+            background-color: #3CCACE;
+            width: 380px;
+            height: 60px;
+            border-radius: 30px;
             color: #fff;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
           }
+        }
+      }
+      .purchase_none_btn {
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .btn {
+          background-color: #3CCACE;
+          width: 380px;
+          height: 60px;
+          border-radius: 30px;
+          color: #fff;
+          font-weight: bold;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
