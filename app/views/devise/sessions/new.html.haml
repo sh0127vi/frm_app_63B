@@ -22,8 +22,10 @@
           .login-form__lower-group
             = link_to new_user_password_path do
               = 'パスワードをお忘れの方'
-          .login-form__sns
-            = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
-            = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
+          .form__lower-sns
+            .login-box-facebook
+              = button_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, class: 'btn btn-facebook', method: :post
+            .login-box-google
+              = button_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, class: 'btn', method: :post
   .footer
     = render "footer"

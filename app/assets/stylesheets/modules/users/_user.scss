@@ -240,7 +240,7 @@
         }
       }
       &-sns {
-        .box-facebook {          
+        .register-box-facebook {          
           .btn {
             margin-top: 20px;
             width: 350px;
@@ -252,7 +252,7 @@
             border-radius: 2px;
           }
         }
-        .box-google {
+        .register-box-google {
           .btn {
             margin-top: 20px;
             width: 350px;
@@ -262,6 +262,28 @@
             color: #fff;
             text-decoration: none;
             border-radius: 2px;
+          }
+        }
+        .login-box-facebook {          
+          .btn {
+            margin-top: 20px;
+            width: 330px;
+            height: 45px;
+            font-size: 17px;
+            background-color: #3CCACE;
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+        .login-box-google {
+          .btn {
+            margin-top: 20px;
+            width: 330px;
+            height: 45px;
+            font-size: 17px;
+            background-color: #3CCACE;
+            color: #fff;
+            text-decoration: none;
           }
         }
       }
