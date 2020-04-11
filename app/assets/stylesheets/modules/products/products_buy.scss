@@ -61,21 +61,77 @@
           font-size: 25px;
         }
       }
-      .purchase_btn {
-        height: 110px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .btn {
-          background-color: gray;
-          height: 45px;
-          width: 300px;
-          color: #fff;
-          font-weight: bold;
-          font-size: 15px;
+      .purchase_function {
+        .credit_card_info_title {
+
+          .credit_card_info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            width: 385px;
+            border: solid #3CCACE 1px;
+            border-radius: 20px;
+            margin: 0 20px;
+            padding: 0 20px;
+
+            &__brand {
+              padding-right: 20px;
+              height: 100px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              &__img {
+                height: 50px;
+              }
+            }
+            &__numbers {
+              height: 100px;
+              padding-right: 60px;
+              vertical-align: middle;
+              display: inline;
+
+              .number {
+                font-size: 25px;
+                text-align: center;
+                line-height: 50px;
+                display: inline;
+                vertical-align: middle;
+              }
+              .expiration_date {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                &__title {
+                  font-size: 20px;
+                  padding: 10px;
+                }
+                &__info {
+                  font-size: 22px;
+                  padding: 10px;
+
+                }
+              }
+            }
+          }
+        }
+
+        &__btn {
+          height: 110px;
           display: flex;
           align-items: center;
           justify-content: center;
+          .btn {
+            background-color: gray;
+            height: 45px;
+            width: 300px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
         }
       }
     }

@@ -31,8 +31,8 @@ crumb :like do
   parent :mypage
 end
 
-crumb :card do
-  link "カード情報", card_users_path
+crumb :card_new do
+  link "クレジットカード登録", new_credit_card_path
   parent :mypage
 end
 
@@ -41,8 +41,8 @@ crumb :logout do
   parent :mypage
 end
 
-# 4番目
-crumb :card_add do
-  link "カード登録", card_add_users_path
-  parent :card
+# 3番目に修正
+crumb :card_show do
+  link "クレジットカード情報", credit_card_path
+  parent :mypage
 end

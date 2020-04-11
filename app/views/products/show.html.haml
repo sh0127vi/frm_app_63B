@@ -68,7 +68,7 @@
         = link_to '出品の取り消し', product_path(@product.id), method: :delete, class: "btn2"
   - else
     .goods__details--buybtn
-      = link_to "購入画面にすすむ", buy_products_path(@product), class: "btn"
+      = link_to "購入画面にすすむ", buy_product_path, class: "btn"
       
   .goods__details--comment
     = @product.detail

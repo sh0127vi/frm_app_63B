@@ -1,11 +1,10 @@
 .upper_content {
   .show {
-
     &__frame { 
     width: 750px;
     height: 300px;
     margin-left: 500px;
-    margin-top: 30px;
+    margin-top: 45px;
     background-color: #fff;
     position: relative;
 
@@ -38,6 +37,7 @@
             align-items: center;
             justify-content: center;
             height: 100px;
+            width: 385px;
             border: solid #3CCACE 1px;
             border-radius: 20px;
             margin: 0 20px;

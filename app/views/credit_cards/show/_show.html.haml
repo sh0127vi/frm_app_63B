@@ -6,17 +6,7 @@
       .credit_card__list__title
         クレジットカード一覧
       .credit_card__list__frame
-        .credit_card_info
-          .credit_card_info__brand
-            = image_tag "cards/#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
-          .credit_card_info__numbers
-            .number
-              = "**** **** **** " + @customer_card.last4
-            .expiration_date
-              .expiration_date__title
-                有効期限
-              .expiration_date__info
-                = @exp_month + " / " + @exp_year
+        = render "credit_cards/shared/credit_card_info"
         .destroy__function
           .destroy__function__link
             = link_to credit_card_path, method: :delete, class: "destroy__function__link__btn" do 

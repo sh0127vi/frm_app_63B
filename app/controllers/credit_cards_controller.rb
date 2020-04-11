@@ -3,6 +3,7 @@ class CreditCardsController < ApplicationController
   require "payjp"
 
   before_action :find_current_user_credit_card, only:[:new, :show, :destroy]
+  before_action :category_set
 
   def new
     card = CreditCard.where(user_id: current_user.id)
@@ -85,5 +86,8 @@ class CreditCardsController < ApplicationController
     @card = CreditCard.find_by(user_id: current_user.id)
   end
 
+  def category_set
+    @parents = Category.all.order("id ASC").limit(13)
+  end
 
 end
