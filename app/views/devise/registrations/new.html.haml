@@ -18,7 +18,7 @@
             = f.label :メールアドレス
             %span.form__lower-group--require
               必須
-            = f.email_field :email, autofocus: true, autocomplete: true, placeholder: "どちらでも可", class: "input input-text form__lower-group-address"
+            = f.email_field :email, autofocus: true, autocomplete: true, placeholder: "PC・携帯どちらでも可", class: "input input-text form__lower-group-address"
           .form__lower-group
             - if @sns_id.present?
               = hidden_field_tag :sns_auth, true
