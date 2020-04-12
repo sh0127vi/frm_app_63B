@@ -240,28 +240,34 @@
         }
       }
       &-sns {
-        .box-facebook {          
+        .box-facebook {
+          margin-top: 20px;
+          width: 350px;
+          height: 45px;
+          background-color: #3CCACE;
+          border-radius: 2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           .btn {
-            margin-top: 20px;
-            width: 350px;
-            height: 45px;
             font-size: 17px;
-            background-color: #3CCACE;
             color: #fff;
             text-decoration: none;
-            border-radius: 2px;
           }
         }
         .box-google {
+          margin-top: 20px;
+          width: 350px;
+          height: 45px;
+          background-color: #3CCACE;
+          border-radius: 2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           .btn {
-            margin-top: 20px;
-            width: 350px;
-            height: 45px;
             font-size: 17px;
-            background-color: #3CCACE;
             color: #fff;
             text-decoration: none;
-            border-radius: 2px;
           }
         }
       }
@@ -376,24 +382,32 @@
         font-size: 14px;
       }
       &-sns {
-        .box-facebook {          
+        .box-facebook {    
+          margin-top: 20px;
+          width: 350px;
+          height: 45px;
+          background-color: #3CCACE;
+          border-radius: 2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;      
           .btn {
-            margin-top: 20px;
-            width: 330px;
-            height: 45px;
             font-size: 17px;
-            background-color: #3CCACE;
             color: #fff;
             text-decoration: none;
           }
         }
         .box-google {
+          margin-top: 20px;
+          width: 350px;
+          height: 45px;
+          background-color: #3CCACE;
+          border-radius: 2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           .btn {
-            margin-top: 20px;
-            width: 330px;
-            height: 45px;
             font-size: 17px;
-            background-color: #3CCACE;
             color: #fff;
             text-decoration: none;
           }
