@@ -24,8 +24,11 @@ class LikesController < ApplicationController
   def show
     @parents = Category.all.order("id ASC").limit(13)
     @user = User.find(params[:id])
-    @products = @user.products
-    @like_products = @user.likes.order("created_at DESC").map{|like| like.product}
+    if current_user.id == @user.id
+      @like_products = @user.likes.order("created_at DESC").map{|like| like.product}
+    else
+      redirect_to root_path
+    end
   end
 
   private
