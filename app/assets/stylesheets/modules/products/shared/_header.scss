@@ -81,6 +81,7 @@
             li.list {
               position: relative;
               list-style: none;
+              z-index: 1;
                 a{
                   span{
                   &:hover {
