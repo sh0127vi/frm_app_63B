@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
     resource :purchases do
       member do
-        get "buy"
+        get  "buy"
         post "pay"
       end
     end
