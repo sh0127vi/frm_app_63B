@@ -54,13 +54,23 @@
       }
     }
     .purchase_registration {
+      .purchase_registration_main::after {
+        content: "";
+        width: 500px;
+        height: 3px;
+        background-color: black;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 25px;
+      }
       .purchase_registration_main {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         width: 700px;
-        background-color: #fff;
         height: 100px;
+        position: relative;
         .payment {
           font-size: 25px;
         }
@@ -69,8 +79,9 @@
           font-weight: bold;
         }
       }
-      .purchase_function {
 
+      .purchase_function {
+        margin-top: 40px;
         .credit_card_info_title {
           display: flex;
           align-items: center;
@@ -83,10 +94,10 @@
             align-items: center;
             justify-content: center;
             height: 100px;
-            width: 385px;
+            width: 350px;
             border: solid #3CCACE 1px;
             border-radius: 20px;
-            margin: 0 20px;
+            margin: 0 10px;
             padding: 0 20px;
 
             &__brand {
@@ -101,7 +112,7 @@
             }
             &__numbers {
               height: 100px;
-              padding-right: 60px;
+              padding-right: 20px;
               vertical-align: middle;
               display: inline;
 
