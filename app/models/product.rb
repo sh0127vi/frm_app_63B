@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   belongs_to :brand, optional: true
   belongs_to :category
   has_one    :purchase
-  has_many   :comments
+  has_many   :comments, dependent: :destroy
   has_many   :likes, dependent: :destroy
   has_many   :like_users, through: :likes, source: :user
 

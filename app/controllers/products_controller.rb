@@ -1,12 +1,12 @@
 class ProductsController < ApplicationController
+  before_action :parents_category, only: [:index_Top_page, :index_all, :show, :search]
+  before_action :set_product, only: [:show, :destroy]
 
   def index_Top_page
     @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
-    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def index_all
-    @parents = Category.all.order("id ASC").limit(13)
     @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
   end
 
@@ -31,9 +31,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @parents = Category.all.order("id ASC").limit(13)
-    @product = Product.find(params[:id])
+    # 商品詳細に関するコントローラー
     @image = @product.images.all
+    # コメントに関するコントローラー
     @comment = Comment.new
     @comments = @product.comments.includes(:user)
     @comment = @product.comments.build
@@ -57,7 +57,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     if @product.destroy
       redirect_to root_path
     else
@@ -67,12 +66,20 @@ class ProductsController < ApplicationController
 
   def search
     @products = Product.search(params[:keyword]).order("created_at DESC").limit(25)
-    @parents = Category.order("id ASC").limit(13)
   end
   
-  private
 
+  private
   def product_params
     params.require(:product).permit( :name, :detail, :price, :category_id, :brand_id, :condition, :city, :fee_payer, :delivery, images_attributes: [:images]).merge(user_id: current_user.id)
   end
+
+  def parents_category
+    @parents = Category.order("id ASC").limit(13)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
 end

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end  
 
-  resources :users do
+  resources :users, only: [:index, :edit, :update] do
     collection do
       get "logout", to: "users#logout"
       get "card", to: "users#card" 
@@ -17,11 +17,9 @@ Rails.application.routes.draw do
     end
   end
 
-
-  resources :products, only: [:new, :create, :index, :show, :destroy] do
+  resources :products do
     resources :likes, only: [:create, :destroy, :show]
-    resource :comments, only: [:new, :create, :index]
-  resources :users
+    resource :comments, only: :create
     collection do
       get "buy"
       get "index_Top_page"
@@ -30,6 +28,6 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'search'
     end
-
   end
+
 end

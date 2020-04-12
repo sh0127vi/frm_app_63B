@@ -13,9 +13,6 @@ class UsersController < ApplicationController
   def card_add
   end
 
-  def create
-  end
-
   def edit
   end
 
