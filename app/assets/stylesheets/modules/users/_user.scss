@@ -240,7 +240,7 @@
         }
       }
       &-sns {
-        .register-box-facebook {          
+        .box-facebook {          
           .btn {
             margin-top: 20px;
             width: 350px;
@@ -249,36 +249,12 @@
             background-color: #3CCACE;
             color: #fff;
             text-decoration: none;
-            border-radius: 2px;
           }
         }
-        .register-box-google {
+        .box-google {
           .btn {
             margin-top: 20px;
             width: 350px;
-            height: 45px;
-            font-size: 17px;
-            background-color: #3CCACE;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 2px;
-          }
-        }
-        .login-box-facebook {          
-          .btn {
-            margin-top: 20px;
-            width: 330px;
-            height: 45px;
-            font-size: 17px;
-            background-color: #3CCACE;
-            color: #fff;
-            text-decoration: none;
-          }
-        }
-        .login-box-google {
-          .btn {
-            margin-top: 20px;
-            width: 330px;
             height: 45px;
             font-size: 17px;
             background-color: #3CCACE;
@@ -396,6 +372,30 @@
       a {
         text-decoration: none;
         font-size: 14px;
+      }
+      &-sns {
+        .box-facebook {          
+          .btn {
+            margin-top: 20px;
+            width: 330px;
+            height: 45px;
+            font-size: 17px;
+            background-color: #3CCACE;
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+        .box-google {
+          .btn {
+            margin-top: 20px;
+            width: 330px;
+            height: 45px;
+            font-size: 17px;
+            background-color: #3CCACE;
+            color: #fff;
+            text-decoration: none;
+          }
+        }
       }
     }
   }
