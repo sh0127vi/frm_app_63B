@@ -77,10 +77,5 @@
                 = '利用規約'
               %p
                 に同意したものとみなします
-            .form__lower-sns
-              .box-facebook
-                = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, class: 'btn', method: :post
-              .box-google
-                = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, class: 'btn', method: :post
   .footer
     = render "footer"
