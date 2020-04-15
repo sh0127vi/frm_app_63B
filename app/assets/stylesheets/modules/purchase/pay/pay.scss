@@ -9,7 +9,7 @@
     padding: 20px;
 
     .main_details {
-      .main_details__message {
+      &__message {
         display: flex;
         align-items: center;
         justify-content: center;

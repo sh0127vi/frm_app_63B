@@ -16,10 +16,10 @@
       = image_tag(image_path('cards/discover.gif'), class: 'discover')
       
     .expirationdate
-      .expirationdate-details
+      .expirationdate__details
         .date 有効期限
         %span.must_check 必須
-      .expirationdate-choice
+      .expirationdate__choice
         .month
           %select#payment_card_month.card-default{name: "payment_card_month", type: "text"}
             %option{value: "1"} 01
@@ -51,11 +51,11 @@
           .year-details 年
         
     .securitycode
-      .securitycode-details
-        .securitycode-details-title セキュリティコード
+      .securitycode__details
+        .securitycode-details__title セキュリティコード
         %span.must_check 必須
-      .securitycode-cardsecurity
-        = text_field_tag  "payment_card_cvc", "", type: 'text', class: 'cardsecurity', id: "payment_card_cvc", maxlength: "4", placeholder: 'カード背面4桁もしくは3桁の番号'
+      .securitycode__cardsecurity
+        = text_field_tag  "payment_card_cvc", "", type: 'text', class: 'securitycode__cardsecurity__form', id: "payment_card_cvc", maxlength: "4", placeholder: 'カード背面4桁もしくは3桁の番号'
       .card-question カード裏面の番号とは？
     .add 
-      = submit_tag "登録する", class: "add-btn", id: "payment_card_submit-button"
+      = submit_tag "登録する", class: "add__btn", id: "payment_card_submit-button"

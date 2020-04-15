@@ -74,7 +74,7 @@
         }
       }
       .expirationdate {
-        .expirationdate-details {
+        &__details {
           display: flex;
           margin-left: 207px;
           margin-top: 25px;
@@ -95,7 +95,7 @@
             margin-left: 10px;
           }
         }
-        .expirationdate-choice {
+        &__choice {
           margin-top: 8px;
           margin-left: 207px;
           display: flex;
@@ -126,7 +126,7 @@
               height: 40px;
               width: 120px;
             }
-            .year-details {
+            &-details {
               margin: 0px 10px 0px 10px;
               font-size: 15px;
             }
@@ -134,12 +134,12 @@
         }
       }
       .securitycode {
-        .securitycode-details {
+        &__details {
           display: flex;
           align-items: center;
           margin-left: 207px;
           margin-top: 25px;
-          .securitycode-details-title {
+          &__title {
             font-weight: bold;
             font-size: 14px;
           }
@@ -156,10 +156,10 @@
             margin-left: 10px;
           }
         }
-        .securitycode-cardsecurity {
+        &__cardsecurity {
           margin-left: 207px;
           margin-top: 5px;
-          .cardsecurity {
+          &__form {
             border-radius: 5px;
             border: 1px solid #ccc;
             padding-left: 10px;
@@ -179,7 +179,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      .add-btn {
+      &__btn {
         width: 280px;
         height: 60px;
         background-color: #3CCACE;
