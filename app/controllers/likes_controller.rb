@@ -24,11 +24,7 @@ class LikesController < ApplicationController
   def show
     @parents = Category.all.order("id ASC").limit(13)
     @user = User.find(params[:id])
-    if current_user.id == @user.id
-      @like_products = @user.likes.order("created_at DESC").map{|like| like.product}
-    else
-      redirect_to root_path
-    end
+    @like_products = @user.likes.order("created_at DESC").map{|like| like.product}
   end
 
   private
@@ -40,4 +36,5 @@ class LikesController < ApplicationController
   def move_to_index
     redirect_to root_path unless user_signed_in?
   end
+
 end
