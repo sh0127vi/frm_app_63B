@@ -1,0 +1,197 @@
+.upper_content {
+  .card_add {
+    width: 725px;
+    margin-left: 500px;
+    margin-top: 45px;
+    background-color: #fff;
+    padding: 30px 0;
+    .title {
+      padding-top: 10px;
+      font-weight: bold;
+      font-size: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .details {
+      .number-details {
+        display: flex;
+        margin-left: 207px;
+        margin-top: 30px;
+        .card-number {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .must_check {
+          background-color: #3CCACE;
+          color: #fff;
+          border-radius: 3px;
+          font-size: 13px;
+          width: 35px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 10px;
+        }
+      }
+      .number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5px;
+        .cardnumber {
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          padding-left: 10px;
+          height: 40px;
+          width: 300px;
+        }
+      }
+      .image {
+        margin-left: 207px;
+        margin-top: 5px;
+        .visa {
+          height: 25px;
+        }
+        .master {
+          height: 25px;
+        }
+        .saison {
+          height: 30px;
+        }
+        .jcb {
+          height: 25px;
+        }
+        .amex {
+          height: 25px;
+        }
+        .diners {
+          height: 25px;
+        }
+        .discover {
+          height: 25px;
+        }
+      }
+      .expirationdate {
+        &__details {
+          display: flex;
+          margin-left: 207px;
+          margin-top: 25px;
+          .date {
+            font-weight: bold;
+            font-size: 14px;
+          }
+          .must_check {
+            background-color: #3CCACE;
+            color: #fff;
+            border-radius: 3px;
+            font-size: 13px;
+            width: 35px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+          }
+        }
+        &__choice {
+          margin-top: 8px;
+          margin-left: 207px;
+          display: flex;
+          .month {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          .card-default {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 10px;
+            height: 40px;
+            width: 120px;
+            }
+          .month-details {
+            margin: 0px 10px 0px 10px;
+            font-size: 15px;
+            }
+          }
+          .year {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .card-default {
+              border-radius: 5px;
+              border: 1px solid #ccc;
+              padding-left: 10px;
+              height: 40px;
+              width: 120px;
+            }
+            &-details {
+              margin: 0px 10px 0px 10px;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+      .securitycode {
+        &__details {
+          display: flex;
+          align-items: center;
+          margin-left: 207px;
+          margin-top: 25px;
+          &__title {
+            font-weight: bold;
+            font-size: 14px;
+          }
+          .must_check {
+            background-color: #3CCACE;
+            color: #fff;
+            border-radius: 3px;
+            font-size: 13px;
+            width: 35px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+          }
+        }
+        &__cardsecurity {
+          margin-left: 207px;
+          margin-top: 5px;
+          &__form {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 10px;
+            height: 40px;
+            width: 300px;
+          }
+        }
+      }
+      .card-question { 
+        color: #ea352d;
+        font-size: 15px;
+        margin-left: 355px;
+        margin-top: 3px;
+      }
+    }
+    .add {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__btn {
+        width: 280px;
+        height: 60px;
+        background-color: #3CCACE;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        margin-top: 25px;
+        border-radius: 30px;
+        font-size: 20px;
+      }
+    }
+  }
+
+}

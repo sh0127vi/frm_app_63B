@@ -1,0 +1,11 @@
+.verification
+  購入内容の確認
+.product_details
+  .main
+    .image
+      = image_tag images.first.images.url, alt: product.name, class: "product"
+    .details
+      .title
+        = product.name
+      .money
+        = "#{product.price}" + "円"

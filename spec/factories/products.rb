@@ -2,8 +2,8 @@ FactoryBot.define do
 
   factory :product do
     
-    name {"a"}
-    detail {"a"}
+    #name {"a"}
+    #detail {"a"}
     
     name            {"a"}
     detail          {"a"}
@@ -12,6 +12,7 @@ FactoryBot.define do
     city            {"a"}
     delivery        {"1"}
     fee_payer       {"1"}
+
     
   end
 
