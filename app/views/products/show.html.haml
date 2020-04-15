@@ -57,7 +57,7 @@
 
   .goods__details--price
     %span 
-      = "¥#{@product.price}円" 
+      = "#{@product.price}円" 
     (税込)送料込み
 
   - if user_signed_in? && current_user.id == @product.user.id
