@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: "products#index_Top_page"
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -12,8 +13,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update] do
     collection do
       get "logout", to: "users#logout"
-      get "card", to: "users#card" 
-      get "card_add", to: "users#card_add" 
     end
   end
 
@@ -21,13 +20,22 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy, :show]
     resource :comments, only: :create
     collection do
-      get "buy"
       get "index_Top_page"
       get "index_all"
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'search'
     end
+
+    resource :purchases do
+      member do
+        get  "buy"
+        post "pay"
+      end
+    end
+  end
+
+  resources :credit_cards, only: [:new, :show, :create, :index, :destroy] do
   end
 
 end

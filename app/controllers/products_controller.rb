@@ -1,13 +1,12 @@
 class ProductsController < ApplicationController
   before_action :parents_category, only: [:index_Top_page, :index_all, :show, :search]
   before_action :set_product, only: [:show, :destroy]
+  before_action :set_products_all, only: [:index_all, :index_Top_page]
 
   def index_Top_page
-    @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
   end
 
   def index_all
-    @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
   end
 
   def new 
@@ -53,9 +52,6 @@ class ProductsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
-  def buy
-  end
-
   def destroy
     if @product.destroy
       redirect_to root_path
@@ -80,6 +76,10 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def set_products_all
+    @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
   end
 
 end
