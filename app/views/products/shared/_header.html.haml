@@ -4,10 +4,12 @@
       .header-bar__upper-side__main-icon
         = link_to image_tag('material/logo/logo.png', alt: "FURIMA-icon", class: 'main-logo-icon'), root_path, width: "140px"
       .header-bar__upper-side__search-word-input-form
-        %input.input-form{name: "search-word", placeholder: "キーワードから探す"}
-        %button.submit-btn{type: 'submit'}
-          .submit-btn-icon
-            = image_tag src='material/icon/icon-search1.png', alt: 'sending-btn', height: '100%', width: '100%'
+        = form_with(url: search_products_path, local: true, method: :get, class: "header-bar__upper-side__search-word-input-form") do |form|
+         = form.text_field :search, "", placeholder: "キーワードから探す", class: "input-form"
+          .submit-btn
+            = form.submit class: "submit-btn"
+            = image_tag src='material/icon/icon-search1.png', alt: 'sending-btn', height: '100%', width: '100%', class: "submit-btn-icon"
+
     .header-bar__menu-bar
 
       .header-bar__menu-bar__left-side

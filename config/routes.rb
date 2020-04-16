@@ -13,10 +13,9 @@ Rails.application.routes.draw do
     collection do
       get "logout", to: "users#logout"
       get "card", to: "users#card" 
-      get "card_add", to: "users#card_add" 
+      get "card_add", to: "users#card_add"
     end
   end
-
 
   resources :products, only: [:new, :create, :index, :show, :destroy] do
     resources :likes, only: [:create, :destroy, :show]
@@ -28,7 +27,10 @@ Rails.application.routes.draw do
       get "index_all"
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'search'
     end
-
+  end
+  namespace :products do
+    resources :searches, only: :index
   end
 end

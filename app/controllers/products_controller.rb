@@ -64,6 +64,11 @@ class ProductsController < ApplicationController
       render product_path(params[:id])
     end
   end
+
+  def search
+    @product = Product.search(params[:keyword])
+    @keyword = :keyword
+  end
   
   private
 
