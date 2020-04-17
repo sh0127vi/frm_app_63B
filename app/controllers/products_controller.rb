@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :destroy]
   before_action :set_products_all, only: [:index_all, :index_Top_page]
 
-  before_action :ensure_currect_user,{only: [:edit,:update,:destroy]}
+  before_action :ensure_currect_user,only: [:edit,:update,:destroy]
 
   def index_Top_page
   end
