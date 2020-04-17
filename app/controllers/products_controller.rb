@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
   before_action :parents_category, only: [:index_Top_page, :index_all, :show, :search]
   before_action :set_product, only: [:show, :destroy]
   before_action :set_products_all, only: [:index_all, :index_Top_page]
-
   before_action :ensure_currect_user,only: [:edit,:update,:destroy]
+
 
   def index_Top_page
   end
@@ -120,7 +120,7 @@ class ProductsController < ApplicationController
   def ensure_currect_user
     @product = Product.find_by(id: params[:id])
     if @product.user_id != current_user.id
-      redirect_to root_path
+       redirect_to root_path
     end
   end
 
