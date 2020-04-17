@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :products, only: [:new, :create, :index, :show, :destroy] do
+  resources :products, only: [:index, :show, :new, :edit, :destroy, :create, :update ] do
     resources :likes, only: [:create, :destroy, :show]
     resource :comments, only: [:new, :create, :index]
   resources :users
