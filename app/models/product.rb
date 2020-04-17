@@ -8,8 +8,9 @@ class Product < ApplicationRecord
   has_many   :comments, dependent: :destroy
   has_many   :likes, dependent: :destroy
   has_many   :like_users, through: :likes, source: :user
+  
 
-  accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :images, allow_destroy: true, reject_if: :all_blank
   
   def previous
     Product.where("id < ?", self.id).order("id DESC").first
@@ -29,6 +30,7 @@ class Product < ApplicationRecord
   end
   
   # バリデーション
+  validates :images, presence: true
   validates :name, presence: true, length: { maximum: 40 }
   validates :detail, presence: true, length: { maximum: 1000 }
   validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}

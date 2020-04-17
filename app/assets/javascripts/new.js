@@ -93,7 +93,6 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
 
   });
 
-  var file_field = document.querySelector('input[type=file]');
   $(document).on("click", '.delete_btn', function(){
     var count = $('.img').length;
     var target_image = $(this).parent().parent();
@@ -128,7 +127,15 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
     }
   })
 
+  $(document).on("click",'edit_btn',function(){
+    var target_image = $(this).parent().parent();
+    var target_url = target_image.attr('src');
+  })
+
   $(".goods_form-send-redbtn").on('click',function(){
+    last_input=$("#js_html input:last");
+    if(last_input.val()==""){
     $("#js_html input:last").remove();
+    }
   })
 });
