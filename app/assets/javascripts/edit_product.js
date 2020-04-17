@@ -80,7 +80,6 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
       file_reader.onload = (function () {
         return function (e) {
           var image = e.target.result
-          console.log(image);
           $('#preview_'+id).attr('src',image);
         }
       })(file);
@@ -142,7 +141,6 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
     var total_amount = $('.img').length;
     var target_index = $(this).data('id');
     var hiddenDestroy = $(`input[data-id="${target_index}"].hidden_destroy`);
-    console.log(hiddenDestroy);
     if(hiddenDestroy.length){ 
       hiddenDestroy.prop('checked', true);
       $('#margin_'+target_index).remove();
