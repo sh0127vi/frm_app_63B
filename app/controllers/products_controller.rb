@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :ensure_currect_user,{only: [:edit,:update,:destroy]}
+  before_action :ensure_currect_user,only: [:edit,:update,:destroy]
 
   def index_Top_page
     @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
