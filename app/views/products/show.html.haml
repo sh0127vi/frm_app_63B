@@ -49,7 +49,7 @@
         %tr
           %td.left-data{height: "40px"}  配送元地域
           %td.right-data  
-            = @product.city
+            = @product.prefecture.name
         %tr
           %td.left-data{height: "40px"}  発送日の目安
           %td.right-data 
@@ -63,7 +63,7 @@
   - if user_signed_in? && current_user.id == @product.user.id
     .goods__details--option
       .btn1
-        = link_to "商品の編集", "#", class: "btn1"
+        = link_to "商品の編集", edit_product_path(@product.id), class: "btn1"
       .btn2
         = link_to '出品の取り消し', product_path(@product.id), method: :delete, class: "btn2"
   - else

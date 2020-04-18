@@ -1,48 +1,35 @@
-.goods_field{
+.about{
   height: 156px;
   width: 100%;
   margin-top: 10px;
-
-  &-box{
+}
+.box{
     width: 100%;
     height: 150px;
     border: dotted 2px;
     border-color: rgb(204, 204, 204);
     box-sizing: border-box;
-    &-inner{
+}
+.inner{
       width: 100%;
-      &-html{
+}
+.field{
         height: 146.023px;
         text-align: center;
         background-color: #dcdcdc;
         line-height:1;
         font-weight: bolder;
+        display: flex;
         flex:1 1 0%;
         flex-wrap: wrap;
-        &_text{
-          position: relative;
-          bottom: 105px;
-          z-index: 0;
-        }
-        &-file{
-          cursor: pointer;
-          }
-        }
-      }
+    &_text{
+      position: relative;
+      bottom: 105px;
+      height: 60px;
+      margin: 0 auto;
+      z-index: 0;
     }
-  }
-
-#image{
-  &_0{
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 1;
-    display: block;
-    cursor: pointer;
-  }
-};
+}
 
 .margin_img{
   width: 20%;
@@ -62,12 +49,45 @@
 .edit_image_btn{
   display: flex;
 }
-.delete_btn{
-  width: 110px;
+.destroy_btn{
+  width: 58px;
   height: 29.023px;
   line-height: 29.023px;
   background-color: #f5f5f5;
   color:#3ccace;
   cursor: pointer;
   margin: 0 auto;
+  &-check{
+    display: none;
+  }
+  &-text{
+  }
+}
+.edit_btn{
+  width: 58px;
+  height: 29.023px;
+  line-height: 29.023px;
+  background-color: #f5f5f5;
+  color: #3ccace;
+  margin: 0 auto;
+  z-index: 0;
+}
+.image_edit{
+&-field{
+  width: 58px;
+  opacity: 0;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}&-text{
+  position: relative;
+  bottom: 29.02px;
+}
+}
+.edit_send-btn{
+  height: 50px;
+  width: 620px;
+  margin: 20px auto 0;
+  background-color: #3ccace;
+  color: #eee;
 }
