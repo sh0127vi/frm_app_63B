@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   has_many   :images,      dependent: :destroy
   belongs_to :brand, optional: true
   belongs_to :category
-  has_one    :purchase
+  has_one    :purchase, dependent: :destroy
   has_many   :comments, dependent: :destroy
   has_many   :likes, dependent: :destroy
   has_many   :like_users, through: :likes, source: :user
