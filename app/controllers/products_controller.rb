@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :parents_category, only: [:index_Top_page, :index_all, :show, :search]
-  before_action :set_product, only: [:show, :destroy]
+  before_action :set_product, only: [:show, :destroy,:edit,:update]
   before_action :set_products_all, only: [:index_all, :index_Top_page]
   before_action :ensure_currect_user,only: [:edit,:update,:destroy]
 
@@ -32,7 +32,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
     @category = Category.find((@product).category_id)
     grandchild_category = @product.category
     child_category = grandchild_category.parent
@@ -54,7 +53,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
     @category_parent_array = Category.where(ancestry: nil).pluck(:name)
     if @product.update(product_params)
       redirect_to root_path
