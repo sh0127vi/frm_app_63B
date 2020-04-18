@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_18_084130) do
+ActiveRecord::Schema.define(version: 2020_04_18_131811) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "f_name_kana", null: false
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 2020_04_18_084130) do
     t.string "fee_payer", null: false
     t.integer "likes_count"
     t.bigint "brand_id"
+    t.integer "prefecture_id"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
