@@ -8,6 +8,14 @@ crumb :new_user do
   link "新規登録", new_user_registration_path
 end
 
+crumb :edit_product do
+  link "商品編集", edit_product_path
+end
+
+crumb :buy_product do
+  link "商品購入", buy_product_purchases_path
+end
+
 crumb :session_user do
   link "ログイン", user_session_path
 end
