@@ -65,7 +65,7 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
   }
   function build_text(){
     var html=`<div class="edit_field_text">
-                <img src="/assets/material/icon/icon_camera.png" alt="カメラ" width="40">
+                <img width="40" src="/assets/material/icon/icon_camera-24c5a3dec3f777b383180b053077a49d0416a4137a1c541d7dd3f5ce93194dee.png">
                 <p>クリックしてファイルをアップロード</p>
               </div>`
     return html;
