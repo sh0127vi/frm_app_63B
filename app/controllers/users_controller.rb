@@ -7,16 +7,6 @@ class UsersController < ApplicationController
   def logout
   end
 
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-
   private
 
   def set_category
