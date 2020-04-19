@@ -55,7 +55,7 @@ Things you may want to cover:
 |category_id|references|null: false,foreign_key: true|
 |price|integer|null: false|
 |condition|string|null: false|
-|city|string|null: false|
+|prefecture_id|integer|null: false|
 |delivery|string|null: false|
 |fee_payer|string|null: false|
 |likes_count|integer||
