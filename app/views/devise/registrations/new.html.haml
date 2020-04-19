@@ -20,17 +20,19 @@
               必須
             = f.email_field :email, autofocus: true, autocomplete: true, placeholder: "PC・携帯どちらでも可", class: "input input-text form__lower-group-address"
           .form__lower-group
-            = f.label :パスワード
-            %span.form__lower-group--require
-              必須
-            = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "input input-text form__lower-group-password", minlength: "7"
-            %p
-              ※ 英字と数字の両方を含めて設定してください
-          .form__lower-group
-            = f.label :パスワード再入力
-            %span.form__lower-group--require
-              必須
-            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード再確認", class: "input input-text form__lower-group-password_confirmation"
+            - if @sns_id.present?
+              = hidden_field_tag :sns_auth, true
+            - else
+              .field
+                = f.label :パスワード
+                %span.form__lower-group--require
+                  必須
+                = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "input input-text form__lower-group-password", minlength: "7"
+              .field
+                = f.label :パスワード再入力
+                %span.form__lower-group--require
+                  必須
+                = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード再確認", class: "input input-text form__lower-group-password_confirmation"
           .form__lower-group
             %p.verification
               本人確認

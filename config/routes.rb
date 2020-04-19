@@ -2,12 +2,14 @@ Rails.application.routes.draw do
 
   root to: "products#index_Top_page"
   devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
+    get 'register_choice', to: 'users/registrations#register_choice'
   end  
 
   resources :users, only: :index do
