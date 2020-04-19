@@ -22,7 +22,7 @@
                 .about
                   .box
                     .inner
-                      .field#js_field
+                      .edit_field#js_field
                         - @product.images.each_with_index do |img, num|
                           =f.check_box :_destroy, class:"hidden_destroy destroy_btn-check",name:"product[images_attributes][#{num}][_destroy]", data:{id:num}
                           =f.hidden_field :id, value: img.id, name:"product[images_attributes][#{num}][id]"
