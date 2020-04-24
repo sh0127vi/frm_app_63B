@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :parents_category, only: [:index_Top_page, :index_all, :show, :search]
+  before_action :parents_category, only: [:index_Top_page, :index_all, :show, :search, :detail_search]
   before_action :set_product, only: [:show, :destroy,:edit,:update]
   before_action :set_products_all, only: [:index_all, :index_Top_page]
-  before_action :set_ransack
+  before_action :set_ransack 
   before_action :ensure_currect_user,only: [:edit,:update,:destroy]
 
   def index_Top_page
@@ -94,8 +94,12 @@ class ProductsController < ApplicationController
 
   def search
     @products = Product.search(params[:keyword]).order("created_at DESC").limit(25)
+  end
+
+  def detail_search
     @search = Product.ransack(params[:q]) 
     @products = @search.result
+    render action: :search
   end
 
   private
