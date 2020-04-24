@@ -1,6 +1,6 @@
 .sign_up
   = render partial:"devise/header" 
-  - breadcrumb :product_new
+  - breadcrumb :edit_product
   = breadcrumbs pretext: "",separator: " &rsaquo; " 
   %main.shipping_main
     %section.shipping_main-container
@@ -19,15 +19,22 @@
                   %span.must_check 必須
                 %br
                 %p.goods_form-image-text 最大１０枚までアップロードできます
-                .goods_field
-                  .goods_field-box
-                    .goods_field-box-inner
-                      =f.fields_for :images,@product.images.build do |i|
-                        .goods_field-box-inner-html#js_html
-                          =i.file_field :images,multipart: true,class: "goods_field-box-inner-html-file",id:"image_0",accept: "image/*",data: {image:i.index}
-                          .goods_field-box-inner-html_text
-                            = image_tag(image_path("material/icon/icon_camera.png"), width:"40")
-                            %p クリックしてファイルをアップロード
+                .about
+                  .box
+                    .inner
+                      .edit_field#js_field
+                        - @product.images.each_with_index do |img, num|
+                          =f.check_box :_destroy, class:"hidden_destroy destroy_btn-check",name:"product[images_attributes][#{num}][_destroy]", data:{id:num}
+                          =f.hidden_field :id, value: img.id, name:"product[images_attributes][#{num}][id]"
+                          .margin_img{id:"margin_#{num}"}
+                            .nest_img
+                              =image_tag img.images.url,class:"img img_edit",id:"preview_#{num}"
+                              .edit_image_btn
+                                .destroy_btn{data:{id:num}} 削除
+                                .edit_btn{id:"#{num}"}
+                                  =f.file_field :images,class: "image_edit-field",accept:"image/*",id:"image_#{num}",name:"product[images_attributes][#{num}][images]",data:{id:num}
+                                  =f.hidden_field :id, value: img.id, name:"product[images_attributes][#{num}][id]"
+                                  %p.image_edit-text 編集
 
 
               .goods_form-explain.clearfix
@@ -48,7 +55,11 @@
                     %h2.label カテゴリー
                     %span.must_check 必須
                     .goods_form-detail-category-list
-                      = f.select :category_id, @category_parent_array, {prompt:"---"}, {class: 'listing-select-wrapper__box--select', id:  'parent_category', name: ''}
+                      = f.select :parent_name, @category_parent_array, {selected:@product.category.parent.parent.name}, {class: 'listing-select-wrapper__box--select', id:  'parent_category', name: ''}
+                    .goods_form-detail-category-list#children_wrapper
+                      = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "---", selected: @product.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id:  'child_category', name: ''}
+                    .goods_form-detail-category-list#grandchildren_wrapper
+                      = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "---", selected: @product.category.id}),{},{class: 'listing-select-wrapper__box--select', id:  'grandchild_category', name: 'product[category_id]'}
                   %br
                   .goods_form-detail-bland
                     %h2.label ブランド
@@ -104,7 +115,7 @@
                   %p
                     また、出品をもちまして加盟店規約に同意したことになります。
 
-                =f.submit value:"出品する",class:"goods_form-send-redbtn"
+                =f.submit value:"完了する",class:"edit_send-btn"
                 %br
                 = link_to "戻る", root_path, class:'goods_form-send-graybtn'
     .footer

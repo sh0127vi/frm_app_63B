@@ -3,6 +3,7 @@
 class Users::SessionsController < Devise::SessionsController
   # prepend_before_action :configure_sign_in_params, only: [:create]
   prepend_before_action :check_captcha, only: [:create]
+  # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
   # def new
@@ -18,11 +19,15 @@ class Users::SessionsController < Devise::SessionsController
   # def destroy
   #   super
   # end
-
+  
   private
-  # def configure_sign_in_params
-  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password])
-  # end
+  # protected
+
+  # If you have extra params to permit, append them to the sanitizer.
+  def configure_sign_in_params
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
+  end
 
   def check_captcha
     unless verify_recaptcha

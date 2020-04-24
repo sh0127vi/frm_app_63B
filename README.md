@@ -55,15 +55,17 @@ Things you may want to cover:
 |category_id|references|null: false,foreign_key: true|
 |price|integer|null: false|
 |condition|string|null: false|
-|city|string|null: false|
-|delivery|integer|null: false|
-|fee_payer|integer|null: false|
-|delivery_area|string|null: false|
+|prefecture_id|integer|null: false|
+|delivery|string|null: false|
+|fee_payer|string|null: false|
+|likes_count|integer||
+|brand_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
 - has_many :images, dependent: :destroy
-- belongs_to :category, dependent: :destroy
+- belongs_to :category
+- belongs_tp :brand
 - has_many :likes, dependent: :destroy
 - has_many :likes_users, through: :user, source: :user
 - has_one :purchase

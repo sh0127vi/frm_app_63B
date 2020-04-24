@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
   before_action :parents_category, only: [:index_Top_page, :index_all, :show, :search]
-  before_action :set_product, only: [:show, :destroy]
+  before_action :set_product, only: [:show, :destroy,:edit,:update]
   before_action :set_products_all, only: [:index_all, :index_Top_page]
   before_action :set_ransack
+  before_action :ensure_currect_user,only: [:edit,:update,:destroy]
 
   def index_Top_page
   end
@@ -27,6 +28,36 @@ class ProductsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @category = Category.find((@product).category_id)
+    grandchild_category = @product.category
+    child_category = grandchild_category.parent
+    # 親カテゴリーの配列を取得する
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+    # 子カテゴリーの配列を取得する
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+    # 孫カテゴリーの配列を取得する
+    @category_grandchildren_array = []
+    Category.where(ancestry: @category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
+  end
+
+  def update
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      redirect_to edit_product_path(@product)
     end
   end
 
@@ -77,7 +108,7 @@ class ProductsController < ApplicationController
   private
   
   def product_params
-    params.require(:product).permit( :name, :detail, :price, :category_id, :brand_id, :condition, :city, :fee_payer, :delivery, images_attributes: [:images]).merge(user_id: current_user.id)
+    params.require(:product).permit( :name, :detail, :price, :category_id, :brand_id, :condition, :prefecture_id, :fee_payer, :delivery, images_attributes: [:images,:id,:_destroy]).merge(user_id: current_user.id)
   end
 
   def parents_category
@@ -90,6 +121,13 @@ class ProductsController < ApplicationController
 
   def set_products_all
     @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
+  end
+  
+  def ensure_currect_user
+    @product = Product.find_by(id: params[:id])
+    if @product.user_id != current_user.id
+       redirect_to root_path
+    end
   end
 
   def set_ransack
