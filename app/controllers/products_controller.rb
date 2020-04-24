@@ -98,15 +98,8 @@ class ProductsController < ApplicationController
     @products = @search.result
   end
 
-  def change
-    create_table :products do |t|
-      t.integer :price, null: false
-      t.timestamps
-    end
-  end
-
   private
-  
+
   def product_params
     params.require(:product).permit( :name, :detail, :price, :category_id, :brand_id, :condition, :prefecture_id, :fee_payer, :delivery, images_attributes: [:images,:id,:_destroy]).merge(user_id: current_user.id)
   end
@@ -122,7 +115,7 @@ class ProductsController < ApplicationController
   def set_products_all
     @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
   end
-  
+
   def ensure_currect_user
     @product = Product.find_by(id: params[:id])
     if @product.user_id != current_user.id
