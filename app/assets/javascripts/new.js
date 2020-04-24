@@ -25,7 +25,7 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
 
   function build_text(){
     var html=`<div class="goods_field-box-inner-html_text">
-                <img src="/assets/material/icon/icon_camera.png" alt="カメラ" width="40">
+                <img width="40" src="/assets/material/icon/icon_camera-24c5a3dec3f777b383180b053077a49d0416a4137a1c541d7dd3f5ce93194dee.png">
                 <p>クリックしてファイルをアップロード</p>
               </div>`
     return html;
@@ -70,9 +70,9 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
 
       if (count>4){
         image_file.css({'height':''});
-        image_file.css({'height':'300'});
+        image_file.css({'height':'292.046'});
         $('.goods_field-box').css({'height':''});
-        $('.goods_field-box').css({'height':'305'});
+        $('.goods_field-box').css({'height':'296.023'});
         $('.goods_form-image').css({'height':''});
         $('.goods_form-image').css({'height':'460'});
       }
@@ -93,7 +93,6 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
 
   });
 
-  var file_field = document.querySelector('input[type=file]');
   $(document).on("click", '.delete_btn', function(){
     var count = $('.img').length;
     var target_image = $(this).parent().parent();
@@ -106,7 +105,7 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
       $('.goods_field-box-inner-html').append(text_html);
       $("#js_html input:last").css({
         'width':'100%',
-        'height':'150px',
+        'height':'146.023px'
       });
     }else if (count<6){
       image_file.css({'height':''});
@@ -118,7 +117,7 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
     }else if(count==5){
       $("#js_html input:last").css({
         'width':'100%',
-        'height':'150px'
+        'height':'146.023px'
       });
     }else if(count<9){
       $("#js_html input:last").css({'width': `calc(100% - (20% * (${$('.img').length} - 5)))`});
@@ -128,7 +127,15 @@ $(document).on('DOMContentLoaded turbolinks:render', function() {
     }
   })
 
+  $(document).on("click",'edit_btn',function(){
+    var target_image = $(this).parent().parent();
+    var target_url = target_image.attr('src');
+  })
+
   $(".goods_form-send-redbtn").on('click',function(){
+    last_input=$("#js_html input:last");
+    if(last_input.val()==""){
     $("#js_html input:last").remove();
+    }
   })
 });
