@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
   before_action :parents_category, only: [:index_Top_page, :index_all, :show, :search]
   before_action :set_product, only: [:show, :destroy,:edit,:update]
   before_action :set_products_all, only: [:index_all, :index_Top_page]
+  before_action :set_ransack
   before_action :ensure_currect_user,only: [:edit,:update,:destroy]
-
 
   def index_Top_page
   end
@@ -94,11 +94,12 @@ class ProductsController < ApplicationController
 
   def search
     @products = Product.search(params[:keyword]).order("created_at DESC").limit(25)
+    @search = Product.ransack(params[:q]) 
+    @products = @search.result
   end
 
-  
-
   private
+
   def product_params
     params.require(:product).permit( :name, :detail, :price, :category_id, :brand_id, :condition, :prefecture_id, :fee_payer, :delivery, images_attributes: [:images,:id,:_destroy]).merge(user_id: current_user.id)
   end
@@ -114,12 +115,16 @@ class ProductsController < ApplicationController
   def set_products_all
     @products = Product.includes(:user, :images, :purchase, :category,).order("created_at DESC")
   end
-  
+
   def ensure_currect_user
     @product = Product.find_by(id: params[:id])
     if @product.user_id != current_user.id
        redirect_to root_path
     end
+  end
+
+  def set_ransack
+    @q = Product.ransack(params[:q])
   end
 
 end

@@ -1,0 +1,147 @@
+.left_search_list {
+  padding-bottom: 50px;
+  background-color: #f5f5f5;
+  width: 500px;
+  padding-left: 100px;
+  float: left;
+  display: flex;
+  margin-top: 80px;
+
+  &__sort {
+    position: relative;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &--icon {
+      position: absolute;
+      left: 250px;
+      top: 42px;
+      font-size: 25px;
+      color: grey;
+      }
+    .search_sorts {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      position: relative;
+      background-color: white;
+      width: 280px;
+      height: 48px;
+      padding-left: 15px;
+      }
+    }
+  .left_search_list_main {
+    width: 300px;
+    background-color: white;
+    padding: 16px;
+    &__text {
+      font-size: 16px;
+    }
+    &__keyword--icon {
+      padding-top: 15px;
+      float: left;
+      color: rgb(29, 238, 57);
+      font-size: 20px;
+      }
+    &__keyword__text {
+      padding-top: 23px;
+      padding-bottom: 10px;
+      font-size: 14px;
+    }
+    .search_keyword {
+      width: 248px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    &__brand--icon {
+      font-size: 20px;
+      padding-top: 60px;
+      float: left;
+      color: rgb(238, 6, 6);
+    }
+    &__brand__text {
+      padding-top: 20px;
+      padding-bottom: 5px;
+      font-size: 14px;
+    }
+    .search_brand {
+      width: 248px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    &__price--icon {
+      font-size: 20px;
+      padding-top: 80px;
+      float: left;
+      color: rgb(41, 44, 222);
+    }
+    &__price__text {
+      padding-top: 43px;
+      padding-bottom: 5px;
+      font-size: 14px;
+      padding-left: 25px;
+    }
+    &__price__form {
+      display: flex;
+      .search_price_min {
+        padding: 15px 16px 15px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 110px;
+      }
+      p {
+        padding: 15px 10px 10px;
+      }
+      .search_price_max {
+        padding: 15px 16px 15px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 110px;
+      }
+    }
+    &__status__btns {
+      padding-top: 40px;
+      display: flex;
+      &__clear {
+        background: #aaa;
+        border: 1px solid #aaa;
+        height: 50px;
+        width: 110px;
+        text-align: center;
+        line-height: 50px;
+        .search_clear {
+          color: white;
+        }
+      }
+      &__submit {
+        padding-left: 30px;
+      }
+      .search_submit {
+        &__text{
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          height: 50px;
+          text-align: center;
+          line-height: 50px;
+          padding: 0px 38px;
+        }
+      }
+    }
+  }
+  .input {
+    *font-size: 100%;
+  }
+}
+
+.main_header__box__upper__search__row {
+  display: flex;
+  background: #f5f5f5;
+  .search_result_main {
+    margin-left: 150px;
+  }
+}

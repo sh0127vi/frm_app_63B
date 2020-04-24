@@ -1,0 +1,33 @@
+
+.left_search_list
+  = search_form_for(@q,url: search_products_path) do |f|
+    .left_search_list__sort
+      = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' }, {} , {class: "search_sorts"})
+      .left_search_list__sort--icon
+        = icon('fas', 'angle-down', class:"left_search_list--icon")
+    .left_search_list_main
+      .left_search_list_main__text
+        詳細検索
+      .left_search_list_main__keyword--icon
+        %i.fas.fa-plus
+      .left_search_list_main__keyword__text
+        キーワードを追加する
+      = f.search_field :name_cont, placeholder: "例）値下げ",class: "search_keyword"
+      .left_search_list_main__brand--icon
+        %i.fas.fa-tag
+      .left_search_list_main__brand__text
+        ブランド名から探す
+      = f.search_field :brand_id_cont, placeholder: "例）シャネル",class: "search_brand"
+      .left_search_list_main__price--icon
+        %i.fab.fa-bitcoin
+      .left_search_list_main__price__text
+        価格
+      .left_search_list_main__price__form
+        = f.search_field :price_gteq, placeholder: "¥ Min",class: "search_price_min"
+        %p ~
+        = f.search_field :price_lteq, placeholder: "¥ Max",class: "search_price_max"
+      .left_search_list_main__status__btns
+        .left_search_list_main__status__btns__clear
+          = link_to "クリア", "search" ,type: "button",class: "search_clear"
+        .left_search_list_main__status__btns__submit
+          = f.submit "完了", class: "search_submit__text"
