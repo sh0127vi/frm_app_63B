@@ -25,6 +25,6 @@
       %ul.products
         - @products.each do |product|
           = render partial: 'products/shared/product', locals: { product: product }
-      
+
 .footer
   = render 'products/shared/footer'
