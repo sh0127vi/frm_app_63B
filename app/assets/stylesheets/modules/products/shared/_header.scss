@@ -97,15 +97,15 @@
                   box-sizing: border-box;
                   background-color: rgb(255, 255, 255);
                   width: 210px;
-                  line-height: 50px;
+                  line-height: 30px;
                   list-style: block;
                   text-align: center;
                   cursor: pointer;
                   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-                  font-size: 11px;
+                  font-size: 15px;
                   li.parent__list {
                     &:hover {
-                    background-color: #ea352d;
+                    background-color: #4ae20e;
                     a {
                       color: #fff;
                       display: block;
@@ -120,14 +120,14 @@
                       left: 210px;
                       line-height: 30px;
                       position: absolute;
-                      top: 40px;
+                      top: 20px;
                       width: 210px;
                       cursor: pointer;
                       text-align: center;
                       li.child__list {
                         background-color: rgb(255, 255, 255);
                         &:hover {
-                          background-color: #e6e6e6;
+                          background-color: #ea352d;
                         }
                         a{
                           color:#000;
@@ -152,7 +152,7 @@
                           }
                           li{
                             &:hover {
-                            background-color: #e6e6e6;
+                            background-color: #0095EE;
                             a {
                               color: #fff;
                             }

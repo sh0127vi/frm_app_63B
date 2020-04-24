@@ -86,3 +86,4 @@ gem 'jquery-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'payjp'
 gem 'gretel'
+gem 'ransack'

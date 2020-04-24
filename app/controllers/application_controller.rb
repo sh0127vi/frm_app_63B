@@ -2,11 +2,21 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
+  before_action :set_ransack
+
+  def search
+    @search_product = Product.ransack(params[:q]) 
+    @products = @search_product.result.page(params[:page])
+  end
 
   private
 
   def production?
     Rails.env.production?
+  end
+
+  def set_ransack
+    @q = Product.ransack(params[:q])
   end
 
   def basic_auth

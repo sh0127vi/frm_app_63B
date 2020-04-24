@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :likes, only: [:create, :destroy, :show]
     resource :comments, only: :create
+    resources :searches,only:[:index]
     collection do
       get "index_Top_page"
       get "index_all"
