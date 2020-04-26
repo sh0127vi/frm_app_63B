@@ -8,9 +8,13 @@
     .products-list
       .products-list__name
         検索結果
-      %ul.products
-        - @products.each do |product|
-          = render partial: 'products/shared/product', locals: { product: product }
+      - if @products.length == 0
+        .search_nothing  
+          条件に一致する商品はありません
+      - else
+        %ul.products
+          - @products.each do |product|
+            = render partial: 'products/shared/product', locals: { product: product }
 
 .footer
   = render 'products/shared/footer'
